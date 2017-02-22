@@ -56,7 +56,7 @@
 
         <div class="col-lg-6">
             <div class="well bs-component">
-                <form class="form-horizontal" action="/registration/" method="post">
+                <form class="form-horizontal" action="/registration/" name="registration" onsubmit="return validateRegistration()" method="post">
                     <fieldset>
                         <legend>Sing Up Form</legend>
 
@@ -99,11 +99,14 @@
                             <label for="select" class="col-lg-2 control-label">Age</label>
                             <div class="col-lg-6">
                                 <select class="form-control" id="age" name="age">
-                                    <option>18-24</option>
-                                    <option>25-38</option>
-                                    <option>39-52</option>
-                                    <option>52-70</option>
-                                    <option>71-99</option>
+                                    <option selected></option>
+                                    <option>0-18</option>
+                                    <option>19-24</option>
+                                    <option>25-29</option>
+                                    <option>30-35</option>
+                                    <option>36-45</option>
+                                    <option>46-55</option>
+                                    <option>56-other</option>
                                 </select>
                             </div>
                             <div class="col-lg-4">
@@ -114,6 +117,7 @@
                             <label for="select" class="col-lg-2 control-label">Gender</label>
                             <div class="col-lg-6">
                                 <select class="form-control" id="gender" name="gender">
+                                    <option selected></option>
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -122,9 +126,41 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label for="select" class="col-lg-2 control-label">Profession</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="profession" name="profession">
+                                    <option selected></option>
+                                    <option>Unemployed</option>
+                                    <option>Student</option>
+                                    <option>Office Worker</option>
+                                    <option>Freelance</option>
+                                    <option>Household</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="select" class="col-lg-2 control-label">Education</label>
+                            <div class="col-lg-6">
+                                <select class="form-control" id="education" name="education">
+                                    <option selected></option>
+                                    <option>Not graduated</option>
+                                    <option>Degree</option>
+                                    <option>Three-Year Degree</option>
+                                    <option>Master's Degree</option>
+                                    <option>Ph.D or other</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4">
+                            </div>
+                        </div>
+
+
                         <div class=" form-group">
                             <div class="col-lg-10">
-
                                 <button type="submit" name="submit" class="btn btn-primary">Create an account</button>
                             </div>
                         </div>

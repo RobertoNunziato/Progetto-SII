@@ -14,16 +14,6 @@ def getRegitrationModule():
 
 @app.route('/registration/',methods=['POST'])
 def registration():
-    print "dentro"
-    name = request.form['name']
-    surname = request.form['surname']
-    email = request.form['email']
-    password = request.form['password']
-    verifyPassword = request.form['verifyPassword']
-    age = request.form['age']
-    gender = request.form['gender']
-
-    print name," ",surname," ",email," ",password," ",verifyPassword," ",age," ",gender
     return redirect(url_for('index'))
 
 """Funzionano
