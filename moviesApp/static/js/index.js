@@ -1,25 +1,27 @@
 function validateRegistration(){
-    var name = document.forms["registration"]["name"].value
-    var surname = document.forms["registration"]["surname"].value
-    var email = document.forms["registration"]["email"].value
     var password = document.forms["registration"]["password"].value
     var verifyPassword = document.forms["registration"]["verifyPassword"].value
-    var age = document.forms["registration"]["age"].value
-    var gender = document.forms["registration"]["gender"].value
-    var profession = document.forms["registration"]["profession"].value
-    var education = document.forms["registration"]["education"].value
 
-    alert(age)
-
-    /*Check n°1 : all element will be defined*/
-    if ((name == "") || (surname == "") || (email == "") ||
-        (password == "") || (verifyPassword == "") || (age == "") ||
-        (gender == "") || (profession == "") || (education == "")) {
-
-        alert("Compile all!")
+    /*Check n°2 : verify password and password must be equals*/
+    if ((password != verifyPassword)) {
+        alert("Check that password and verifyPassword are equals")
         return false;
     }
-
     return true;
-
 }
+
+
+/*Function that verify if all field are written*/
+function InvalidMsg(textbox) {
+    if (textbox.value == '') {
+        textbox.setCustomValidity('Field mandatory!');
+    }
+    else if (textbox.validity.typeMismatch){
+        textbox.setCustomValidity('Please enter a valid email address');
+    }
+    else {
+       textbox.setCustomValidity('');
+    }
+    return true;
+}
+

@@ -56,49 +56,49 @@
 
         <div class="col-lg-6">
             <div class="well bs-component">
-                <form class="form-horizontal" action="/registration/" name="registration" onsubmit="return validateRegistration()" method="post">
+                <form class="form-horizontal" action="/registration/" id="registration" name="registration" onsubmit="return validateRegistration()" method="post">
                     <fieldset>
                         <legend>Sing Up Form</legend>
 
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Name</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" name="name" placeholder="Name">
+                                <input type="text" class="form-control" name="name" placeholder="Name" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Surname</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" name="surname" placeholder="Surname">
+                                <input type="text" required class="form-control" name="surname" placeholder="Surname" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" name="email" placeholder="Email">
+                                <input type="email" required class="form-control" name="email" placeholder="Email" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                             <div class="col-lg-10">
-                                <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                                <input type="password" required class="form-control" name="password" id="password" placeholder="Password" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Verify Password</label>
                             <div class="col-lg-10">
-                                <input type="password" class="form-control" name="verifyPassword" id="verifyPassword" placeholder="Verify Password">
+                                <input type="password" required class="form-control" name="verifyPassword" id="verifyPassword" placeholder="Verify Password" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="select" class="col-lg-2 control-label">Age</label>
                             <div class="col-lg-6">
-                                <select class="form-control" id="age" name="age">
+                                <select class="form-control" required id="age" name="age" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                                     <option selected></option>
                                     <option>0-18</option>
                                     <option>19-24</option>
@@ -116,7 +116,7 @@
                         <div class="form-group">
                             <label for="select" class="col-lg-2 control-label">Gender</label>
                             <div class="col-lg-6">
-                                <select class="form-control" id="gender" name="gender">
+                                <select class="form-control" required id="gender" name="gender" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                                     <option selected></option>
                                     <option>Male</option>
                                     <option>Female</option>
@@ -129,7 +129,7 @@
                         <div class="form-group">
                             <label for="select" class="col-lg-2 control-label">Profession</label>
                             <div class="col-lg-6">
-                                <select class="form-control" id="profession" name="profession">
+                                <select class="form-control" required id="profession" name="profession" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                                     <option selected></option>
                                     <option>Unemployed</option>
                                     <option>Student</option>
@@ -145,7 +145,7 @@
                         <div class="form-group">
                             <label for="select" class="col-lg-2 control-label">Education</label>
                             <div class="col-lg-6">
-                                <select class="form-control" id="education" name="education">
+                                <select class="form-control" required id="education" name="education" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                                     <option selected></option>
                                     <option>Not graduated</option>
                                     <option>Degree</option>
@@ -158,10 +158,14 @@
                             </div>
                         </div>
 
-
+                        <br>
                         <div class=" form-group">
-                            <div class="col-lg-10">
+                            <div class="col-lg-4">
+                            </div>
+                            <div class="col-lg-4">
                                 <button type="submit" name="submit" class="btn btn-primary">Create an account</button>
+                            </div>
+                            <div class="col-lg-4">
                             </div>
                         </div>
                     </fieldset>
@@ -186,14 +190,22 @@
             <form action="/getRegistrationModule/" method="post">
                 <input type="submit" class="btn btn-primary btn-lg" name="registration" value="Sing up now!">
             </form>
+
+
+
+            <form action="/getSurveyModule/" method="post">
+                <input type="submit" class="btn btn-primary btn-lg" name="survey" value="get Survey!">
+            </form>
+
+
         </div>
     </div>
 {% endif %}
-
+<div class="col-lg-12">
 <footer>
     <p style="text-align: center">&copy; 2017 JavaComeLava</p>
 </footer>
-
+</div>
 </div> <!-- /container -->
 
 
