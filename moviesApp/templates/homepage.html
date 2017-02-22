@@ -48,50 +48,106 @@
 
 
 {% if registration %}
-
-    <div class="jumbotron">
-        <div class="container">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Modulo di registrazione</h3>
-                </div>
-                <div class="panel-body">
-                    <form action="/registration/" method="post">
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="name" placeholder="Nome">
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="surname" placeholder="Cognome">
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="email" placeholder="Email">
-                        </div>
-                        <br>
-                        <div class="input-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                        </div>
-                        <br>
-                        <button type="submit" name="submit" class="btn btn-success">Registrati</button>
-
-                    </form>
-                </div>
-            </div>
+        <div class="row">
         </div>
+        <div class="row">
+<div class="col-lg-3">
+</div>
+
+          <div class="col-lg-6">
+            <div class="well bs-component">
+<form class="form-horizontal" action="/registration/" method="post">
+  <fieldset>
+    <legend>Sing Up Form</legend>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Name</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="name" placeholder="Name">
+      </div>
     </div>
+
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Surname</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="surname" placeholder="Surname">
+      </div>
+    </div>
+
+<div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" name="email" placeholder="Email">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      </div>
+      </div>
+
+          <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">Verify Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Verify Password">
+      </div>
+      </div>
+
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Age</label>
+      <div class="col-lg-6">
+        <select class="form-control" id="age">
+          <option>18-24</option>
+          <option>25-38</option>
+          <option>39-52</option>
+          <option>52-70</option>
+          <option>71-99</option>
+        </select>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Gender</label>
+      <div class="col-lg-6">
+        <select class="form-control" id="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
+
+    <div class=" form-group">
+      <div class="col-lg-10">
+
+        <button type="submit" class="btn btn-primary">Create an account</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+   </div>
+          </div>
+          </div>
+
+<div class="col-lg-3">
+</div>
 
 {% else %}
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Benvenuto su Movies App!</h1>
-        <p>Movies App! è un'applicazione che scopre e suggerisce quali film potrebbero piacerti.
-        Grazie ad una vasta community siamo in grado di trovare utenti con i tuoi stessi gusti
-        cinematografici e proporti film che magari non hai mai visto!
-        Cosa aspetti a registrarti?</p>
+        <h1>Wellcome on Movies App!</h1>
+        <p>Movies App! is a web application that detects and suggests what movies you might also like. 
+        Thanks to a large community we can find users who share your own cinematic tastes and we can propose 
+        films that maybe you've never seen!
+        What are you waiting to join us?</p>
         <form action="/getRegistrationModule/" method="post">
-            <input type="submit" class="btn btn-primary btn-lg" name="registration" value="Registrati!">
+            <input type="submit" class="btn btn-primary btn-lg" name="registration" value="Sing up now!">
         </form>
     </div>
 </div>
