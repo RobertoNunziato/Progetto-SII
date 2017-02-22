@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+from mongodb import mongoDriver
 
 app = Flask(__name__)
 
@@ -13,14 +14,19 @@ def getRegitrationModule():
 
 @app.route('/registration/',methods=['POST'])
 def registration():
+    print "dentro"
     name = request.form['name']
     surname = request.form['surname']
     email = request.form['email']
     password = request.form['password']
-    print name," ",surname," ",email," ",password
+    verifyPassword = request.form['verifyPassword']
+    age = request.form['age']
+    gender = request.form['gender']
+
+    print name," ",surname," ",email," ",password," ",verifyPassword," ",age," ",gender
     return redirect(url_for('index'))
 
-""" Funzionano
+"""Funzionano
 @app.route('/cercaFilm/')
 def cercaFilm():
     data = request.args.get('nomeFilm')
