@@ -1,13 +1,3 @@
-function cercaFilm(){
-    $.getJSON('cercaFilm/',
-        {
-            nomeFilm: "ciaooo"
-        },
-        function(data){
-            console.log(data);
-    });
-}
-
 function validateRegistration(){
     var name = document.forms["registration"]["name"].value
     var surname = document.forms["registration"]["surname"].value
