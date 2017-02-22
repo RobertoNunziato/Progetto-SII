@@ -18,8 +18,6 @@
 
 </head>
 
-<body>
-
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -32,12 +30,426 @@
             </button>
             <a class="navbar-brand" href="#">Movies App!</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <p class="navbar-brand navbar-right">Benvenuto {{ user['name'] }} {{ user['surname'] }}</p>
-        </div><!--/.navbar-collapse -->
+
 
     </div>
 </nav>
+    {% set count=1 %}
+
+    {% if page==1 or count==1 %}
+    <div class="col-lg-12">
+
+        <fieldset style="width:30%; position:absolute">
+            <legend>1. Am the life of the party.</legend>
+            <input type="radio" name="q1" value=1 id="q11"><label for="q11">1</label>
+            <input type="radio" name="q1" value=2 id="q12"><label for="q12">2</label>
+            <input type="radio" name="q1" value=3 id="q13"><label for="q13">3</label>
+            <input type="radio" name="q1" value=4 id="q14"><label for="q14">4</label>
+            <input type="radio" name="q1" value=5 id="q15"><label for="q15">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; position:absolute">
+            <legend>2. Feel little concern for others.</legend>
+            <input type="radio" name="q2" value=1 id="q21"><label for="q21">1</label>
+            <input type="radio" name="q2" value=2 id="q22"><label for="q22">2</label>
+            <input type="radio" name="q2" value=3 id="q23"><label for="q23">3</label>
+            <input type="radio" name="q2" value=4 id="q24"><label for="q24">4</label>
+            <input type="radio" name="q2" value=5 id="q25"><label for="q25">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; position:absolute">
+            <legend>3. Am always prepared.</legend>
+            <input type="radio" name="q3" value=1 id="q31"><label for="q31">1</label>
+            <input type="radio" name="q3" value=2 id="q32"><label for="q32">2</label>
+            <input type="radio" name="q3" value=3 id="q33"><label for="q33">3</label>
+            <input type="radio" name="q3" value=4 id="q34"><label for="q34">4</label>
+            <input type="radio" name="q3" value=5 id="q35"><label for="q35">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:155px; position:absolute">
+            <legend>4. Get stressed out easily.</legend>
+            <input type="radio" name="q4" value=1 id="q41"><label for="q41">1</label>
+            <input type="radio" name="q4" value=2 id="q42"><label for="q42">2</label>
+            <input type="radio" name="q4" value=3 id="q43"><label for="q43">3</label>
+            <input type="radio" name="q4" value=4 id="q44"><label for="q44">4</label>
+            <input type="radio" name="q4" value=5 id="q45"><label for="q45">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:155px; position:absolute">
+            <legend>5. Have a rich vocabulary.</legend>
+            <input type="radio" name="q5" value=1 id="q51"><label for="q51">1</label>
+            <input type="radio" name="q5" value=2 id="q52"><label for="q52">2</label>
+            <input type="radio" name="q5" value=3 id="q53"><label for="q53">3</label>
+            <input type="radio" name="q5" value=4 id="q54"><label for="q54">4</label>
+            <input type="radio" name="q5" value=5 id="q55"><label for="q55">5</label>
+        </fieldset>
+    </div>
+    {% endif %}
+    {% if page==2 or count==2%}
+               <fieldset style="width:30%; left:66%; top:155px; position:absolute">
+            <legend>6. Don't talk a lot.</legend>
+            <input type="radio" name="q6" value=1 id="q61"><label for="q61">1</label>
+            <input type="radio" name="q6" value=2 id="q62"><label for="q62">2</label>
+            <input type="radio" name="q6" value=3 id="q63"><label for="q63">3</label>
+            <input type="radio" name="q6" value=4 id="q64"><label for="q64">4</label>
+            <input type="radio" name="q6" value=5 id="q65"><label for="q65">5</label>
+        </fieldset>
+        </div>
+        <fieldset style="width:30%; top:213px; position:absolute">
+            <legend>7. Am interested in people.</legend>
+            <input type="radio" name="q7" value=1 id="q71"><label for="q71">1</label>
+            <input type="radio" name="q7" value=2 id="q72"><label for="q72">2</label>
+            <input type="radio" name="q7" value=3 id="q73"><label for="q73">3</label>
+            <input type="radio" name="q7" value=4 id="q74"><label for="q74">4</label>
+            <input type="radio" name="q7" value=5 id="q75"><label for="q75">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:213px; position:absolute">
+            <legend>8. Leave my belongings around.</legend>
+            <input type="radio" name="q8" value=1 id="q81"><label for="q81">1</label>
+            <input type="radio" name="q8" value=2 id="q82"><label for="q82">2</label>
+            <input type="radio" name="q8" value=3 id="q83"><label for="q83">3</label>
+            <input type="radio" name="q8" value=4 id="q84"><label for="q84">4</label>
+            <input type="radio" name="q8" value=5 id="q85"><label for="q85">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:213px; position:absolute">
+            <legend>9. Am relaxed most of the time.</legend>
+            <input type="radio" name="q9" value=1 id="q91"><label for="q91">1</label>
+            <input type="radio" name="q9" value=2 id="q92"><label for="q92">2</label>
+            <input type="radio" name="q9" value=3 id="q93"><label for="q93">3</label>
+            <input type="radio" name="q9" value=4 id="q94"><label for="q94">4</label>
+            <input type="radio" name="q9" value=5 id="q95"><label for="q95">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:271px; position:absolute">
+            <legend>10. Have difficulty understanding abstract ideas.</legend>
+            <input type="radio" name="q10" value=1 id="q101"><label for="q101">1</label>
+            <input type="radio" name="q10" value=2 id="q102"><label for="q102">2</label>
+            <input type="radio" name="q10" value=3 id="q103"><label for="q103">3</label>
+            <input type="radio" name="q10" value=4 id="q104"><label for="q104">4</label>
+            <input type="radio" name="q10" value=5 id="q105"><label for="q105">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==3 %}
+        <fieldset style="width:30%; left:33%; top:271px; position:absolute">
+            <legend>11. Feel comfortable around people.</legend>
+            <input type="radio" name="q11" value=1 id="q111"><label for="q111">1</label>
+            <input type="radio" name="q11" value=2 id="q112"><label for="q112">2</label>
+            <input type="radio" name="q11" value=3 id="q113"><label for="q113">3</label>
+            <input type="radio" name="q11" value=4 id="q114"><label for="q114">4</label>
+            <input type="radio" name="q11" value=5 id="q115"><label for="q115">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:271px; position:absolute">
+            <legend>12. Insult people.</legend>
+            <input type="radio" name="q12" value=1 id="q121"><label for="q121">1</label>
+            <input type="radio" name="q12" value=2 id="q122"><label for="q122">2</label>
+            <input type="radio" name="q12" value=3 id="q123"><label for="q123">3</label>
+            <input type="radio" name="q12" value=4 id="q124"><label for="q124">4</label>
+            <input type="radio" name="q12" value=5 id="q125"><label for="q125">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:329px; position:absolute">
+            <legend>13. Pay attention to details.</legend>
+            <input type="radio" name="q13" value=1 id="q131"><label for="q131">1</label>
+            <input type="radio" name="q13" value=2 id="q132"><label for="q132">2</label>
+            <input type="radio" name="q13" value=3 id="q133"><label for="q133">3</label>
+            <input type="radio" name="q13" value=4 id="q134"><label for="q134">4</label>
+            <input type="radio" name="q13" value=5 id="q135"><label for="q135">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:329px; position:absolute">
+        <legend>14. Worry about things.</legend>
+            <input type="radio" name="q14" value=1 id="q141"><label for="q141">1</label>
+            <input type="radio" name="q14" value=2 id="q142"><label for="q142">2</label>
+            <input type="radio" name="q14" value=3 id="q143"><label for="q143">3</label>
+            <input type="radio" name="q14" value=4 id="q144"><label for="q144">4</label>
+            <input type="radio" name="q14" value=5 id="q145"><label for="q145">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:329px; position:absolute">
+            <legend>15. Have a vivid imagination.</legend>
+            <input type="radio" name="q15" value=1 id="q151"><label for="q151">1</label>
+            <input type="radio" name="q15" value=2 id="q152"><label for="q152">2</label>
+            <input type="radio" name="q15" value=3 id="q153"><label for="q153">3</label>
+            <input type="radio" name="q15" value=4 id="q154"><label for="q154">4</label>
+            <input type="radio" name="q15" value=5 id="q155"><label for="q155">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==4 %}
+        <fieldset style="width:30%; top:387px; position:absolute">
+            <legend>16. Keep in the background.</legend>
+            <input type="radio" name="q16" value=1 id="q161"><label for="q161">1</label>
+            <input type="radio" name="q16" value=2 id="q162"><label for="q162">2</label>
+            <input type="radio" name="q16" value=3 id="q163"><label for="q163">3</label>
+            <input type="radio" name="q16" value=4 id="q164"><label for="q164">4</label>
+            <input type="radio" name="q16" value=5 id="q165"><label for="q165">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:387px; position:absolute">
+            <legend>17. Sympathize with others' feelings.</legend>
+            <input type="radio" name="q17" value=1 id="q171"><label for="q171">1</label>
+            <input type="radio" name="q17" value=2 id="q172"><label for="q172">2</label>
+            <input type="radio" name="q17" value=3 id="q173"><label for="q173">3</label>
+            <input type="radio" name="q17" value=4 id="q174"><label for="q174">4</label>
+            <input type="radio" name="q17" value=5 id="q175"><label for="q175">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:387px; position:absolute">
+            <legend>18. Make a mess of things.</legend>
+            <input type="radio" name="q18" value=1 id="q181"><label for="q181">1</label>
+            <input type="radio" name="q18" value=2 id="q182"><label for="q182">2</label>
+            <input type="radio" name="q18" value=3 id="q183"><label for="q183">3</label>
+            <input type="radio" name="q18" value=4 id="q184"><label for="q184">4</label>
+            <input type="radio" name="q18" value=5 id="q185"><label for="q185">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:445px; position:absolute">
+            <legend>19. Seldom feel blue.</legend>
+            <input type="radio" name="q19" value=1 id="q191"><label for="q191">1</label>
+            <input type="radio" name="q19" value=2 id="q192"><label for="q192">2</label>
+            <input type="radio" name="q19" value=3 id="q193"><label for="q193">3</label>
+            <input type="radio" name="q19" value=4 id="q194"><label for="q194">4</label>
+            <input type="radio" name="q19" value=5 id="q195"><label for="q195">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:445px; position:absolute">
+            <legend>20. Am not interested in abstract ideas.</legend>
+            <input type="radio" name="q20" value=1 id="q201"><label for="q201">1</label>
+            <input type="radio" name="q20" value=2 id="q202"><label for="q202">2</label>
+            <input type="radio" name="q20" value=3 id="q203"><label for="q203">3</label>
+            <input type="radio" name="q20" value=4 id="q204"><label for="q204">4</label>
+            <input type="radio" name="q20" value=5 id="q205"><label for="q205">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==5 %}
+        <fieldset style="width:30%; left:66%; top:445px; position:absolute">
+            <legend>21. Start conversations.</legend>
+                <input type="radio" name="q21" value=1 id="q211"><label for="q211">1</label>
+                <input type="radio" name="q21" value=2 id="q212"><label for="q212">2</label>
+                <input type="radio" name="q21" value=3 id="q213"><label for="q213">3</label>
+                <input type="radio" name="q21" value=4 id="q214"><label for="q214">4</label>
+                <input type="radio" name="q21" value=5 id="q215"><label for="q215">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:503px; position:absolute">
+            <legend>22. Am not interested in other people's problems.</legend>
+                <input type="radio" name="q22" value=1 id="q221"><label for="q221">1</label>
+                <input type="radio" name="q22" value=2 id="q222"><label for="q222">2</label>
+                <input type="radio" name="q22" value=3 id="q223"><label for="q223">3</label>
+                <input type="radio" name="q22" value=4 id="q224"><label for="q224">4</label>
+                <input type="radio" name="q22" value=5 id="q225"><label for="q225">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:503px; position:absolute">
+            <legend>23. Get chores done right away.</legend>
+                <input type="radio" name="q23" value=1 id="q231"><label for="q231">1</label>
+                <input type="radio" name="q23" value=2 id="q232"><label for="q232">2</label>
+                <input type="radio" name="q23" value=3 id="q233"><label for="q233">3</label>
+                <input type="radio" name="q23" value=4 id="q234"><label for="q234">4</label>
+                <input type="radio" name="q23" value=5 id="q235"><label for="q235">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:503px; position:absolute"><legend>24. Am easily disturbed.</legend>
+                <input type="radio" name="q24" value=1 id="q241"><label for="q241">1</label>
+                <input type="radio" name="q24" value=2 id="q242"><label for="q242">2</label>
+                <input type="radio" name="q24" value=3 id="q243"><label for="q243">3</label>
+                <input type="radio" name="q24" value=4 id="q244"><label for="q244">4</label>
+                <input type="radio" name="q24" value=5 id="q245"><label for="q245">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:561px; position:absolute"><legend>25. Have excellent ideas.</legend>
+                <input type="radio" name="q25" value=1 id="q251"><label for="q251">1</label>
+                <input type="radio" name="q25" value=2 id="q252"><label for="q252">2</label>
+                <input type="radio" name="q25" value=3 id="q253"><label for="q253">3</label>
+                <input type="radio" name="q25" value=4 id="q254"><label for="q254">4</label>
+                <input type="radio" name="q25" value=5 id="q255"><label for="q255">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==6 %}
+        <fieldset style="width:30%; left:66%; top:561px; position:absolute"><legend>26. Have little to say.</legend>
+                <input type="radio" name="q26" value=1 id="q261"><label for="q261">1</label>
+                <input type="radio" name="q26" value=2 id="q262"><label for="q262">2</label>
+                <input type="radio" name="q26" value=3 id="q263"><label for="q263">3</label>
+                <input type="radio" name="q26" value=4 id="q264"><label for="q264">4</label>
+                <input type="radio" name="q26" value=5 id="q265"><label for="q265">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:619px; position:absolute"><legend>27. Have a soft heart.</legend>
+                <input type="radio" name="q27" value=1 id="q271"><label for="q271">1</label>
+                <input type="radio" name="q27" value=2 id="q272"><label for="q272">2</label>
+                <input type="radio" name="q27" value=3 id="q273"><label for="q273">3</label>
+                <input type="radio" name="q27" value=4 id="q274"><label for="q274">4</label>
+                <input type="radio" name="q27" value=5 id="q275"><label for="q275">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:619px; position:absolute"><legend>28. Often forget to put things back in their proper place.</legend>
+                <input type="radio" name="q28" value=1 id="q281"><label for="q281">1</label>
+                <input type="radio" name="q28" value=2 id="q282"><label for="q282">2</label>
+                <input type="radio" name="q28" value=3 id="q283"><label for="q283">3</label>
+                <input type="radio" name="q28" value=4 id="q284"><label for="q284">4</label>
+                <input type="radio" name="q28" value=5 id="q285"><label for="q285">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:619px; position:absolute"><legend>29. Get upset easily.</legend>
+                <input type="radio" name="q29" value=1 id="q291"><label for="q291">1</label>
+                <input type="radio" name="q29" value=2 id="q292"><label for="q292">2</label>
+                <input type="radio" name="q29" value=3 id="q293"><label for="q293">3</label>
+                <input type="radio" name="q29" value=4 id="q294"><label for="q294">4</label>
+                <input type="radio" name="q29" value=5 id="q295"><label for="q295">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:677px; position:absolute"><legend>30. Do not have a good imagination.</legend>
+                <input type="radio" name="q30" value=1 id="q301"><label for="q301">1</label>
+                <input type="radio" name="q30" value=2 id="q302"><label for="q302">2</label>
+                <input type="radio" name="q30" value=3 id="q303"><label for="q303">3</label>
+                <input type="radio" name="q30" value=4 id="q304"><label for="q304">4</label>
+                <input type="radio" name="q30" value=5 id="q305"><label for="q305">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==7 %}
+        <fieldset style="width:30%; left:33%; top:677px; position:absolute"><legend>31. Talk to a lot of different people at parties.</legend>
+                <input type="radio" name="q31" value=1 id="q311"><label for="q311">1</label>
+                <input type="radio" name="q31" value=2 id="q312"><label for="q312">2</label>
+                <input type="radio" name="q31" value=3 id="q313"><label for="q313">3</label>
+                <input type="radio" name="q31" value=4 id="q314"><label for="q314">4</label>
+                <input type="radio" name="q31" value=5 id="q315"><label for="q315">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:677px; position:absolute"><legend>32. Am not really interested in others.</legend>
+                <input type="radio" name="q32" value=1 id="q321"><label for="q321">1</label>
+                <input type="radio" name="q32" value=2 id="q322"><label for="q322">2</label>
+                <input type="radio" name="q32" value=3 id="q323"><label for="q323">3</label>
+                <input type="radio" name="q32" value=4 id="q324"><label for="q324">4</label>
+                <input type="radio" name="q32" value=5 id="q325"><label for="q325">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:735px; position:absolute"><legend>33. Like order.</legend>
+                <input type="radio" name="q33" value=1 id="q331"><label for="q331">1</label>
+                <input type="radio" name="q33" value=2 id="q332"><label for="q332">2</label>
+                <input type="radio" name="q33" value=3 id="q333"><label for="q333">3</label>
+                <input type="radio" name="q33" value=4 id="q334"><label for="q334">4</label>
+                <input type="radio" name="q33" value=5 id="q335"><label for="q335">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:735px; position:absolute"><legend>34. Change my mood a lot.</legend>
+                <input type="radio" name="q34" value=1 id="q341"><label for="q341">1</label>
+                <input type="radio" name="q34" value=2 id="q342"><label for="q342">2</label>
+                <input type="radio" name="q34" value=3 id="q343"><label for="q343">3</label>
+                <input type="radio" name="q34" value=4 id="q344"><label for="q344">4</label>
+                <input type="radio" name="q34" value=5 id="q345"><label for="q345">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:735px; position:absolute"><legend>35. Am quick to understand things.</legend>
+                <input type="radio" name="q35" value=1 id="q351"><label for="q351">1</label>
+                <input type="radio" name="q35" value=2 id="q352"><label for="q352">2</label>
+                <input type="radio" name="q35" value=3 id="q353"><label for="q353">3</label>
+                <input type="radio" name="q35" value=4 id="q354"><label for="q354">4</label>
+                <input type="radio" name="q35" value=5 id="q355"><label for="q355">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==8 %}
+        <fieldset style="width:30%; top:793px; position:absolute"><legend>36. Don't like to draw attention to myself.</legend>
+                <input type="radio" name="q36" value=1 id="q361"><label for="q361">1</label>
+                <input type="radio" name="q36" value=2 id="q362"><label for="q362">2</label>
+                <input type="radio" name="q36" value=3 id="q363"><label for="q363">3</label>
+                <input type="radio" name="q36" value=4 id="q364"><label for="q364">4</label>
+                <input type="radio" name="q36" value=5 id="q365"><label for="q365">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:793px; position:absolute"><legend>37. Take time out for others.</legend>
+                <input type="radio" name="q37" value=1 id="q371"><label for="q371">1</label>
+                <input type="radio" name="q37" value=2 id="q372"><label for="q372">2</label>
+                <input type="radio" name="q37" value=3 id="q373"><label for="q373">3</label>
+                <input type="radio" name="q37" value=4 id="q374"><label for="q374">4</label>
+                <input type="radio" name="q37" value=5 id="q375"><label for="q375">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:793px; position:absolute"><legend>38. Shirk my duties.</legend>
+                <input type="radio" name="q38" value=1 id="q381"><label for="q381">1</label>
+                <input type="radio" name="q38" value=2 id="q382"><label for="q382">2</label>
+                <input type="radio" name="q38" value=3 id="q383"><label for="q383">3</label>
+                <input type="radio" name="q38" value=4 id="q384"><label for="q384">4</label>
+                <input type="radio" name="q38" value=5 id="q385"><label for="q385">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:851px; position:absolute"><legend>39. Have frequent mood swings.</legend>
+                <input type="radio" name="q39" value=1 id="q391"><label for="q391">1</label>
+                <input type="radio" name="q39" value=2 id="q392"><label for="q392">2</label>
+                <input type="radio" name="q39" value=3 id="q393"><label for="q393">3</label>
+                <input type="radio" name="q39" value=4 id="q394"><label for="q394">4</label>
+                <input type="radio" name="q39" value=5 id="q395"><label for="q395">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:851px; position:absolute"><legend>40. Use difficult words.</legend>
+                <input type="radio" name="q40" value=1 id="q401"><label for="q401">1</label>
+                <input type="radio" name="q40" value=2 id="q402"><label for="q402">2</label>
+                <input type="radio" name="q40" value=3 id="q403"><label for="q403">3</label>
+                <input type="radio" name="q40" value=4 id="q404"><label for="q404">4</label>
+                <input type="radio" name="q40" value=5 id="q405"><label for="q405">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==9 %}
+        <fieldset style="width:30%; left:66%; top:851px; position:absolute"> <legend>41. Don't mind being the center of attention.</legend>
+                <input type="radio" name="q41" value=1 id="q411"><label for="q411">1</label>
+                <input type="radio" name="q41" value=2 id="q412"><label for="q412">2</label>
+                <input type="radio" name="q41" value=3 id="q413"><label for="q413">3</label>
+                <input type="radio" name="q41" value=4 id="q414"><label for="q414">4</label>
+                <input type="radio" name="q41" value=5 id="q415"><label for="q415">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:909px; position:absolute"><legend>42. Feel others' emotions.</legend>
+                <input type="radio" name="q42" value=1 id="q421"><label for="q421">1</label>
+                <input type="radio" name="q42" value=2 id="q422"><label for="q422">2</label>
+                <input type="radio" name="q42" value=3 id="q423"><label for="q423">3</label>
+                <input type="radio" name="q42" value=4 id="q424"><label for="q424">4</label>
+                <input type="radio" name="q42" value=5 id="q425"><label for="q425">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:909px; position:absolute"><legend>43. Follow a schedule.</legend>
+                <input type="radio" name="q43" value=1 id="q431"><label for="q431">1</label>
+                <input type="radio" name="q43" value=2 id="q432"><label for="q432">2</label>
+                <input type="radio" name="q43" value=3 id="q433"><label for="q433">3</label>
+                <input type="radio" name="q43" value=4 id="q434"><label for="q434">4</label>
+                <input type="radio" name="q43" value=5 id="q435"><label for="q435">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:909px; position:absolute"><legend>44. Get irritated easily.</legend>
+                <input type="radio" name="q44" value=1 id="q441"><label for="q441">1</label>
+                <input type="radio" name="q44" value=2 id="q442"><label for="q442">2</label>
+                <input type="radio" name="q44" value=3 id="q443"><label for="q443">3</label>
+                <input type="radio" name="q44" value=4 id="q444"><label for="q444">4</label>
+                <input type="radio" name="q44" value=5 id="q445"><label for="q445">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:967px; position:absolute"><legend>45. Spend time reflecting on things.</legend>
+                <input type="radio" name="q45" value=1 id="q451"><label for="q451">1</label>
+                <input type="radio" name="q45" value=2 id="q452"><label for="q452">2</label>
+                <input type="radio" name="q45" value=3 id="q453"><label for="q453">3</label>
+                <input type="radio" name="q45" value=4 id="q454"><label for="q454">4</label>
+                <input type="radio" name="q45" value=5 id="q455"><label for="q455">5</label>
+        </fieldset>
+    {% endif %}
+    {% if page==10 %}
+        <fieldset style="width:30%; left:33%; top:967px; position:absolute"><legend>46. Am quiet around strangers.</legend>
+                <input type="radio" name="q46" value=1 id="q461"><label for="q461">1</label>
+                <input type="radio" name="q46" value=2 id="q462"><label for="q462">2</label>
+                <input type="radio" name="q46" value=3 id="q463"><label for="q463">3</label>
+                <input type="radio" name="q46" value=4 id="q464"><label for="q464">4</label>
+                <input type="radio" name="q46" value=5 id="q465"><label for="q465">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:967px; position:absolute"><legend>47. Make people feel at ease.</legend>
+                <input type="radio" name="q47" value=1 id="q471"><label for="q471">1</label>
+                <input type="radio" name="q47" value=2 id="q472"><label for="q472">2</label>
+                <input type="radio" name="q47" value=3 id="q473"><label for="q473">3</label>
+                <input type="radio" name="q47" value=4 id="q474"><label for="q474">4</label>
+                <input type="radio" name="q47" value=5 id="q475"><label for="q475">5</label>
+        </fieldset>
+        <fieldset style="width:30%; top:1025px; position:absolute"><legend>48. Am exacting in my work.</legend>
+                <input type="radio" name="q48" value=1 id="q481"><label for="q481">1</label>
+                <input type="radio" name="q48" value=2 id="q482"><label for="q482">2</label>
+                <input type="radio" name="q48" value=3 id="q483"><label for="q483">3</label>
+                <input type="radio" name="q48" value=4 id="q484"><label for="q484">4</label>
+                <input type="radio" name="q48" value=5 id="q485"><label for="q485">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:33%; top:1025px; position:absolute"><legend>49. Often feel blue.</legend>
+                <input type="radio" name="q49" value=1 id="q491"><label for="q491">1</label>
+                <input type="radio" name="q49" value=2 id="q492"><label for="q492">2</label>
+                <input type="radio" name="q49" value=3 id="q493"><label for="q493">3</label>
+                <input type="radio" name="q49" value=4 id="q494"><label for="q494">4</label>
+                <input type="radio" name="q49" value=5 id="q495"><label for="q495">5</label>
+        </fieldset>
+        <fieldset style="width:30%; left:66%; top:1025px; position:absolute"><legend>50. Am full of ideas.</legend>
+                <input type="radio" name="q50" value=1 id="q501"><label for="q501">1</label>
+                <input type="radio" name="q50" value=2 id="q502"><label for="q502">2</label>
+                <input type="radio" name="q50" value=3 id="q503"><label for="q503">3</label>
+                <input type="radio" name="q50" value=4 id="q504"><label for="q504">4</label>
+                <input type="radio" name="q50" value=5 id="q505"><label for="q505">5</label>
+        </fieldset>
+    {% endif %}
+
+
+    {% if page<10 %}
+        <div class="col-lg-12">
+            <form action="/nextSurveyPage/" method="post">
+                <input type="submit" class="btn btn-primary btn-lg" name="next" value="Next">
+            </form>
+        </div>
+
+    {% endif %}
+    {% if page>=2 %}
+        <div class="col-lg-12">
+            <form action="/prevSurveyPage/" method="post">
+                <input type="submit" class="btn btn-primary btn-lg" name="prev" value="Prev">
+            </form>
+        </div>
+    {% endif %}
 
 
 <div class="col-lg-12">
