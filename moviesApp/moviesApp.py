@@ -18,11 +18,10 @@ def registration():
 
 @app.route('/login/',methods=['POST'])
 def login():
-    print "dentro login"
     if mongoDriver.getUser(request.form):
         return render_template('homepage.html',user=request.form)
     else:
-        return render_template("homepage.html",login=False)
+        return render_template("homepage.html",user=None)
 
 #App start on localhost:5000
 if __name__ == '__main__':
