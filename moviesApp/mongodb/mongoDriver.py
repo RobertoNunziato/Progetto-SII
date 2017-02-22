@@ -19,7 +19,18 @@ def insertUser(form):
     profession = form['profession']
     education = form['education']
 
+    #Controlla se la mail non e' gia' esistente!
+
     user = {'name':name,'surname':surname,'email':email,'password':password,'age':age,
             'gender':gender,'profession':profession,'education':education}
 
     db.users.insert_one(user)
+
+def getUser(form):
+    email = form['email']
+    password = form['login']
+
+    if db.users.find({'$and':[{'email':email},{'password':password}]}).count() == 1:
+        return True
+    else:
+        return False

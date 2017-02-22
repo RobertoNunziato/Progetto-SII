@@ -13,12 +13,16 @@ def getRegitrationModule():
 
 @app.route('/registration/',methods=['POST'])
 def registration():
-    mongoDriver.insertUser(request.form)
-    return redirect(url_for('index'))
+    #mongoDriver.insertUser(request.form)
+    return render_template('survey.html',user=request.form)
 
-@app.route('/getSurveyModule/',methods=['POST'])
-def getSurveyModule():
-    return render_template('prova.html')
+@app.route('/login/',methods=['POST'])
+def login():
+    print "dentro login"
+    if mongoDriver.getUser(request.form):
+        return render_template('homepage.html',user=request.form)
+    else:
+        return render_template("homepage.html",login=False)
 
 #App start on localhost:5000
 if __name__ == '__main__':

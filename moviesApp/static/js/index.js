@@ -10,7 +10,6 @@ function validateRegistration(){
     return true;
 }
 
-
 /*Function that verify if all field are written*/
 function InvalidMsg(textbox) {
     if (textbox.value == '') {
