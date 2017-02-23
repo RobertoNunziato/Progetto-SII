@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Movies App!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/jumbotron.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap/ie-emulation-modes-warning.js') }}"></script>
+
+
+
+    
+
+
+</head>
+
+<nav class="navbar navbar-default navbar-fixed-top"">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Movies App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li ><a href="/">Home</a></li>
+      <li class="active"><a href=/userPage/">User Page</a></li>
+    </ul>
+    <form class="navbar-form navbar-right">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Search Film</button>
+    </form>
+  </div>
+</nav>
+
+
+
+<br>
+<br>
+
+  <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+        </div>
+
+        <div class="col-lg-6" align="center">
+            <div class="well bs-component">
+                <form class="form-horizontal" action="/registration/" id="registration" name="registration" onsubmit="return validateRegistration()" method="post">
+                    <fieldset>
+                        <legend><h1>User Profile</h1></legend>
+<br>
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-2">
+			<div class="profile-sidebar" align="left">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="http://hdtorrents.it/themes/TBDev/images/default_avatar.gif" class="img-responsive" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<br>
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						NOME + COGNOME
+					</div>
+
+				</div>
+				<br>
+
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">
+							<i class="glyphicon glyphicon-user"></i>
+							My Films </a>
+						</li>
+						<li>
+							<a href="#">
+							<i class="glyphicon glyphicon-user"></i>
+							Account Settings </a>
+						</li>
+						
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-10">
+            <div class="profile-content" align="left" style="vertical-align: middle">
+			   Name:
+			   <br>
+			   Surname:
+			   <br>
+			   Email:
+			   <br>
+			   Age:
+			   <br>
+			   Gender:
+			   <br>
+			   Profession:
+			   <br>
+			   Education:
+			   <br>
+			   Big 5 test:
+			   <br>
+            </div>
+		</div>
+	</div>
+</div>
+
+  </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+<br>
+<br>
+
+<div class="col-lg-12">
+<footer>
+    <p style="text-align: center">&copy; 2017 JavaComeLava</p>
+</footer>
+</div>
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
