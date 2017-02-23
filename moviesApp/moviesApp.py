@@ -35,6 +35,10 @@ def getSurveyPage():
     print "scelte ",choices
     return render_template("survey.html",page=cont)
 
+@app.route('/userPage/')
+def getUserPage():
+    return render_template("user.html")
+
 
 #App start on localhost:5000
 if __name__ == '__main__':
