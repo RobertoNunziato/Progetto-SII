@@ -3,6 +3,7 @@ from mongodb import mongoDriver
 
 app = Flask(__name__)
 cont = 1
+survey = {}
 
 @app.route('/')
 def index():
@@ -24,19 +25,13 @@ def login():
     else:
         return render_template("homepage.html",user=None)
 
-@app.route('/nextSurveyPage/',methods=['POST'])
-def nextSurveyPage():
+@app.route('/getSurveyPage/',methods=['POST'])
+def getSurveyPage():
     global cont
-    cont = cont+1
-    print cont
+    cont = int(request.form['number'])
+    print "numero cliccato ",cont
     return render_template("survey.html",page=cont)
 
-@app.route('/prevSurveyPage/',methods=['POST'])
-def prevSurveyPage():
-    global cont
-    cont = cont-1
-    print cont
-    return render_template("survey.html",page=cont)
 
 #App start on localhost:5000
 if __name__ == '__main__':

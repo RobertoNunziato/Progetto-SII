@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c19f5b0-854b-4b0f-b7ca-347f7c253da6" name="Default" comment="fix">
+    <list default="true" id="0c19f5b0-854b-4b0f-b7ca-347f7c253da6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/survey_NIK.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/survey_OLD.html" afterPath="$PROJECT_DIR$/templates/survey.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/moviesApp.py" afterPath="$PROJECT_DIR$/moviesApp.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/js/index.js" afterPath="$PROJECT_DIR$/static/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/homepage.html" afterPath="$PROJECT_DIR$/templates/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/survey.html" afterPath="$PROJECT_DIR$/templates/survey.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +23,8 @@
       <file leaf-file-name="moviesApp.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/moviesApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="218">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
                 <element signature="e#0#68#0" expanded="true" />
               </folding>
@@ -33,83 +32,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mongoDriver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="survey.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/survey.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="440" column="36" lean-forward="false" selection-start-line="440" selection-start-column="36" selection-end-line="440" selection-end-column="36" />
+            <state relative-caret-position="104">
+              <caret line="538" column="0" lean-forward="false" selection-start-line="538" selection-start-column="0" selection-end-line="538" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#fieldset#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#1;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#2;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#3;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#4;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#1;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#2;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#3;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#4;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#5;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#6;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#7;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#8;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#9;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#10;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#11;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#12;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#13;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#14;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#15;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#16;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#17;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#18;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#19;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#20;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#21;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#22;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#23;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#24;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#25;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#26;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#27;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#28;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#29;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#30;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#31;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#32;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#33;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#34;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#35;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#36;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#37;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#38;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#39;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#40;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#41;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#42;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#43;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#fieldset#44;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#footer#0;n#div#3;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#ul#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#form#0;n#ul#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#28597#28604#0#HTML" expanded="true" />
+                <element signature="e#29769#29776#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -118,8 +50,38 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/homepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-346">
+              <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mongoDriver.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="survey_NIK.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/survey_NIK.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3765">
+              <caret line="508" column="18" lean-forward="true" selection-start-line="508" selection-start-column="18" selection-end-line="508" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -161,8 +123,8 @@
         <option value="$PROJECT_DIR$/templates/userPage.html" />
         <option value="$PROJECT_DIR$/mongodb/mongoDriver.py" />
         <option value="$PROJECT_DIR$/templates/homepage.html" />
-        <option value="$PROJECT_DIR$/templates/survey.html" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
+        <option value="$PROJECT_DIR$/templates/survey.html" />
         <option value="$PROJECT_DIR$/moviesApp.py" />
       </list>
     </option>
@@ -174,8 +136,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="y" value="33" />
     <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -193,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -286,7 +250,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -604,21 +567,28 @@
       <option name="project" value="LOCAL" />
       <updated>1487779686521</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Inizio inserimento questionario">
+      <created>1487785541198</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1487785541198</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="33" width="1280" height="735" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2819063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28594506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35789475" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22465754" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22406015" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -644,13 +614,30 @@
     <MESSAGE value="Pulizia file inutili" />
     <MESSAGE value="Inserimento utente" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="Inizio inserimento questionario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Inizio inserimento questionario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/survey_NIK.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6600">
+          <caret line="440" column="36" lean-forward="false" selection-start-line="440" selection-start-column="36" selection-end-line="440" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -901,13 +888,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/static/css/favicon.ico" />
     <entry file="file://$PROJECT_DIR$/mongodb/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -942,118 +923,58 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/formValidator.py" />
-    <entry file="file://$PROJECT_DIR$/helpers/validate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/userPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="34" lean-forward="false" selection-start-line="0" selection-start-column="34" selection-end-line="0" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/validate.py" />
+    <entry file="file://$PROJECT_DIR$/templates/index.html" />
+    <entry file="file://$PROJECT_DIR$/templates/userPage.html" />
     <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
+        <state relative-caret-position="315">
           <caret line="21" column="37" lean-forward="false" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/survey_NIK.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3765">
+          <caret line="508" column="18" lean-forward="true" selection-start-line="508" selection-start-column="18" selection-end-line="508" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="62" column="30" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="30" />
+        <state relative-caret-position="-346">
+          <caret line="57" column="10" lean-forward="true" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/survey.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="440" column="36" lean-forward="false" selection-start-line="440" selection-start-column="36" selection-end-line="440" selection-end-column="36" />
+        <state relative-caret-position="104">
+          <caret line="538" column="0" lean-forward="false" selection-start-line="538" selection-start-column="0" selection-end-line="538" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#fieldset#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#1;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#2;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#3;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#4;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#1;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#2;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#3;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#4;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#5;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#6;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#7;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#8;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#9;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#10;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#11;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#12;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#13;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#14;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#15;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#16;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#17;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#18;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#19;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#20;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#21;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#22;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#23;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#24;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#25;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#26;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#27;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#28;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#29;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#30;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#31;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#32;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#33;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#34;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#35;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#36;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#37;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#38;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#39;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#40;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#41;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#42;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#43;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#fieldset#44;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#footer#0;n#div#3;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#ul#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#ul#0;n#div#2;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#28597#28604#0#HTML" expanded="true" />
+            <element signature="e#29769#29776#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/moviesApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="218">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
             <element signature="e#0#68#0" expanded="true" />
           </folding>
