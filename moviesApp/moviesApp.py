@@ -29,7 +29,10 @@ def login():
 def getSurveyPage():
     global cont
     cont = int(request.form['number'])
+    choices = request.form['choices']
     print "numero cliccato ",cont
+
+    print "scelte ",choices
     return render_template("survey.html",page=cont)
 
 
