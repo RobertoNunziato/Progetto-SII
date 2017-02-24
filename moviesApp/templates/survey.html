@@ -37,6 +37,8 @@
 
 <script>var page;</script>
 
+<form class="form-horizontal" action="/completeRegistration/" id="completeRegistration" name="completeRegistration" onsubmit="return validateSurvey()" method="post">
+
     <div class="col-lg-12">
     <table class="table table-striped table-hover ">
       <thead>
@@ -58,92 +60,92 @@
     <tr class="active">
       <td>1</td>
       <td>Am the life of the party.</td>
-      <td><input type="radio" name="q1" value=1 id="q11"></td>
-      <td><input type="radio" name="q1" value=2 id="q12"></td>
-      <td><input type="radio" name="q1" value=3 id="q13"></td>
-      <td><input type="radio" name="q1" value=4 id="q14"></td>
-      <td><input type="radio" name="q1" value=5 id="q15"></td>
+      <td><input type="radio" name="q1" value=1 id="q11" {% if survey['1'][0] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q1" value=2 id="q12" {% if survey['1'][0] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q1" value=3 id="q13" {% if survey['1'][0] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q1" value=4 id="q14" {% if survey['1'][0] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q1" value=5 id="q15" {% if survey['1'][0] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>2</td>
       <td>Feel little concern for others.</td>
-      <td><input type="radio" name="q2" value=1 id="q21"></td>
-      <td><input type="radio" name="q2" value=2 id="q22"></td>
-      <td><input type="radio" name="q2" value=3 id="q23"></td>
-      <td><input type="radio" name="q2" value=4 id="q24"></td>
-      <td><input type="radio" name="q2" value=5 id="q25"></td>
+      <td><input type="radio" name="q2" value=1 id="q21" {% if survey['1'][1] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q2" value=2 id="q22" {% if survey['1'][1] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q2" value=3 id="q23" {% if survey['1'][1] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q2" value=4 id="q24" {% if survey['1'][1] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q2" value=5 id="q25" {% if survey['1'][1] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>3</td>
       <td>Am always prepared.</td>
-      <td><input type="radio" name="q3" value=1 id="q31"></td>
-      <td><input type="radio" name="q3" value=2 id="q32"></td>
-      <td><input type="radio" name="q3" value=3 id="q33"></td>
-      <td><input type="radio" name="q3" value=4 id="q34"></td>
-      <td><input type="radio" name="q3" value=5 id="q35"></td>
+      <td><input type="radio" name="q3" value=1 id="q31" {% if survey['1'][2] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q3" value=2 id="q32" {% if survey['1'][2] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q3" value=3 id="q33" {% if survey['1'][2] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q3" value=4 id="q34" {% if survey['1'][2] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q3" value=5 id="q35" {% if survey['1'][2] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>4</td>
       <td>Get stressed out easily.</td>
-      <td><input type="radio" name="q4" value=1 id="q41"></td>
-      <td><input type="radio" name="q4" value=2 id="q42"></td>
-      <td><input type="radio" name="q4" value=3 id="q43"></td>
-      <td><input type="radio" name="q4" value=4 id="q44"></td>
-      <td><input type="radio" name="q4" value=5 id="q45"></td>
+      <td><input type="radio" name="q4" value=1 id="q41" {% if survey['1'][3] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q4" value=2 id="q42" {% if survey['1'][3] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q4" value=3 id="q43" {% if survey['1'][3] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q4" value=4 id="q44" {% if survey['1'][3] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q4" value=5 id="q45" {% if survey['1'][3] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>5</td>
       <td>Have a rich vocabulary.</td>
-      <td><input type="radio" name="q5" value=1 id="q51"></td>
-      <td><input type="radio" name="q5" value=2 id="q52"></td>
-      <td><input type="radio" name="q5" value=3 id="q53"></td>
-      <td><input type="radio" name="q5" value=4 id="q54"></td>
-      <td><input type="radio" name="q5" value=5 id="q55"></td>
+      <td><input type="radio" name="q5" value=1 id="q51" {% if survey['1'][4] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q5" value=2 id="q52" {% if survey['1'][4] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q5" value=3 id="q53" {% if survey['1'][4] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q5" value=4 id="q54" {% if survey['1'][4] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q5" value=5 id="q55" {% if survey['1'][4] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>6</td>
       <td>Don't talk a lot.</td>
-      <td><input type="radio" name="q6" value=1 id="q61"></td>
-      <td><input type="radio" name="q6" value=2 id="q62"></td>
-      <td><input type="radio" name="q6" value=3 id="q63"></td>
-      <td><input type="radio" name="q6" value=4 id="q64"></td>
-      <td><input type="radio" name="q6" value=5 id="q65"></td>
+      <td><input type="radio" name="q6" value=1 id="q61" {% if survey['1'][5] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q6" value=2 id="q62" {% if survey['1'][5] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q6" value=3 id="q63" {% if survey['1'][5] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q6" value=4 id="q64" {% if survey['1'][5] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q6" value=5 id="q65" {% if survey['1'][5] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>7</td>
       <td>Am interested in people.</td>
-      <td><input type="radio" name="q7" value=1 id="q71"></td>
-      <td><input type="radio" name="q7" value=2 id="q72"></td>
-      <td><input type="radio" name="q7" value=3 id="q73"></td>
-      <td><input type="radio" name="q7" value=4 id="q74"></td>
-      <td><input type="radio" name="q7" value=5 id="q75"></td>
+      <td><input type="radio" name="q7" value=1 id="q71" {% if survey['1'][6] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q7" value=2 id="q72" {% if survey['1'][6] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q7" value=3 id="q73" {% if survey['1'][6] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q7" value=4 id="q74" {% if survey['1'][6] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q7" value=5 id="q75" {% if survey['1'][6] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>8</td>
       <td>Leave my belongings around.</td>
-      <td><input type="radio" name="q8" value=1 id="q81"></td>
-      <td><input type="radio" name="q8" value=2 id="q82"></td>
-      <td><input type="radio" name="q8" value=3 id="q83"></td>
-      <td><input type="radio" name="q8" value=4 id="q84"></td>
-      <td><input type="radio" name="q8" value=5 id="q85"></td>
+      <td><input type="radio" name="q8" value=1 id="q81" {% if survey['1'][7] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q8" value=2 id="q82" {% if survey['1'][7] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q8" value=3 id="q83" {% if survey['1'][7] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q8" value=4 id="q84" {% if survey['1'][7] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q8" value=5 id="q85" {% if survey['1'][7] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>9</td>
       <td>Am relaxed most of the time.</td>
-      <td><input type="radio" name="q9" value=1 id="q91"></td>
-      <td><input type="radio" name="q9" value=2 id="q92"></td>
-      <td><input type="radio" name="q9" value=3 id="q93"></td>
-      <td><input type="radio" name="q9" value=4 id="q94"></td>
-      <td><input type="radio" name="q9" value=5 id="q95"></td>
+      <td><input type="radio" name="q9" value=1 id="q91" {% if survey['1'][8] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q9" value=2 id="q92" {% if survey['1'][8] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q9" value=3 id="q93" {% if survey['1'][8] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q9" value=4 id="q94" {% if survey['1'][8] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q9" value=5 id="q95" {% if survey['1'][8] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>10</td>
       <td>Have difficulty understanding abstract ideas.</td>
-      <td><input type="radio" name="q10" value=1 id="q101"></td>
-      <td><input type="radio" name="q10" value=2 id="q102"></td>
-      <td><input type="radio" name="q10" value=3 id="q103"></td>
-      <td><input type="radio" name="q10" value=4 id="q104"></td>
-      <td><input type="radio" name="q10" value=5 id="q105"></td>
+      <td><input type="radio" name="q10" value=1 id="q101" {% if survey['1'][9] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q10" value=2 id="q102" {% if survey['1'][9] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q10" value=3 id="q103" {% if survey['1'][9] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q10" value=4 id="q104" {% if survey['1'][9] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q10" value=5 id="q105" {% if survey['1'][9] == '5' %}checked{% endif %}></td>
     </tr>
     {% endif %}
 
@@ -153,92 +155,92 @@
     <tr class="active">
       <td>11</td>
       <td>Feel comfortable around people.</td>
-      <td><input type="radio" name="q11" value=1 id="q111"></td>
-      <td><input type="radio" name="q11" value=2 id="q112"></td>
-      <td><input type="radio" name="q11" value=3 id="q113"></td>
-      <td><input type="radio" name="q11" value=4 id="q114"></td>
-      <td><input type="radio" name="q11" value=5 id="q115"></td>
+      <td><input type="radio" name="q11" value=1 id="q111" {% if survey['2'][0] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q11" value=2 id="q112" {% if survey['2'][0] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q11" value=3 id="q113" {% if survey['2'][0] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q11" value=4 id="q114" {% if survey['2'][0] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q11" value=5 id="q115" {% if survey['2'][0] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>12</td>
       <td>Insult people.</td>
-      <td><input type="radio" name="q12" value=1 id="q121"></td>
-      <td><input type="radio" name="q12" value=2 id="q122"></td>
-      <td><input type="radio" name="q12" value=3 id="q123"></td>
-      <td><input type="radio" name="q12" value=4 id="q124"></td>
-      <td><input type="radio" name="q12" value=5 id="q125"></td>
+      <td><input type="radio" name="q12" value=1 id="q121" {% if survey['2'][1] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q12" value=2 id="q122" {% if survey['2'][1] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q12" value=3 id="q123" {% if survey['2'][1] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q12" value=4 id="q124" {% if survey['2'][1] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q12" value=5 id="q125" {% if survey['2'][1] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>13</td>
       <td>Pay attention to details.</td>
-      <td><input type="radio" name="q13" value=1 id="q131"></td>
-      <td><input type="radio" name="q13" value=2 id="q132"></td>
-      <td><input type="radio" name="q13" value=3 id="q133"></td>
-      <td><input type="radio" name="q13" value=4 id="q134"></td>
-      <td><input type="radio" name="q13" value=5 id="q135"></td>
+      <td><input type="radio" name="q13" value=1 id="q131" {% if survey['2'][2] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q13" value=2 id="q132" {% if survey['2'][2] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q13" value=3 id="q133" {% if survey['2'][2] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q13" value=4 id="q134" {% if survey['2'][2] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q13" value=5 id="q135" {% if survey['2'][2] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>14</td>
       <td>Worry about things.</td>
-      <td><input type="radio" name="q14" value=1 id="q141"></td>
-      <td><input type="radio" name="q14" value=2 id="q142"></td>
-      <td><input type="radio" name="q14" value=3 id="q143"></td>
-      <td><input type="radio" name="q14" value=4 id="q144"></td>
-      <td><input type="radio" name="q14" value=5 id="q145"></td>
+      <td><input type="radio" name="q14" value=1 id="q141" {% if survey['2'][3] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q14" value=2 id="q142" {% if survey['2'][3] == '2'%}checked{% endif %}></td>
+      <td><input type="radio" name="q14" value=3 id="q143" {% if survey['2'][3] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q14" value=4 id="q144" {% if survey['2'][3] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q14" value=5 id="q145" {% if survey['2'][3] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>15</td>
       <td>Have a vivid imagination.</td>
-      <td><input type="radio" name="q15" value=1 id="q151"></td>
-      <td><input type="radio" name="q15" value=2 id="q152"></td>
-      <td><input type="radio" name="q15" value=3 id="q153"></td>
-      <td><input type="radio" name="q15" value=4 id="q154"></td>
-      <td><input type="radio" name="q15" value=5 id="q155"></td>
+      <td><input type="radio" name="q15" value=1 id="q151" {% if survey['2'][4] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q15" value=2 id="q152" {% if survey['2'][4] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q15" value=3 id="q153" {% if survey['2'][4] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q15" value=4 id="q154" {% if survey['2'][4] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q15" value=5 id="q155" {% if survey['2'][4] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>16</td>
       <td>Keep in the background.</td>
-      <td><input type="radio" name="q16" value=1 id="q161"></td>
-      <td><input type="radio" name="q16" value=2 id="q162"></td>
-      <td><input type="radio" name="q16" value=3 id="q163"></td>
-      <td><input type="radio" name="q16" value=4 id="q164"></td>
-      <td><input type="radio" name="q16" value=5 id="q165"></td>
+      <td><input type="radio" name="q16" value=1 id="q161" {% if survey['2'][5] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q16" value=2 id="q162" {% if survey['2'][5] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q16" value=3 id="q163" {% if survey['2'][5] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q16" value=4 id="q164" {% if survey['2'][5] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q16" value=5 id="q165" {% if survey['2'][5] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>17</td>
       <td>Sympathize with others' feelings.</td>
-      <td><input type="radio" name="q17" value=1 id="q171"></td>
-      <td><input type="radio" name="q17" value=2 id="q172"></td>
-      <td><input type="radio" name="q17" value=3 id="q173"></td>
-      <td><input type="radio" name="q17" value=4 id="q174"></td>
-      <td><input type="radio" name="q17" value=5 id="q175"></td>
+      <td><input type="radio" name="q17" value=1 id="q171" {% if survey['2'][6] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q17" value=2 id="q172" {% if survey['2'][6] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q17" value=3 id="q173" {% if survey['2'][6] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q17" value=4 id="q174" {% if survey['2'][6] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q17" value=5 id="q175" {% if survey['2'][6] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>18</td>
       <td>Make a mess of things.</td>
-      <td><input type="radio" name="q18" value=1 id="q181"></td>
-      <td><input type="radio" name="q18" value=2 id="q182"></td>
-      <td><input type="radio" name="q18" value=3 id="q183"></td>
-      <td><input type="radio" name="q18" value=4 id="q184"></td>
-      <td><input type="radio" name="q18" value=5 id="q185"></td>
+      <td><input type="radio" name="q18" value=1 id="q181" {% if survey['2'][7] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q18" value=2 id="q182" {% if survey['2'][7] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q18" value=3 id="q183" {% if survey['2'][7] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q18" value=4 id="q184" {% if survey['2'][7] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q18" value=5 id="q185" {% if survey['2'][7] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>19</td>
       <td>Seldom feel blue.</td>
-      <td><input type="radio" name="q19" value=1 id="q191"></td>
-      <td><input type="radio" name="q19" value=2 id="q192"></td>
-      <td><input type="radio" name="q19" value=3 id="q193"></td>
-      <td><input type="radio" name="q19" value=4 id="q194"></td>
-      <td><input type="radio" name="q19" value=5 id="q195"></td>
+      <td><input type="radio" name="q19" value=1 id="q191" {% if survey['2'][8] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q19" value=2 id="q192" {% if survey['2'][8] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q19" value=3 id="q193" {% if survey['2'][8] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q19" value=4 id="q194" {% if survey['2'][8] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q19" value=5 id="q195" {% if survey['2'][8] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>20</td>
       <td>Am not interested in abstract ideas.</td>
-      <td><input type="radio" name="q20" value=1 id="q201"></td>
-      <td><input type="radio" name="q20" value=2 id="q202"></td>
-      <td><input type="radio" name="q20" value=3 id="q203"></td>
-      <td><input type="radio" name="q20" value=4 id="q204"></td>
-      <td><input type="radio" name="q20" value=5 id="q205"></td>
+      <td><input type="radio" name="q20" value=1 id="q201" {% if survey['2'][9] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q20" value=2 id="q202" {% if survey['2'][9] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q20" value=3 id="q203" {% if survey['2'][9] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q20" value=4 id="q204" {% if survey['2'][9] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q20" value=5 id="q205" {% if survey['2'][9] == '5' %}checked{% endif %}></td>
     </tr>
     {% endif %}
 
@@ -248,92 +250,92 @@
     <tr class="active">
       <td>21</td>
       <td>Start conversations.</td>
-      <td><input type="radio" name="q21" value=1 id="q211"></td>
-      <td><input type="radio" name="q21" value=2 id="q212"></td>
-      <td><input type="radio" name="q21" value=3 id="q213"></td>
-      <td><input type="radio" name="q21" value=4 id="q214"></td>
-      <td><input type="radio" name="q21" value=5 id="q215"></td>
+      <td><input type="radio" name="q21" value=1 id="q211" {% if survey['3'][0] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q21" value=2 id="q212" {% if survey['3'][0] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q21" value=3 id="q213" {% if survey['3'][0] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q21" value=4 id="q214" {% if survey['3'][0] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q21" value=5 id="q215" {% if survey['3'][0] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>22</td>
       <td>Am not interested in other people's problems.</td>
-      <td><input type="radio" name="q22" value=1 id="q221"></td>
-      <td><input type="radio" name="q22" value=2 id="q222"></td>
-      <td><input type="radio" name="q22" value=3 id="q223"></td>
-      <td><input type="radio" name="q22" value=4 id="q224"></td>
-      <td><input type="radio" name="q22" value=5 id="q225"></td>
+      <td><input type="radio" name="q22" value=1 id="q221" {% if survey['3'][1] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q22" value=2 id="q222" {% if survey['3'][1] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q22" value=3 id="q223" {% if survey['3'][1] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q22" value=4 id="q224" {% if survey['3'][1] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q22" value=5 id="q225" {% if survey['3'][1] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>23</td>
       <td>Get chores done right away.</td>
-      <td><input type="radio" name="q23" value=1 id="q231"></td>
-      <td><input type="radio" name="q23" value=2 id="q232"></td>
-      <td><input type="radio" name="q23" value=3 id="q233"></td>
-      <td><input type="radio" name="q23" value=4 id="q234"></td>
-      <td><input type="radio" name="q23" value=5 id="q235"></td>
+      <td><input type="radio" name="q23" value=1 id="q231" {% if survey['3'][2] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q23" value=2 id="q232" {% if survey['3'][2] == '2'%}checked{% endif %}></td>
+      <td><input type="radio" name="q23" value=3 id="q233" {% if survey['3'][2] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q23" value=4 id="q234" {% if survey['3'][2] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q23" value=5 id="q235" {% if survey['3'][2] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>24</td>
       <td>Am easily disturbed.</td>
-      <td><input type="radio" name="q24" value=1 id="q241"></td>
-      <td><input type="radio" name="q24" value=2 id="q242"></td>
-      <td><input type="radio" name="q24" value=3 id="q243"></td>
-      <td><input type="radio" name="q24" value=4 id="q244"></td>
-      <td><input type="radio" name="q24" value=5 id="q245"></td>
+      <td><input type="radio" name="q24" value=1 id="q241" {% if survey['3'][3] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q24" value=2 id="q242" {% if survey['3'][3] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q24" value=3 id="q243" {% if survey['3'][3] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q24" value=4 id="q244" {% if survey['3'][3] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q24" value=5 id="q245" {% if survey['3'][3] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>25</td>
       <td>Have excellent ideas.</td>
-      <td><input type="radio" name="q25" value=1 id="q251"></td>
-      <td><input type="radio" name="q25" value=2 id="q252"></td>
-      <td><input type="radio" name="q25" value=3 id="q253"></td>
-      <td><input type="radio" name="q25" value=4 id="q254"></td>
-      <td><input type="radio" name="q25" value=5 id="q255"></td>
+      <td><input type="radio" name="q25" value=1 id="q251" {% if survey['3'][4] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q25" value=2 id="q252" {% if survey['3'][4] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q25" value=3 id="q253" {% if survey['3'][4] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q25" value=4 id="q254" {% if survey['3'][4] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q25" value=5 id="q255" {% if survey['3'][4] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>26</td>
       <td>Have little to say.</td>
-      <td><input type="radio" name="q26" value=1 id="q261"></td>
-      <td><input type="radio" name="q26" value=2 id="q262"></td>
-      <td><input type="radio" name="q26" value=3 id="q263"></td>
-      <td><input type="radio" name="q26" value=4 id="q264"></td>
-      <td><input type="radio" name="q26" value=5 id="q265"></td>
+      <td><input type="radio" name="q26" value=1 id="q261" {% if survey['3'][5] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q26" value=2 id="q262" {% if survey['3'][5] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q26" value=3 id="q263" {% if survey['3'][5] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q26" value=4 id="q264" {% if survey['3'][5] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q26" value=5 id="q265" {% if survey['3'][5] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>27</td>
       <td>Have a soft heart.</td>
-      <td><input type="radio" name="q27" value=1 id="q271"></td>
-      <td><input type="radio" name="q27" value=2 id="q272"></td>
-      <td><input type="radio" name="q27" value=3 id="q273"></td>
-      <td><input type="radio" name="q27" value=4 id="q274"></td>
-      <td><input type="radio" name="q27" value=5 id="q275"></td>
+      <td><input type="radio" name="q27" value=1 id="q271" {% if survey['3'][6] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q27" value=2 id="q272" {% if survey['3'][6] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q27" value=3 id="q273" {% if survey['3'][6] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q27" value=4 id="q274" {% if survey['3'][6] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q27" value=5 id="q275" {% if survey['3'][6] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>28</td>
       <td>Often forget to put things back in their proper place.</td>
-      <td><input type="radio" name="q28" value=1 id="q281"></td>
-      <td><input type="radio" name="q28" value=2 id="q282"></td>
-      <td><input type="radio" name="q28" value=3 id="q283"></td>
-      <td><input type="radio" name="q28" value=4 id="q284"></td>
-      <td><input type="radio" name="q28" value=5 id="q285"></td>
+      <td><input type="radio" name="q28" value=1 id="q281" {% if survey['3'][7] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q28" value=2 id="q282" {% if survey['3'][7] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q28" value=3 id="q283" {% if survey['3'][7] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q28" value=4 id="q284" {% if survey['3'][7] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q28" value=5 id="q285" {% if survey['3'][7] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>29</td>
       <td>Get upset easily.</td>
-      <td><input type="radio" name="q29" value=1 id="q291"></td>
-      <td><input type="radio" name="q29" value=2 id="q292"></td>
-      <td><input type="radio" name="q29" value=3 id="q293"></td>
-      <td><input type="radio" name="q29" value=4 id="q294"></td>
-      <td><input type="radio" name="q29" value=5 id="q295"></td>
+      <td><input type="radio" name="q29" value=1 id="q291" {% if survey['3'][8] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q29" value=2 id="q292" {% if survey['3'][8] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q29" value=3 id="q293" {% if survey['3'][8] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q29" value=4 id="q294" {% if survey['3'][8] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q29" value=5 id="q295" {% if survey['3'][8] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>30</td>
       <td>Do not have a good imagination.</td>
-      <td><input type="radio" name="q30" value=1 id="q301"></td>
-      <td><input type="radio" name="q30" value=2 id="q302"></td>
-      <td><input type="radio" name="q30" value=3 id="q303"></td>
-      <td><input type="radio" name="q30" value=4 id="q304"></td>
-      <td><input type="radio" name="q30" value=5 id="q305"></td>
+      <td><input type="radio" name="q30" value=1 id="q301" {% if survey['3'][9] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q30" value=2 id="q302" {% if survey['3'][9] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q30" value=3 id="q303" {% if survey['3'][9] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q30" value=4 id="q304" {% if survey['3'][9] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q30" value=5 id="q305" {% if survey['3'][9] == '5' %}checked{% endif %}></td>
     </tr>
     {% endif %}
 
@@ -343,92 +345,92 @@
     <tr class="active">
       <td>31</td>
       <td>Talk to a lot of different people at parties.</td>
-      <td><input type="radio" name="q31" value=1 id="q311"></td>
-      <td><input type="radio" name="q31" value=2 id="q312"></td>
-      <td><input type="radio" name="q31" value=3 id="q313"></td>
-      <td><input type="radio" name="q31" value=4 id="q314"></td>
-      <td><input type="radio" name="q31" value=5 id="q315"></td>
+      <td><input type="radio" name="q31" value=1 id="q311" {% if survey['4'][0] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q31" value=2 id="q312" {% if survey['4'][0] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q31" value=3 id="q313" {% if survey['4'][0] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q31" value=4 id="q314" {% if survey['4'][0] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q31" value=5 id="q315" {% if survey['4'][0] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>32</td>
       <td>Am not really interested in others.</td>
-      <td><input type="radio" name="q32" value=1 id="q321"></td>
-      <td><input type="radio" name="q32" value=2 id="q322"></td>
-      <td><input type="radio" name="q32" value=3 id="q323"></td>
-      <td><input type="radio" name="q32" value=4 id="q324"></td>
-      <td><input type="radio" name="q32" value=5 id="q325"></td>
+      <td><input type="radio" name="q32" value=1 id="q321" {% if survey['4'][1] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q32" value=2 id="q322" {% if survey['4'][1] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q32" value=3 id="q323" {% if survey['4'][1] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q32" value=4 id="q324" {% if survey['4'][1] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q32" value=5 id="q325" {% if survey['4'][1] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>33</td>
       <td>Like order.</td>
-      <td><input type="radio" name="q33" value=1 id="q331"></td>
-      <td><input type="radio" name="q33" value=2 id="q332"></td>
-      <td><input type="radio" name="q33" value=3 id="q333"></td>
-      <td><input type="radio" name="q33" value=4 id="q334"></td>
-      <td><input type="radio" name="q33" value=5 id="q335"></td>
+      <td><input type="radio" name="q33" value=1 id="q331" {% if survey['4'][2] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q33" value=2 id="q332" {% if survey['4'][2] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q33" value=3 id="q333" {% if survey['4'][2] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q33" value=4 id="q334" {% if survey['4'][2] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q33" value=5 id="q335" {% if survey['4'][2] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>34</td>
       <td>Change my mood a lot.</td>
-      <td><input type="radio" name="q34" value=1 id="q341"></td>
-      <td><input type="radio" name="q34" value=2 id="q342"></td>
-      <td><input type="radio" name="q34" value=3 id="q343"></td>
-      <td><input type="radio" name="q34" value=4 id="q344"></td>
-      <td><input type="radio" name="q34" value=5 id="q345"></td>
+      <td><input type="radio" name="q34" value=1 id="q341" {% if survey['4'][3] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q34" value=2 id="q342" {% if survey['4'][3] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q34" value=3 id="q343" {% if survey['4'][3] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q34" value=4 id="q344" {% if survey['4'][3] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q34" value=5 id="q345" {% if survey['4'][3] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>35</td>
       <td>Am quick to understand things.</td>
-      <td><input type="radio" name="q35" value=1 id="q351"></td>
-      <td><input type="radio" name="q35" value=2 id="q352"></td>
-      <td><input type="radio" name="q35" value=3 id="q353"></td>
-      <td><input type="radio" name="q35" value=4 id="q354"></td>
-      <td><input type="radio" name="q35" value=5 id="q355"></td>
+      <td><input type="radio" name="q35" value=1 id="q351" {% if survey['4'][4] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q35" value=2 id="q352" {% if survey['4'][4] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q35" value=3 id="q353" {% if survey['4'][4] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q35" value=4 id="q354" {% if survey['4'][4] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q35" value=5 id="q355" {% if survey['4'][4] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>36</td>
       <td>Don't like to draw attention to myself.</td>
-      <td><input type="radio" name="q36" value=1 id="q361"></td>
-      <td><input type="radio" name="q36" value=2 id="q362"></td>
-      <td><input type="radio" name="q36" value=3 id="q363"></td>
-      <td><input type="radio" name="q36" value=4 id="q364"></td>
-      <td><input type="radio" name="q36" value=5 id="q365"></td>
+      <td><input type="radio" name="q36" value=1 id="q361" {% if survey['4'][5] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q36" value=2 id="q362" {% if survey['4'][5] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q36" value=3 id="q363" {% if survey['4'][5] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q36" value=4 id="q364" {% if survey['4'][5] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q36" value=5 id="q365" {% if survey['4'][5] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>37</td>
       <td>Take time out for others.</td>
-      <td><input type="radio" name="q37" value=1 id="q371"></td>
-      <td><input type="radio" name="q37" value=2 id="q372"></td>
-      <td><input type="radio" name="q37" value=3 id="q373"></td>
-      <td><input type="radio" name="q37" value=4 id="q374"></td>
-      <td><input type="radio" name="q37" value=5 id="q375"></td>
+      <td><input type="radio" name="q37" value=1 id="q371" {% if survey['4'][6] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q37" value=2 id="q372" {% if survey['4'][6] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q37" value=3 id="q373" {% if survey['4'][6] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q37" value=4 id="q374" {% if survey['4'][6] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q37" value=5 id="q375" {% if survey['4'][6] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>38</td>
       <td>Shirk my duties.</td>
-      <td><input type="radio" name="q38" value=1 id="q381"></td>
-      <td><input type="radio" name="q38" value=2 id="q382"></td>
-      <td><input type="radio" name="q38" value=3 id="q383"></td>
-      <td><input type="radio" name="q38" value=4 id="q384"></td>
-      <td><input type="radio" name="q38" value=5 id="q385"></td>
+      <td><input type="radio" name="q38" value=1 id="q381" {% if survey['4'][7] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q38" value=2 id="q382" {% if survey['4'][7] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q38" value=3 id="q383" {% if survey['4'][7] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q38" value=4 id="q384" {% if survey['4'][7] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q38" value=5 id="q385" {% if survey['4'][7] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>39</td>
       <td>Have frequent mood swings.</td>
-      <td><input type="radio" name="q39" value=1 id="q391"></td>
-      <td><input type="radio" name="q39" value=2 id="q392"></td>
-      <td><input type="radio" name="q39" value=3 id="q393"></td>
-      <td><input type="radio" name="q39" value=4 id="q394"></td>
-      <td><input type="radio" name="q39" value=5 id="q395"></td>
+      <td><input type="radio" name="q39" value=1 id="q391" {% if survey['4'][8] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q39" value=2 id="q392" {% if survey['4'][8] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q39" value=3 id="q393" {% if survey['4'][8] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q39" value=4 id="q394" {% if survey['4'][8] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q39" value=5 id="q395" {% if survey['4'][8] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>40</td>
       <td>Use difficult words.</td>
-      <td><input type="radio" name="q40" value=1 id="q401"></td>
-      <td><input type="radio" name="q40" value=2 id="q402"></td>
-      <td><input type="radio" name="q40" value=3 id="q403"></td>
-      <td><input type="radio" name="q40" value=4 id="q404"></td>
-      <td><input type="radio" name="q40" value=5 id="q405"></td>
+      <td><input type="radio" name="q40" value=1 id="q401" {% if survey['4'][9] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q40" value=2 id="q402" {% if survey['4'][9] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q40" value=3 id="q403" {% if survey['4'][9] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q40" value=4 id="q404" {% if survey['4'][9] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q40" value=5 id="q405" {% if survey['4'][9] == '5' %}checked{% endif %}></td>
     </tr>
     {% endif %}
 
@@ -438,92 +440,92 @@
     <tr class="active">
       <td>41</td>
       <td>Don't mind being the center of attention.</td>
-      <td><input type="radio" name="q41" value=1 id="q411"></td>
-      <td><input type="radio" name="q41" value=2 id="q412"></td>
-      <td><input type="radio" name="q41" value=3 id="q413"></td>
-      <td><input type="radio" name="q41" value=4 id="q414"></td>
-      <td><input type="radio" name="q41" value=5 id="q415"></td>
+      <td><input type="radio" name="q41" value=1 id="q411" {% if survey['5'][0] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q41" value=2 id="q412" {% if survey['5'][0] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q41" value=3 id="q413" {% if survey['5'][0] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q41" value=4 id="q414" {% if survey['5'][0] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q41" value=5 id="q415" {% if survey['5'][0] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>42</td>
       <td>Feel others' emotions.</td>
-      <td><input type="radio" name="q42" value=1 id="q421"></td>
-      <td><input type="radio" name="q42" value=2 id="q422"></td>
-      <td><input type="radio" name="q42" value=3 id="q423"></td>
-      <td><input type="radio" name="q42" value=4 id="q424"></td>
-      <td><input type="radio" name="q42" value=5 id="q425"></td>
+      <td><input type="radio" name="q42" value=1 id="q421" {% if survey['5'][1] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q42" value=2 id="q422" {% if survey['5'][1] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q42" value=3 id="q423" {% if survey['5'][1] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q42" value=4 id="q424" {% if survey['5'][1] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q42" value=5 id="q425" {% if survey['5'][1] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>43</td>
       <td>Follow a schedule.</td>
-      <td><input type="radio" name="q43" value=1 id="q431"></td>
-      <td><input type="radio" name="q43" value=2 id="q432"></td>
-      <td><input type="radio" name="q43" value=3 id="q433"></td>
-      <td><input type="radio" name="q43" value=4 id="q434"></td>
-      <td><input type="radio" name="q43" value=5 id="q435"></td>
+      <td><input type="radio" name="q43" value=1 id="q431" {% if survey['5'][2] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q43" value=2 id="q432" {% if survey['5'][2] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q43" value=3 id="q433" {% if survey['5'][2] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q43" value=4 id="q434" {% if survey['5'][2] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q43" value=5 id="q435" {% if survey['5'][2] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>44</td>
       <td>Get irritated easily.</td>
-      <td><input type="radio" name="q44" value=1 id="q441"></td>
-      <td><input type="radio" name="q44" value=2 id="q442"></td>
-      <td><input type="radio" name="q44" value=3 id="q443"></td>
-      <td><input type="radio" name="q44" value=4 id="q444"></td>
-      <td><input type="radio" name="q44" value=5 id="q445"></td>
+      <td><input type="radio" name="q44" value=1 id="q441" {% if survey['5'][3] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q44" value=2 id="q442" {% if survey['5'][3] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q44" value=3 id="q443" {% if survey['5'][3] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q44" value=4 id="q444" {% if survey['5'][3] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q44" value=5 id="q445" {% if survey['5'][3] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>45</td>
       <td>Spend time reflecting on things.</td>
-      <td><input type="radio" name="q45" value=1 id="q451"></td>
-      <td><input type="radio" name="q45" value=2 id="q452"></td>
-      <td><input type="radio" name="q45" value=3 id="q453"></td>
-      <td><input type="radio" name="q45" value=4 id="q454"></td>
-      <td><input type="radio" name="q45" value=5 id="q455"></td>
+      <td><input type="radio" name="q45" value=1 id="q451" {% if survey['5'][4] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q45" value=2 id="q452" {% if survey['5'][4] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q45" value=3 id="q453" {% if survey['5'][4] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q45" value=4 id="q454" {% if survey['5'][4] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q45" value=5 id="q455" {% if survey['5'][4] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>46</td>
       <td>Am quiet around strangers.</td>
-      <td><input type="radio" name="q46" value=1 id="q461"></td>
-      <td><input type="radio" name="q46" value=2 id="q462"></td>
-      <td><input type="radio" name="q46" value=3 id="q463"></td>
-      <td><input type="radio" name="q46" value=4 id="q464"></td>
-      <td><input type="radio" name="q46" value=5 id="q465"></td>
+      <td><input type="radio" name="q46" value=1 id="q461" {% if survey['5'][5] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q46" value=2 id="q462" {% if survey['5'][5] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q46" value=3 id="q463" {% if survey['5'][5] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q46" value=4 id="q464" {% if survey['5'][5] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q46" value=5 id="q465" {% if survey['5'][5] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>47</td>
       <td>Make people feel at ease.</td>
-      <td><input type="radio" name="q47" value=1 id="q471"></td>
-      <td><input type="radio" name="q47" value=2 id="q472"></td>
-      <td><input type="radio" name="q47" value=3 id="q473"></td>
-      <td><input type="radio" name="q47" value=4 id="q474"></td>
-      <td><input type="radio" name="q47" value=5 id="q475"></td>
+      <td><input type="radio" name="q47" value=1 id="q471" {% if survey['5'][6] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q47" value=2 id="q472" {% if survey['5'][6] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q47" value=3 id="q473" {% if survey['5'][6] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q47" value=4 id="q474" {% if survey['5'][6] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q47" value=5 id="q475" {% if survey['5'][6] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>48</td>
       <td>Am exacting in my work..</td>
-      <td><input type="radio" name="q48" value=1 id="q481"></td>
-      <td><input type="radio" name="q48" value=2 id="q482"></td>
-      <td><input type="radio" name="q48" value=3 id="q483"></td>
-      <td><input type="radio" name="q48" value=4 id="q484"></td>
-      <td><input type="radio" name="q48" value=5 id="q485"></td>
+      <td><input type="radio" name="q48" value=1 id="q481" {% if survey['5'][7] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q48" value=2 id="q482" {% if survey['5'][7] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q48" value=3 id="q483" {% if survey['5'][7] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q48" value=4 id="q484" {% if survey['5'][7] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q48" value=5 id="q485" {% if survey['5'][7] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>49</td>
       <td>Often feel blue.</td>
-      <td><input type="radio" name="q49" value=1 id="q491"></td>
-      <td><input type="radio" name="q49" value=2 id="q492"></td>
-      <td><input type="radio" name="q49" value=3 id="q493"></td>
-      <td><input type="radio" name="q49" value=4 id="q494"></td>
-      <td><input type="radio" name="q49" value=5 id="q495"></td>
+      <td><input type="radio" name="q49" value=1 id="q491" {% if survey['5'][8] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q49" value=2 id="q492" {% if survey['5'][8] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q49" value=3 id="q493" {% if survey['5'][8] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q49" value=4 id="q494" {% if survey['5'][8] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q49" value=5 id="q495" {% if survey['5'][8] == '5' %}checked{% endif %}></td>
     </tr>
     <tr class="active">
       <td>50</td>
       <td>Am full of ideas.</td>
-      <td><input type="radio" name="q50" value=1 id="q501"></td>
-      <td><input type="radio" name="q50" value=2 id="q502"></td>
-      <td><input type="radio" name="q50" value=3 id="q503"></td>
-      <td><input type="radio" name="q50" value=4 id="q504"></td>
-      <td><input type="radio" name="q50" value=5 id="q505"></td>
+      <td><input type="radio" name="q50" value=1 id="q501" {% if survey['5'][9] == '1' %}checked{% endif %}></td>
+      <td><input type="radio" name="q50" value=2 id="q502" {% if survey['5'][9] == '2' %}checked{% endif %}></td>
+      <td><input type="radio" name="q50" value=3 id="q503" {% if survey['5'][9] == '3' %}checked{% endif %}></td>
+      <td><input type="radio" name="q50" value=4 id="q504" {% if survey['5'][9] == '4' %}checked{% endif %}></td>
+      <td><input type="radio" name="q50" value=5 id="q505" {% if survey['5'][9] == '5' %}checked{% endif %}></td>
     </tr>
     {% endif %}
 
@@ -532,13 +534,27 @@
     </table>
     </div>
 
+
+    {% if page == 5 %}
+    <div class="col-lg-10">
+    </div>
+    <div class="col-lg-2">
+
+        <button type="submit" name="submit" class="btn btn-primary">Send Survey!</button>
+    </div>
+    {% endif %}
+
+
+</form>
+
 <div class="col-lg-6">
 </div>
 <div class="col-lg-6">
     <ul class="pagination">
         <form action="/getSurveyPage/" name="getSurveyPage" method="post">
             <input type="text" name="choices" style="visibility: hidden">
-            <input type='text' name='number' style="visibility: hidden"/>
+            <input type="text" name='number' style="visibility: hidden"/>
+            <!--<input type="text" name="user" style="visibility:hidden" value=""/>-->
         </form>
 
         <li {% if page==1 %}class="disabled"{% endif %}><a href="#"
@@ -659,7 +675,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     if(page == 3){
@@ -721,7 +737,7 @@
                             choices.push(0)
                         insert = false
 
-                        var question16 = document.getElementsByName('q26')
+                        var question26 = document.getElementsByName('q26')
                         for(var i=0; i<5; i++){
                             if(question26[i].checked){
                                 choices.push(question26[i].value)
@@ -734,7 +750,7 @@
 
                         var question27 = document.getElementsByName('q27')
                         for(var i=0; i<5; i++){
-                            if(question17[i].checked){
+                            if(question27[i].checked){
                                 choices.push(question27[i].value)
                                 insert = true
                             }
@@ -775,7 +791,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     if(page == 4){
@@ -891,7 +907,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     if(page == 5){
@@ -1007,7 +1023,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
 
@@ -1016,11 +1032,2923 @@
                     "
                 {% endif %}>&laquo;</a></li>
 
-        <li {% if page==1 %}class="active"{% endif %}><a href="#" onclick="document.forms['getSurveyPage'].elements['number'].value=1; document.forms['getSurveyPage'].submit()">1</a></li>
-        <li {% if page==2 %}class="active"{% endif %}><a href="#" onclick="document.forms['getSurveyPage'].elements['number'].value=2; document.forms['getSurveyPage'].submit()">2</a></li>
-        <li {% if page==3 %}class="active"{% endif %}><a href="#" onclick="document.forms['getSurveyPage'].elements['number'].value=3; document.forms['getSurveyPage'].submit()">3</a></li>
-        <li {% if page==4 %}class="active"{% endif %}><a href="#" onclick="document.forms['getSurveyPage'].elements['number'].value=4; document.forms['getSurveyPage'].submit()">4</a></li>
-        <li {% if page==5 %}class="active"{% endif %}><a href="#" onclick="document.forms['getSurveyPage'].elements['number'].value=5; document.forms['getSurveyPage'].submit()">5</a></li>
+        <li {% if page==1 %}class="active"{% endif %}><a href="#"
+                    onclick="
+                    if(page == 1){
+                        var choices = []
+                        var question1 = document.getElementsByName('q1')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question1[i].checked){
+                                choices.push(question1[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question2 = document.getElementsByName('q2')
+                        for(var i=0; i<5; i++){
+                            if(question2[i].checked){
+                                choices.push(question2[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question3 = document.getElementsByName('q3')
+                        for(var i=0; i<5; i++){
+                            if(question3[i].checked){
+                                choices.push(question3[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question4 = document.getElementsByName('q4')
+                        for(var i=0; i<5; i++){
+                            if(question4[i].checked){
+                                choices.push(question4[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question5 = document.getElementsByName('q5')
+                        for(var i=0; i<5; i++){
+                            if(question5[i].checked){
+                                choices.push(question5[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question6 = document.getElementsByName('q6')
+                        for(var i=0; i<5; i++){
+                            if(question6[i].checked){
+                                choices.push(question6[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question7 = document.getElementsByName('q7')
+                        for(var i=0; i<5; i++){
+                            if(question7[i].checked){
+                                choices.push(question7[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question8 = document.getElementsByName('q8')
+                        for(var i=0; i<5; i++){
+                            if(question8[i].checked){
+                                choices.push(question8[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question9 = document.getElementsByName('q9')
+                        for(var i=0; i<5; i++){
+                            if(question9[i].checked){
+                                choices.push(question9[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question10 = document.getElementsByName('q10')
+                        for(var i=0; i<5; i++){
+                            if(question10[i].checked){
+                                choices.push(question10[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+                    if(page == 2){
+                        var choices = []
+                        var question11 = document.getElementsByName('q11')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question11[i].checked){
+                                choices.push(question11[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question12 = document.getElementsByName('q12')
+                        for(var i=0; i<5; i++){
+                            if(question12[i].checked){
+                                choices.push(question12[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question13 = document.getElementsByName('q13')
+                        for(var i=0; i<5; i++){
+                            if(question13[i].checked){
+                                choices.push(question13[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question14 = document.getElementsByName('q14')
+                        for(var i=0; i<5; i++){
+                            if(question14[i].checked){
+                                choices.push(question14[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question15 = document.getElementsByName('q15')
+                        for(var i=0; i<5; i++){
+                            if(question15[i].checked){
+                                choices.push(question15[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question16 = document.getElementsByName('q16')
+                        for(var i=0; i<5; i++){
+                            if(question16[i].checked){
+                                choices.push(question16[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question17 = document.getElementsByName('q17')
+                        for(var i=0; i<5; i++){
+                            if(question17[i].checked){
+                                choices.push(question17[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question18 = document.getElementsByName('q18')
+                        for(var i=0; i<5; i++){
+                            if(question18[i].checked){
+                                choices.push(question18[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question19 = document.getElementsByName('q19')
+                        for(var i=0; i<5; i++){
+                            if(question19[i].checked){
+                                choices.push(question19[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question20 = document.getElementsByName('q20')
+                        for(var i=0; i<5; i++){
+                            if(question20[i].checked){
+                                choices.push(question20[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 3){
+                        var choices = []
+                        var question21 = document.getElementsByName('q21')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question21[i].checked){
+                                choices.push(question21[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question22 = document.getElementsByName('q22')
+                        for(var i=0; i<5; i++){
+                            if(question22[i].checked){
+                                choices.push(question22[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question23 = document.getElementsByName('q23')
+                        for(var i=0; i<5; i++){
+                            if(question23[i].checked){
+                                choices.push(question23[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question24 = document.getElementsByName('q24')
+                        for(var i=0; i<5; i++){
+                            if(question24[i].checked){
+                                choices.push(question24[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question25 = document.getElementsByName('q25')
+                        for(var i=0; i<5; i++){
+                            if(question25[i].checked){
+                                choices.push(question25[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question26 = document.getElementsByName('q26')
+                        for(var i=0; i<5; i++){
+                            if(question26[i].checked){
+                                choices.push(question26[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question27 = document.getElementsByName('q27')
+                        for(var i=0; i<5; i++){
+                            if(question27[i].checked){
+                                choices.push(question27[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question28 = document.getElementsByName('q28')
+                        for(var i=0; i<5; i++){
+                            if(question28[i].checked){
+                                choices.push(question28[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question29 = document.getElementsByName('q29')
+                        for(var i=0; i<5; i++){
+                            if(question29[i].checked){
+                                choices.push(question29[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question30 = document.getElementsByName('q30')
+                        for(var i=0; i<5; i++){
+                            if(question30[i].checked){
+                                choices.push(question30[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 4){
+                        var choices = []
+                        var question31 = document.getElementsByName('q31')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question31[i].checked){
+                                choices.push(question31[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question32 = document.getElementsByName('q32')
+                        for(var i=0; i<5; i++){
+                            if(question32[i].checked){
+                                choices.push(question32[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question33 = document.getElementsByName('q33')
+                        for(var i=0; i<5; i++){
+                            if(question33[i].checked){
+                                choices.push(question33[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question34 = document.getElementsByName('q34')
+                        for(var i=0; i<5; i++){
+                            if(question34[i].checked){
+                                choices.push(question34[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question35 = document.getElementsByName('q35')
+                        for(var i=0; i<5; i++){
+                            if(question35[i].checked){
+                                choices.push(question35[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question36 = document.getElementsByName('q36')
+                        for(var i=0; i<5; i++){
+                            if(question36[i].checked){
+                                choices.push(question36[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question37 = document.getElementsByName('q37')
+                        for(var i=0; i<5; i++){
+                            if(question37[i].checked){
+                                choices.push(question37[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question38 = document.getElementsByName('q38')
+                        for(var i=0; i<5; i++){
+                            if(question38[i].checked){
+                                choices.push(question38[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question39 = document.getElementsByName('q39')
+                        for(var i=0; i<5; i++){
+                            if(question39[i].checked){
+                                choices.push(question39[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question40 = document.getElementsByName('q40')
+                        for(var i=0; i<5; i++){
+                            if(question40[i].checked){
+                                choices.push(question40[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 5){
+                        var choices = []
+                        var question41 = document.getElementsByName('q41')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question41[i].checked){
+                                choices.push(question41[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question42 = document.getElementsByName('q42')
+                        for(var i=0; i<5; i++){
+                            if(question42[i].checked){
+                                choices.push(question42[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question43 = document.getElementsByName('q43')
+                        for(var i=0; i<5; i++){
+                            if(question43[i].checked){
+                                choices.push(question43[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question44 = document.getElementsByName('q44')
+                        for(var i=0; i<5; i++){
+                            if(question44[i].checked){
+                                choices.push(question44[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question45 = document.getElementsByName('q45')
+                        for(var i=0; i<5; i++){
+                            if(question45[i].checked){
+                                choices.push(question45[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question46 = document.getElementsByName('q46')
+                        for(var i=0; i<5; i++){
+                            if(question46[i].checked){
+                                choices.push(question46[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question47 = document.getElementsByName('q47')
+                        for(var i=0; i<5; i++){
+                            if(question47[i].checked){
+                                choices.push(question47[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question48 = document.getElementsByName('q48')
+                        for(var i=0; i<5; i++){
+                            if(question48[i].checked){
+                                choices.push(question48[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question49 = document.getElementsByName('q49')
+                        for(var i=0; i<5; i++){
+                            if(question49[i].checked){
+                                choices.push(question49[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question50 = document.getElementsByName('q50')
+                        for(var i=0; i<5; i++){
+                            if(question50[i].checked){
+                                choices.push(question50[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+
+                    document.forms['getSurveyPage'].elements['number'].value=1;
+                    document.forms['getSurveyPage'].submit()">1</a></li>
+        <li {% if page==2 %}class="active"{% endif %}><a href="#"
+                    onclick="
+
+                    if(page == 1){
+                        var choices = []
+                        var question1 = document.getElementsByName('q1')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question1[i].checked){
+                                choices.push(question1[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question2 = document.getElementsByName('q2')
+                        for(var i=0; i<5; i++){
+                            if(question2[i].checked){
+                                choices.push(question2[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question3 = document.getElementsByName('q3')
+                        for(var i=0; i<5; i++){
+                            if(question3[i].checked){
+                                choices.push(question3[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question4 = document.getElementsByName('q4')
+                        for(var i=0; i<5; i++){
+                            if(question4[i].checked){
+                                choices.push(question4[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question5 = document.getElementsByName('q5')
+                        for(var i=0; i<5; i++){
+                            if(question5[i].checked){
+                                choices.push(question5[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question6 = document.getElementsByName('q6')
+                        for(var i=0; i<5; i++){
+                            if(question6[i].checked){
+                                choices.push(question6[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question7 = document.getElementsByName('q7')
+                        for(var i=0; i<5; i++){
+                            if(question7[i].checked){
+                                choices.push(question7[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question8 = document.getElementsByName('q8')
+                        for(var i=0; i<5; i++){
+                            if(question8[i].checked){
+                                choices.push(question8[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question9 = document.getElementsByName('q9')
+                        for(var i=0; i<5; i++){
+                            if(question9[i].checked){
+                                choices.push(question9[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question10 = document.getElementsByName('q10')
+                        for(var i=0; i<5; i++){
+                            if(question10[i].checked){
+                                choices.push(question10[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+                    if(page == 2){
+                        var choices = []
+                        var question11 = document.getElementsByName('q11')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question11[i].checked){
+                                choices.push(question11[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question12 = document.getElementsByName('q12')
+                        for(var i=0; i<5; i++){
+                            if(question12[i].checked){
+                                choices.push(question12[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question13 = document.getElementsByName('q13')
+                        for(var i=0; i<5; i++){
+                            if(question13[i].checked){
+                                choices.push(question13[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question14 = document.getElementsByName('q14')
+                        for(var i=0; i<5; i++){
+                            if(question14[i].checked){
+                                choices.push(question14[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question15 = document.getElementsByName('q15')
+                        for(var i=0; i<5; i++){
+                            if(question15[i].checked){
+                                choices.push(question15[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question16 = document.getElementsByName('q16')
+                        for(var i=0; i<5; i++){
+                            if(question16[i].checked){
+                                choices.push(question16[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question17 = document.getElementsByName('q17')
+                        for(var i=0; i<5; i++){
+                            if(question17[i].checked){
+                                choices.push(question17[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question18 = document.getElementsByName('q18')
+                        for(var i=0; i<5; i++){
+                            if(question18[i].checked){
+                                choices.push(question18[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question19 = document.getElementsByName('q19')
+                        for(var i=0; i<5; i++){
+                            if(question19[i].checked){
+                                choices.push(question19[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question20 = document.getElementsByName('q20')
+                        for(var i=0; i<5; i++){
+                            if(question20[i].checked){
+                                choices.push(question20[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 3){
+                        var choices = []
+                        var question21 = document.getElementsByName('q21')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question21[i].checked){
+                                choices.push(question21[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question22 = document.getElementsByName('q22')
+                        for(var i=0; i<5; i++){
+                            if(question22[i].checked){
+                                choices.push(question22[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question23 = document.getElementsByName('q23')
+                        for(var i=0; i<5; i++){
+                            if(question23[i].checked){
+                                choices.push(question23[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question24 = document.getElementsByName('q24')
+                        for(var i=0; i<5; i++){
+                            if(question24[i].checked){
+                                choices.push(question24[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question25 = document.getElementsByName('q25')
+                        for(var i=0; i<5; i++){
+                            if(question25[i].checked){
+                                choices.push(question25[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question26 = document.getElementsByName('q26')
+                        for(var i=0; i<5; i++){
+                            if(question26[i].checked){
+                                choices.push(question26[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question27 = document.getElementsByName('q27')
+                        for(var i=0; i<5; i++){
+                            if(question27[i].checked){
+                                choices.push(question27[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question28 = document.getElementsByName('q28')
+                        for(var i=0; i<5; i++){
+                            if(question28[i].checked){
+                                choices.push(question28[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question29 = document.getElementsByName('q29')
+                        for(var i=0; i<5; i++){
+                            if(question29[i].checked){
+                                choices.push(question29[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question30 = document.getElementsByName('q30')
+                        for(var i=0; i<5; i++){
+                            if(question30[i].checked){
+                                choices.push(question30[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 4){
+                        var choices = []
+                        var question31 = document.getElementsByName('q31')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question31[i].checked){
+                                choices.push(question31[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question32 = document.getElementsByName('q32')
+                        for(var i=0; i<5; i++){
+                            if(question32[i].checked){
+                                choices.push(question32[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question33 = document.getElementsByName('q33')
+                        for(var i=0; i<5; i++){
+                            if(question33[i].checked){
+                                choices.push(question33[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question34 = document.getElementsByName('q34')
+                        for(var i=0; i<5; i++){
+                            if(question34[i].checked){
+                                choices.push(question34[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question35 = document.getElementsByName('q35')
+                        for(var i=0; i<5; i++){
+                            if(question35[i].checked){
+                                choices.push(question35[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question36 = document.getElementsByName('q36')
+                        for(var i=0; i<5; i++){
+                            if(question36[i].checked){
+                                choices.push(question36[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question37 = document.getElementsByName('q37')
+                        for(var i=0; i<5; i++){
+                            if(question37[i].checked){
+                                choices.push(question37[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question38 = document.getElementsByName('q38')
+                        for(var i=0; i<5; i++){
+                            if(question38[i].checked){
+                                choices.push(question38[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question39 = document.getElementsByName('q39')
+                        for(var i=0; i<5; i++){
+                            if(question39[i].checked){
+                                choices.push(question39[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question40 = document.getElementsByName('q40')
+                        for(var i=0; i<5; i++){
+                            if(question40[i].checked){
+                                choices.push(question40[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 5){
+                        var choices = []
+                        var question41 = document.getElementsByName('q41')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question41[i].checked){
+                                choices.push(question41[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question42 = document.getElementsByName('q42')
+                        for(var i=0; i<5; i++){
+                            if(question42[i].checked){
+                                choices.push(question42[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question43 = document.getElementsByName('q43')
+                        for(var i=0; i<5; i++){
+                            if(question43[i].checked){
+                                choices.push(question43[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question44 = document.getElementsByName('q44')
+                        for(var i=0; i<5; i++){
+                            if(question44[i].checked){
+                                choices.push(question44[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question45 = document.getElementsByName('q45')
+                        for(var i=0; i<5; i++){
+                            if(question45[i].checked){
+                                choices.push(question45[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question46 = document.getElementsByName('q46')
+                        for(var i=0; i<5; i++){
+                            if(question46[i].checked){
+                                choices.push(question46[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question47 = document.getElementsByName('q47')
+                        for(var i=0; i<5; i++){
+                            if(question47[i].checked){
+                                choices.push(question47[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question48 = document.getElementsByName('q48')
+                        for(var i=0; i<5; i++){
+                            if(question48[i].checked){
+                                choices.push(question48[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question49 = document.getElementsByName('q49')
+                        for(var i=0; i<5; i++){
+                            if(question49[i].checked){
+                                choices.push(question49[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question50 = document.getElementsByName('q50')
+                        for(var i=0; i<5; i++){
+                            if(question50[i].checked){
+                                choices.push(question50[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    document.forms['getSurveyPage'].elements['number'].value=2;
+                    document.forms['getSurveyPage'].submit()">2</a></li>
+        <li {% if page==3 %}class="active"{% endif %}><a href="#"
+                    onclick="
+                    if(page == 1){
+                        var choices = []
+                        var question1 = document.getElementsByName('q1')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question1[i].checked){
+                                choices.push(question1[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question2 = document.getElementsByName('q2')
+                        for(var i=0; i<5; i++){
+                            if(question2[i].checked){
+                                choices.push(question2[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question3 = document.getElementsByName('q3')
+                        for(var i=0; i<5; i++){
+                            if(question3[i].checked){
+                                choices.push(question3[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question4 = document.getElementsByName('q4')
+                        for(var i=0; i<5; i++){
+                            if(question4[i].checked){
+                                choices.push(question4[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question5 = document.getElementsByName('q5')
+                        for(var i=0; i<5; i++){
+                            if(question5[i].checked){
+                                choices.push(question5[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question6 = document.getElementsByName('q6')
+                        for(var i=0; i<5; i++){
+                            if(question6[i].checked){
+                                choices.push(question6[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question7 = document.getElementsByName('q7')
+                        for(var i=0; i<5; i++){
+                            if(question7[i].checked){
+                                choices.push(question7[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question8 = document.getElementsByName('q8')
+                        for(var i=0; i<5; i++){
+                            if(question8[i].checked){
+                                choices.push(question8[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question9 = document.getElementsByName('q9')
+                        for(var i=0; i<5; i++){
+                            if(question9[i].checked){
+                                choices.push(question9[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question10 = document.getElementsByName('q10')
+                        for(var i=0; i<5; i++){
+                            if(question10[i].checked){
+                                choices.push(question10[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+                    if(page == 2){
+                        var choices = []
+                        var question11 = document.getElementsByName('q11')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question11[i].checked){
+                                choices.push(question11[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question12 = document.getElementsByName('q12')
+                        for(var i=0; i<5; i++){
+                            if(question12[i].checked){
+                                choices.push(question12[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question13 = document.getElementsByName('q13')
+                        for(var i=0; i<5; i++){
+                            if(question13[i].checked){
+                                choices.push(question13[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question14 = document.getElementsByName('q14')
+                        for(var i=0; i<5; i++){
+                            if(question14[i].checked){
+                                choices.push(question14[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question15 = document.getElementsByName('q15')
+                        for(var i=0; i<5; i++){
+                            if(question15[i].checked){
+                                choices.push(question15[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question16 = document.getElementsByName('q16')
+                        for(var i=0; i<5; i++){
+                            if(question16[i].checked){
+                                choices.push(question16[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question17 = document.getElementsByName('q17')
+                        for(var i=0; i<5; i++){
+                            if(question17[i].checked){
+                                choices.push(question17[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question18 = document.getElementsByName('q18')
+                        for(var i=0; i<5; i++){
+                            if(question18[i].checked){
+                                choices.push(question18[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question19 = document.getElementsByName('q19')
+                        for(var i=0; i<5; i++){
+                            if(question19[i].checked){
+                                choices.push(question19[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question20 = document.getElementsByName('q20')
+                        for(var i=0; i<5; i++){
+                            if(question20[i].checked){
+                                choices.push(question20[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 3){
+                        var choices = []
+                        var question21 = document.getElementsByName('q21')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question21[i].checked){
+                                choices.push(question21[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question22 = document.getElementsByName('q22')
+                        for(var i=0; i<5; i++){
+                            if(question22[i].checked){
+                                choices.push(question22[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question23 = document.getElementsByName('q23')
+                        for(var i=0; i<5; i++){
+                            if(question23[i].checked){
+                                choices.push(question23[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question24 = document.getElementsByName('q24')
+                        for(var i=0; i<5; i++){
+                            if(question24[i].checked){
+                                choices.push(question24[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question25 = document.getElementsByName('q25')
+                        for(var i=0; i<5; i++){
+                            if(question25[i].checked){
+                                choices.push(question25[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question26 = document.getElementsByName('q26')
+                        for(var i=0; i<5; i++){
+                            if(question26[i].checked){
+                                choices.push(question26[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question27 = document.getElementsByName('q27')
+                        for(var i=0; i<5; i++){
+                            if(question27[i].checked){
+                                choices.push(question27[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question28 = document.getElementsByName('q28')
+                        for(var i=0; i<5; i++){
+                            if(question28[i].checked){
+                                choices.push(question28[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question29 = document.getElementsByName('q29')
+                        for(var i=0; i<5; i++){
+                            if(question29[i].checked){
+                                choices.push(question29[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question30 = document.getElementsByName('q30')
+                        for(var i=0; i<5; i++){
+                            if(question30[i].checked){
+                                choices.push(question30[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 4){
+                        var choices = []
+                        var question31 = document.getElementsByName('q31')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question31[i].checked){
+                                choices.push(question31[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question32 = document.getElementsByName('q32')
+                        for(var i=0; i<5; i++){
+                            if(question32[i].checked){
+                                choices.push(question32[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question33 = document.getElementsByName('q33')
+                        for(var i=0; i<5; i++){
+                            if(question33[i].checked){
+                                choices.push(question33[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question34 = document.getElementsByName('q34')
+                        for(var i=0; i<5; i++){
+                            if(question34[i].checked){
+                                choices.push(question34[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question35 = document.getElementsByName('q35')
+                        for(var i=0; i<5; i++){
+                            if(question35[i].checked){
+                                choices.push(question35[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question36 = document.getElementsByName('q36')
+                        for(var i=0; i<5; i++){
+                            if(question36[i].checked){
+                                choices.push(question36[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question37 = document.getElementsByName('q37')
+                        for(var i=0; i<5; i++){
+                            if(question37[i].checked){
+                                choices.push(question37[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question38 = document.getElementsByName('q38')
+                        for(var i=0; i<5; i++){
+                            if(question38[i].checked){
+                                choices.push(question38[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question39 = document.getElementsByName('q39')
+                        for(var i=0; i<5; i++){
+                            if(question39[i].checked){
+                                choices.push(question39[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question40 = document.getElementsByName('q40')
+                        for(var i=0; i<5; i++){
+                            if(question40[i].checked){
+                                choices.push(question40[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 5){
+                        var choices = []
+                        var question41 = document.getElementsByName('q41')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question41[i].checked){
+                                choices.push(question41[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question42 = document.getElementsByName('q42')
+                        for(var i=0; i<5; i++){
+                            if(question42[i].checked){
+                                choices.push(question42[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question43 = document.getElementsByName('q43')
+                        for(var i=0; i<5; i++){
+                            if(question43[i].checked){
+                                choices.push(question43[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question44 = document.getElementsByName('q44')
+                        for(var i=0; i<5; i++){
+                            if(question44[i].checked){
+                                choices.push(question44[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question45 = document.getElementsByName('q45')
+                        for(var i=0; i<5; i++){
+                            if(question45[i].checked){
+                                choices.push(question45[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question46 = document.getElementsByName('q46')
+                        for(var i=0; i<5; i++){
+                            if(question46[i].checked){
+                                choices.push(question46[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question47 = document.getElementsByName('q47')
+                        for(var i=0; i<5; i++){
+                            if(question47[i].checked){
+                                choices.push(question47[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question48 = document.getElementsByName('q48')
+                        for(var i=0; i<5; i++){
+                            if(question48[i].checked){
+                                choices.push(question48[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question49 = document.getElementsByName('q49')
+                        for(var i=0; i<5; i++){
+                            if(question49[i].checked){
+                                choices.push(question49[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question50 = document.getElementsByName('q50')
+                        for(var i=0; i<5; i++){
+                            if(question50[i].checked){
+                                choices.push(question50[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    document.forms['getSurveyPage'].elements['number'].value=3;
+                    document.forms['getSurveyPage'].submit()">3</a></li>
+        <li {% if page==4 %}class="active"{% endif %}><a href="#"
+                    onclick="
+                    if(page == 1){
+                        var choices = []
+                        var question1 = document.getElementsByName('q1')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question1[i].checked){
+                                choices.push(question1[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question2 = document.getElementsByName('q2')
+                        for(var i=0; i<5; i++){
+                            if(question2[i].checked){
+                                choices.push(question2[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question3 = document.getElementsByName('q3')
+                        for(var i=0; i<5; i++){
+                            if(question3[i].checked){
+                                choices.push(question3[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question4 = document.getElementsByName('q4')
+                        for(var i=0; i<5; i++){
+                            if(question4[i].checked){
+                                choices.push(question4[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question5 = document.getElementsByName('q5')
+                        for(var i=0; i<5; i++){
+                            if(question5[i].checked){
+                                choices.push(question5[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question6 = document.getElementsByName('q6')
+                        for(var i=0; i<5; i++){
+                            if(question6[i].checked){
+                                choices.push(question6[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question7 = document.getElementsByName('q7')
+                        for(var i=0; i<5; i++){
+                            if(question7[i].checked){
+                                choices.push(question7[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question8 = document.getElementsByName('q8')
+                        for(var i=0; i<5; i++){
+                            if(question8[i].checked){
+                                choices.push(question8[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question9 = document.getElementsByName('q9')
+                        for(var i=0; i<5; i++){
+                            if(question9[i].checked){
+                                choices.push(question9[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question10 = document.getElementsByName('q10')
+                        for(var i=0; i<5; i++){
+                            if(question10[i].checked){
+                                choices.push(question10[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+                    if(page == 2){
+                        var choices = []
+                        var question11 = document.getElementsByName('q11')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question11[i].checked){
+                                choices.push(question11[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question12 = document.getElementsByName('q12')
+                        for(var i=0; i<5; i++){
+                            if(question12[i].checked){
+                                choices.push(question12[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question13 = document.getElementsByName('q13')
+                        for(var i=0; i<5; i++){
+                            if(question13[i].checked){
+                                choices.push(question13[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question14 = document.getElementsByName('q14')
+                        for(var i=0; i<5; i++){
+                            if(question14[i].checked){
+                                choices.push(question14[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question15 = document.getElementsByName('q15')
+                        for(var i=0; i<5; i++){
+                            if(question15[i].checked){
+                                choices.push(question15[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question16 = document.getElementsByName('q16')
+                        for(var i=0; i<5; i++){
+                            if(question16[i].checked){
+                                choices.push(question16[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question17 = document.getElementsByName('q17')
+                        for(var i=0; i<5; i++){
+                            if(question17[i].checked){
+                                choices.push(question17[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question18 = document.getElementsByName('q18')
+                        for(var i=0; i<5; i++){
+                            if(question18[i].checked){
+                                choices.push(question18[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question19 = document.getElementsByName('q19')
+                        for(var i=0; i<5; i++){
+                            if(question19[i].checked){
+                                choices.push(question19[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question20 = document.getElementsByName('q20')
+                        for(var i=0; i<5; i++){
+                            if(question20[i].checked){
+                                choices.push(question20[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 3){
+                        var choices = []
+                        var question21 = document.getElementsByName('q21')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question21[i].checked){
+                                choices.push(question21[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question22 = document.getElementsByName('q22')
+                        for(var i=0; i<5; i++){
+                            if(question22[i].checked){
+                                choices.push(question22[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question23 = document.getElementsByName('q23')
+                        for(var i=0; i<5; i++){
+                            if(question23[i].checked){
+                                choices.push(question23[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question24 = document.getElementsByName('q24')
+                        for(var i=0; i<5; i++){
+                            if(question24[i].checked){
+                                choices.push(question24[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question25 = document.getElementsByName('q25')
+                        for(var i=0; i<5; i++){
+                            if(question25[i].checked){
+                                choices.push(question25[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question26 = document.getElementsByName('q26')
+                        for(var i=0; i<5; i++){
+                            if(question26[i].checked){
+                                choices.push(question26[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question27 = document.getElementsByName('q27')
+                        for(var i=0; i<5; i++){
+                            if(question27[i].checked){
+                                choices.push(question27[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question28 = document.getElementsByName('q28')
+                        for(var i=0; i<5; i++){
+                            if(question28[i].checked){
+                                choices.push(question28[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question29 = document.getElementsByName('q29')
+                        for(var i=0; i<5; i++){
+                            if(question29[i].checked){
+                                choices.push(question29[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question30 = document.getElementsByName('q30')
+                        for(var i=0; i<5; i++){
+                            if(question30[i].checked){
+                                choices.push(question30[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 4){
+                        var choices = []
+                        var question31 = document.getElementsByName('q31')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question31[i].checked){
+                                choices.push(question31[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question32 = document.getElementsByName('q32')
+                        for(var i=0; i<5; i++){
+                            if(question32[i].checked){
+                                choices.push(question32[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question33 = document.getElementsByName('q33')
+                        for(var i=0; i<5; i++){
+                            if(question33[i].checked){
+                                choices.push(question33[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question34 = document.getElementsByName('q34')
+                        for(var i=0; i<5; i++){
+                            if(question34[i].checked){
+                                choices.push(question34[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question35 = document.getElementsByName('q35')
+                        for(var i=0; i<5; i++){
+                            if(question35[i].checked){
+                                choices.push(question35[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question36 = document.getElementsByName('q36')
+                        for(var i=0; i<5; i++){
+                            if(question36[i].checked){
+                                choices.push(question36[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question37 = document.getElementsByName('q37')
+                        for(var i=0; i<5; i++){
+                            if(question37[i].checked){
+                                choices.push(question37[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question38 = document.getElementsByName('q38')
+                        for(var i=0; i<5; i++){
+                            if(question38[i].checked){
+                                choices.push(question38[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question39 = document.getElementsByName('q39')
+                        for(var i=0; i<5; i++){
+                            if(question39[i].checked){
+                                choices.push(question39[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question40 = document.getElementsByName('q40')
+                        for(var i=0; i<5; i++){
+                            if(question40[i].checked){
+                                choices.push(question40[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 5){
+                        var choices = []
+                        var question41 = document.getElementsByName('q41')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question41[i].checked){
+                                choices.push(question41[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question42 = document.getElementsByName('q42')
+                        for(var i=0; i<5; i++){
+                            if(question42[i].checked){
+                                choices.push(question42[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question43 = document.getElementsByName('q43')
+                        for(var i=0; i<5; i++){
+                            if(question43[i].checked){
+                                choices.push(question43[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question44 = document.getElementsByName('q44')
+                        for(var i=0; i<5; i++){
+                            if(question44[i].checked){
+                                choices.push(question44[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question45 = document.getElementsByName('q45')
+                        for(var i=0; i<5; i++){
+                            if(question45[i].checked){
+                                choices.push(question45[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question46 = document.getElementsByName('q46')
+                        for(var i=0; i<5; i++){
+                            if(question46[i].checked){
+                                choices.push(question46[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question47 = document.getElementsByName('q47')
+                        for(var i=0; i<5; i++){
+                            if(question47[i].checked){
+                                choices.push(question47[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question48 = document.getElementsByName('q48')
+                        for(var i=0; i<5; i++){
+                            if(question48[i].checked){
+                                choices.push(question48[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question49 = document.getElementsByName('q49')
+                        for(var i=0; i<5; i++){
+                            if(question49[i].checked){
+                                choices.push(question49[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question50 = document.getElementsByName('q50')
+                        for(var i=0; i<5; i++){
+                            if(question50[i].checked){
+                                choices.push(question50[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    document.forms['getSurveyPage'].elements['number'].value=4;
+                    document.forms['getSurveyPage'].submit()">4</a></li>
+        <li {% if page==5 %}class="active"{% endif %}><a href="#"
+                    onclick="
+                    if(page == 1){
+                        var choices = []
+                        var question1 = document.getElementsByName('q1')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question1[i].checked){
+                                choices.push(question1[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question2 = document.getElementsByName('q2')
+                        for(var i=0; i<5; i++){
+                            if(question2[i].checked){
+                                choices.push(question2[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question3 = document.getElementsByName('q3')
+                        for(var i=0; i<5; i++){
+                            if(question3[i].checked){
+                                choices.push(question3[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question4 = document.getElementsByName('q4')
+                        for(var i=0; i<5; i++){
+                            if(question4[i].checked){
+                                choices.push(question4[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question5 = document.getElementsByName('q5')
+                        for(var i=0; i<5; i++){
+                            if(question5[i].checked){
+                                choices.push(question5[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question6 = document.getElementsByName('q6')
+                        for(var i=0; i<5; i++){
+                            if(question6[i].checked){
+                                choices.push(question6[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question7 = document.getElementsByName('q7')
+                        for(var i=0; i<5; i++){
+                            if(question7[i].checked){
+                                choices.push(question7[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question8 = document.getElementsByName('q8')
+                        for(var i=0; i<5; i++){
+                            if(question8[i].checked){
+                                choices.push(question8[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question9 = document.getElementsByName('q9')
+                        for(var i=0; i<5; i++){
+                            if(question9[i].checked){
+                                choices.push(question9[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question10 = document.getElementsByName('q10')
+                        for(var i=0; i<5; i++){
+                            if(question10[i].checked){
+                                choices.push(question10[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+                    if(page == 2){
+                        var choices = []
+                        var question11 = document.getElementsByName('q11')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question11[i].checked){
+                                choices.push(question11[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question12 = document.getElementsByName('q12')
+                        for(var i=0; i<5; i++){
+                            if(question12[i].checked){
+                                choices.push(question12[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question13 = document.getElementsByName('q13')
+                        for(var i=0; i<5; i++){
+                            if(question13[i].checked){
+                                choices.push(question13[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question14 = document.getElementsByName('q14')
+                        for(var i=0; i<5; i++){
+                            if(question14[i].checked){
+                                choices.push(question14[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question15 = document.getElementsByName('q15')
+                        for(var i=0; i<5; i++){
+                            if(question15[i].checked){
+                                choices.push(question15[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question16 = document.getElementsByName('q16')
+                        for(var i=0; i<5; i++){
+                            if(question16[i].checked){
+                                choices.push(question16[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question17 = document.getElementsByName('q17')
+                        for(var i=0; i<5; i++){
+                            if(question17[i].checked){
+                                choices.push(question17[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question18 = document.getElementsByName('q18')
+                        for(var i=0; i<5; i++){
+                            if(question18[i].checked){
+                                choices.push(question18[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question19 = document.getElementsByName('q19')
+                        for(var i=0; i<5; i++){
+                            if(question19[i].checked){
+                                choices.push(question19[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question20 = document.getElementsByName('q20')
+                        for(var i=0; i<5; i++){
+                            if(question20[i].checked){
+                                choices.push(question20[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 3){
+                        var choices = []
+                        var question21 = document.getElementsByName('q21')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question21[i].checked){
+                                choices.push(question21[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question22 = document.getElementsByName('q22')
+                        for(var i=0; i<5; i++){
+                            if(question22[i].checked){
+                                choices.push(question22[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question23 = document.getElementsByName('q23')
+                        for(var i=0; i<5; i++){
+                            if(question23[i].checked){
+                                choices.push(question23[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question24 = document.getElementsByName('q24')
+                        for(var i=0; i<5; i++){
+                            if(question24[i].checked){
+                                choices.push(question24[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question25 = document.getElementsByName('q25')
+                        for(var i=0; i<5; i++){
+                            if(question25[i].checked){
+                                choices.push(question25[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question26 = document.getElementsByName('q26')
+                        for(var i=0; i<5; i++){
+                            if(question26[i].checked){
+                                choices.push(question26[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question27 = document.getElementsByName('q27')
+                        for(var i=0; i<5; i++){
+                            if(question27[i].checked){
+                                choices.push(question27[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question28 = document.getElementsByName('q28')
+                        for(var i=0; i<5; i++){
+                            if(question28[i].checked){
+                                choices.push(question28[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question29 = document.getElementsByName('q29')
+                        for(var i=0; i<5; i++){
+                            if(question29[i].checked){
+                                choices.push(question29[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question30 = document.getElementsByName('q30')
+                        for(var i=0; i<5; i++){
+                            if(question30[i].checked){
+                                choices.push(question30[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 4){
+                        var choices = []
+                        var question31 = document.getElementsByName('q31')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question31[i].checked){
+                                choices.push(question31[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question32 = document.getElementsByName('q32')
+                        for(var i=0; i<5; i++){
+                            if(question32[i].checked){
+                                choices.push(question32[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question33 = document.getElementsByName('q33')
+                        for(var i=0; i<5; i++){
+                            if(question33[i].checked){
+                                choices.push(question33[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question34 = document.getElementsByName('q34')
+                        for(var i=0; i<5; i++){
+                            if(question34[i].checked){
+                                choices.push(question34[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question35 = document.getElementsByName('q35')
+                        for(var i=0; i<5; i++){
+                            if(question35[i].checked){
+                                choices.push(question35[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question36 = document.getElementsByName('q36')
+                        for(var i=0; i<5; i++){
+                            if(question36[i].checked){
+                                choices.push(question36[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question37 = document.getElementsByName('q37')
+                        for(var i=0; i<5; i++){
+                            if(question37[i].checked){
+                                choices.push(question37[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question38 = document.getElementsByName('q38')
+                        for(var i=0; i<5; i++){
+                            if(question38[i].checked){
+                                choices.push(question38[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question39 = document.getElementsByName('q39')
+                        for(var i=0; i<5; i++){
+                            if(question39[i].checked){
+                                choices.push(question39[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question40 = document.getElementsByName('q40')
+                        for(var i=0; i<5; i++){
+                            if(question40[i].checked){
+                                choices.push(question40[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    if(page == 5){
+                        var choices = []
+                        var question41 = document.getElementsByName('q41')
+                        var insert = false;
+
+                        for(var i=0; i<5; i++){
+                            if(question41[i].checked){
+                                choices.push(question41[i].value)
+                                insert = true
+                             }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question42 = document.getElementsByName('q42')
+                        for(var i=0; i<5; i++){
+                            if(question42[i].checked){
+                                choices.push(question42[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question43 = document.getElementsByName('q43')
+                        for(var i=0; i<5; i++){
+                            if(question43[i].checked){
+                                choices.push(question43[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question44 = document.getElementsByName('q44')
+                        for(var i=0; i<5; i++){
+                            if(question44[i].checked){
+                                choices.push(question44[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question45 = document.getElementsByName('q45')
+                        for(var i=0; i<5; i++){
+                            if(question45[i].checked){
+                                choices.push(question45[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question46 = document.getElementsByName('q46')
+                        for(var i=0; i<5; i++){
+                            if(question46[i].checked){
+                                choices.push(question46[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question47 = document.getElementsByName('q47')
+                        for(var i=0; i<5; i++){
+                            if(question47[i].checked){
+                                choices.push(question47[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question48 = document.getElementsByName('q48')
+                        for(var i=0; i<5; i++){
+                            if(question48[i].checked){
+                                choices.push(question48[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question49 = document.getElementsByName('q49')
+                        for(var i=0; i<5; i++){
+                            if(question49[i].checked){
+                                choices.push(question49[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+
+                        var question50 = document.getElementsByName('q50')
+                        for(var i=0; i<5; i++){
+                            if(question50[i].checked){
+                                choices.push(question50[i].value)
+                                insert = true
+                            }
+                        }
+                        if(!insert)
+                            choices.push(0)
+                        insert = false
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
+                    }
+
+                    document.forms['getSurveyPage'].elements['number'].value=5;
+                    document.forms['getSurveyPage'].submit()">5</a></li>
         <li {% if page==5 %}class="disabled"{% endif %}><a href="#"
                 {% if page < 5 %}
                     onclick="
@@ -1139,7 +4067,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     if(page == 2){
@@ -1255,7 +4183,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     if(page == 3){
@@ -1317,7 +4245,7 @@
                             choices.push(0)
                         insert = false
 
-                        var question16 = document.getElementsByName('q26')
+                        var question26 = document.getElementsByName('q26')
                         for(var i=0; i<5; i++){
                             if(question26[i].checked){
                                 choices.push(question26[i].value)
@@ -1330,7 +4258,7 @@
 
                         var question27 = document.getElementsByName('q27')
                         for(var i=0; i<5; i++){
-                            if(question17[i].checked){
+                            if(question27[i].checked){
                                 choices.push(question27[i].value)
                                 insert = true
                             }
@@ -1371,7 +4299,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     if(page == 4){
@@ -1487,7 +4415,7 @@
                         if(!insert)
                             choices.push(0)
                         insert = false
-                        document.forms['getSurveyPage'].elements['choices'].value = choices;
+                        document.forms['getSurveyPage'].elements['choices'].value = page+':'+choices;
                     }
 
                     document.forms['getSurveyPage'].elements['number'].value = page+1;
@@ -1495,6 +4423,8 @@
                     "{% endif %}>&raquo;</a></li>
     </ul>
 </div>
+
+
 
 
 <div class="col-lg-12">
