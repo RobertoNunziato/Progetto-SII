@@ -37,7 +37,7 @@ def login():
     if user != None:
         print (user.getPreferences())
         session['user'] = user.serialize()
-        return render_template('homepage.html')
+        return render_template('homepageUtente.html')
     else:
         return render_template("homepage.html",user=None)
 
@@ -90,6 +90,10 @@ def getUserPage():
 @app.route('/movie/')
 def getMovie():
     return render_template("movie.html")
+
+@app.route('/homeUtente/')
+def userHome():
+    return render_template("homepageUtente.html")
 
 @app.route('/searchFilm/', methods=['POST'])
 def searchFilm():
