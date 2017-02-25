@@ -35,6 +35,7 @@ def registration():
 def login():
     user = mongoDriver.getUser(request.form)
     if user != None:
+        print (user.getPreferences())
         session['user'] = user.serialize()
         return render_template('homepage.html')
     else:
@@ -90,6 +91,11 @@ def getUserPage():
 def getMovie():
     return render_template("movie.html")
 
+@app.route('/searchFilm/', methods=['POST'])
+def searchFilm():
+    search = request.form['search']
+    films = mongoDriver.searchFilm(search)
+    return render_template("listaFilm.html",films=films)
 
 #App start on localhost:5000
 if __name__ == '__main__':

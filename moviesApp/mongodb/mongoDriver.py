@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from bson.json_util import dumps
 from helpers import helpers
 from model.user import User
+import json
 
 client = MongoClient()
 db = client.movielens
@@ -42,6 +43,7 @@ def getUser(form):
                     user[0]['age'], user[0]['gender'], user[0]['profession'], user[0]['education'])
         for preference in user[0]['preferences']:
             preferences.append(preference)
+        userLogged.setPreferences(preferences)
 
     return userLogged
 
@@ -49,3 +51,17 @@ def verifyUser(email):
     if db.users.find({'email':email}).count() == 1:
         return True
     return False
+
+def searchFilm(search):
+    result=[]
+    numbers = db.movies.find({'title': {'$regex': search, '$options': 'i'}}).count()
+    films = db.movies.find({'title': {'$regex': search, '$options': 'i'}}).limit(10)
+    if numbers == 1:
+        result.append(films[0])
+        return result
+
+    elif numbers <= 10:
+        for i in range(numbers):
+            result.append(films[i])
+
+    return result

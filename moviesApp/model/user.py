@@ -62,6 +62,9 @@ class User():
     def setPreferences(self,preferences):
         self.preferences = preferences
 
+    def getPreferences(self):
+        return self.preferences
+
     def serialize(self):
         return {
             'name': self.name,
