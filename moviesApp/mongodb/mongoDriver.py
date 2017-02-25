@@ -34,3 +34,9 @@ def getUser(form):
         return True
     else:
         return False
+
+def verifyUser(email):
+    print email
+    if db.users.find({'email':email}).count() == 1:
+        return True
+    return False

@@ -11,15 +11,17 @@ function validateRegistration() {
 }
 
 function verifyUser(){
-    alert("dentro")
-    var email = document.form["registration"]["email"].value
+    var email = document.forms["registration"]["email"].value
     $.getJSON('/verifyUser/',
         {
             email: email
         },
-        function(data){
-            console.log(data);
-    });
+        function(result){
+            if (result == true) {
+                document.forms["registration"]["email"].value = ""
+                alert("Email already used!")
+            }
+        });
 
 }
 
@@ -114,11 +116,12 @@ function validateSurvey() {
     c = (14 + q3 - q8 + q13 - q18 + q23 - q28 + q33 - q38 + q43 + q48) * 5 / 40;
     n = (38 - q4 + q9 - q14 + q19 - q24 - q29 - q34 - q39 - q44 - q49) * 5 / 40;
     o = (8 + q5 - q10 + q15 - q20 + q25 - q30 + q35 + q40 + q45 + q50) * 5 / 40;
-    alert("Extroversion: " + e +
+
+/*    alert("Extroversion: " + e +
         "\nAgreeableness: " + a +
         "\nConscientiousness: " + c +
         "\nNeuroticism: " + n +
-        "\nOpenness to Experience: " + o);
+        "\nOpenness to Experience: " + o);*/
 
     var cont = 0;
     if ((o > 2 && o <= 4.25) && (e > 2.35 && e <= 5) && (a > 2.52 && a <= 5)) {

@@ -39,9 +39,17 @@ def login():
 
 @app.route('/completeRegistration/', methods=['POST'])
 def completeRegistration():
+    global survey
     preferences = request.form['preferences']
     user = session['user']
     mongoDriver.insertUser(user,preferences)
+    #clean survey
+    survey = {"1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "2": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "3": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "4": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+              "5": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+    print (survey)
     return render_template("homepage.html")
 
 @app.route('/getSurveyPage/',methods=['POST'])
@@ -62,10 +70,8 @@ def getSurveyPage():
 
 @app.route('/verifyUser/')
 def verifyUser():
-    prova = request.args.get('email')
-    print (prova['email'])
-
-    return
+    email = request.args.get('email')
+    return jsonify(mongoDriver.verifyUser(email))
 
 @app.route('/userPage/')
 def getUserPage():
@@ -74,6 +80,7 @@ def getUserPage():
 @app.route('/movie/')
 def getMovie():
     return render_template("movie.html")
+
 
 #App start on localhost:5000
 if __name__ == '__main__':
