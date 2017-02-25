@@ -71,6 +71,9 @@ def verifyUser():
 def getUserPage():
     return render_template("user.html")
 
+@app.route('/movie/')
+def getMovie():
+    return render_template("movie.html")
 
 #App start on localhost:5000
 if __name__ == '__main__':
