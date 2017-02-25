@@ -32,8 +32,10 @@ def registration():
 
 @app.route('/login/',methods=['POST'])
 def login():
-    if mongoDriver.getUser(request.form):
-        return render_template('homepage.html',user=request.form)
+    user = mongoDriver.getUser(request.form)
+    if user != None:
+        session['user'] = user.serialize()
+        return render_template('homepage.html')
     else:
         return render_template("homepage.html",user=None)
 
@@ -43,13 +45,14 @@ def completeRegistration():
     preferences = request.form['preferences']
     user = session['user']
     mongoDriver.insertUser(user,preferences)
+    print (user)
     #clean survey
     survey = {"1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "2": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "3": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "4": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "5": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
-    print (survey)
+    del session['survey']
     return render_template("homepage.html")
 
 @app.route('/getSurveyPage/',methods=['POST'])

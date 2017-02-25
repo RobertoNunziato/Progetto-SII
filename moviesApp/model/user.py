@@ -9,6 +9,7 @@ class User():
         self.gender = gender
         self.profession = profession
         self.education = education
+        self.preferences = []
 
     def getName(self):
         return self.name
@@ -58,6 +59,9 @@ class User():
     def setEducation(self,education):
         self.education = education
 
+    def setPreferences(self,preferences):
+        self.preferences = preferences
+
     def serialize(self):
         return {
             'name': self.name,
@@ -68,4 +72,5 @@ class User():
             'gender': self.gender,
             'profession': self.profession,
             'education': self.education,
+            'preferences': self.preferences,
         }
