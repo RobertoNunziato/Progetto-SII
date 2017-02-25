@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from bson.json_util import dumps
 from helpers import helpers
 from model.user import User
-import json
+import random
 
 client = MongoClient()
 db = client.movielens
@@ -63,5 +63,32 @@ def searchFilm(search):
     elif numbers <= 10:
         for i in range(numbers):
             result.append(films[i])
+
+    return result
+
+def suggestFilms(preferences):
+    categories = []
+    filmSuggest = []
+    #Se ci sono piu' di 5 preferenze, ne estraggo random 5
+    if len(preferences) > 5:
+        num = len(preferences)
+        for i in range(5):
+            randomNumber = random.randint(0,num)
+            if preferences[randomNumber] not in categories:
+                categories.append(preferences[randomNumber])
+
+        #Per ogni categoria mi prendo due film
+        for category in categories:
+            for film in getFilmBestRatedByGenre(category):
+                print film
+
+    #print filmSuggest
+
+def getFilmBestRatedByGenre(genre):
+    result=[]
+
+    films = db.movies.find({'genres': {'$regex': genre, '$options': 'i'}}).limit(2)
+    result.append(films[0])
+    result.append(films[1])
 
     return result
