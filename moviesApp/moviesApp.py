@@ -101,6 +101,11 @@ def searchFilm():
     films = mongoDriver.searchFilm(search)
     return render_template("listaFilm.html",films=films)
 
+@app.route('/rateFilm/<rating>')
+def rateFilm(rating):
+    print (rating)
+    return render_template("movie.html")
+
 #App start on localhost:5000
 if __name__ == '__main__':
     app.secret_key = 'RENOMIBACENORULTEAOLE'

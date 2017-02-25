@@ -87,11 +87,18 @@
                 
                 <br>
                        <label for="input-1" class="control-label">Rate This</label>
-						<input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
-
+				            <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
                         <br>
                         <br>
-                 </div>      
+                        <!-- Per prendere il valore delle stelle cliccate-->
+                        <script>
+                        $('#input-1').on('rating.change', function(event, value, caption) {
+                            $.getJSON('/rateFilm/'+value)
+                            console.log(value);
+                            console.log(caption);
+                        });
+                        </script>
+                     </div>
 
 
 
