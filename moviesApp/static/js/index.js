@@ -125,39 +125,39 @@ function validateSurvey() {
 
     var cont = 0;
     if ((o > 2 && o <= 4.25) && (e > 2.35 && e <= 5) && (a > 2.52 && a <= 5)) {
-        if (!contains(preferences), "comedy") {
+        if (!contains(preferences, "comedy")) {
             preferences.push("comedy");
             cont += 1;
         }
     }
     if ((o > 2.8 && o <= 5) && (c > 2 && c <= 4.5) && (a > 2 && a <= 4.52) && (n > 1 && n <= 4)) {
-        if (!contains(preferences), "horror") {
+        if (!contains(preferences, "horror")) {
             preferences.push("horror");
             cont += 1;
         }
     }
     if ((o > 2.6 && o <= 5) && (e > 2.62 && e <= 5) && (a > 2 && a <= 5)) {
-        if (!contains(preferences), "horror") {
+        if (!contains(preferences, "horror")) {
             preferences.push("horror")
             cont += 1;
         }
     }
     if ((o > 2.6 && o <= 5) && (e > 2 && e <= 5) && (a > 2 && a <= 5) && (n > 1.53 && n <= 4)) {
-        if (!contains(preferences), "horror") {
+        if (!contains(preferences, "horror")) {
 
             preferences.push("horror")
             cont += 1;
         }
     }
     if ((o > 2.6 && o <= 5) && (a > 2 && a <= 4.52) && (n > 1.53 && n <= 3.85)) {
-        if (!contains(preferences), "horror") {
+        if (!contains(preferences, "horror")) {
 
             preferences.push("horror")
             cont += 1;
         }
     }
     if ((o > 2.8 && o <= 5) && (e > 2.62 && e <= 4.89) && (a > 2.52 && a <= 4.85)) {
-        if (!contains(preferences), "comedy") {
+        if (!contains(preferences, "comedy")) {
 
             preferences.push("comedy")
             cont += 1;
@@ -165,7 +165,7 @@ function validateSurvey() {
     }
     if ((e > 1.37 && e <= 3.75) && (n > 2.7 && n <= 5.02)) {
         if (gender == "Female") {
-            if (!contains(preferences), "animation") {
+            if (!contains(preferences, "animation")) {
 
                 preferences.push("animation");
                 console.log("animation");//woman
@@ -175,7 +175,7 @@ function validateSurvey() {
     }
     if ((o > 3.2 && o <= 5) && (c > 2.25 && c <= 4.6) && (e > 4.8 && e <= 3.2)) {
         if (gender == "Male") {
-            if (!contains(preferences), "animation") {
+            if (!contains(preferences, "animation")) {
 
                 preferences.push("animation");
                 console.log("animation");//man
@@ -185,7 +185,7 @@ function validateSurvey() {
     }
     if ((c > 2.25 && c <= 4.6) && (n > 0.47 && n <= 2.79)) {
         if (gender == "Male") {
-            if (!contains(preferences), "animation") {
+            if (!contains(preferences, "animation")) {
 
                 preferences.push("animation");
                 console.log("animation");//man
@@ -195,7 +195,7 @@ function validateSurvey() {
     }
     if ((o > 2.8 && o <= 5) && (e > 2.5 && e <= 4.87) && (n > 1.4 && n <= 3.72)) {
         if (gender == "Female") {
-            if (!contains(preferences), "children") {
+            if (!contains(preferences, "children")) {
 
                 preferences.push("children");
                 console.log("children");//woman-cartoon
@@ -205,7 +205,7 @@ function validateSurvey() {
     }
     if ((c > 2.67 && c <= 5) && (a > 2.3 && a <= 4.6) && (n > 1.72 && n <= 4.05)) {
         if (gender == "Female") {
-            if (!contains(preferences), "romance") {
+            if (!contains(preferences, "romance")) {
 
                 preferences.push("romance");
                 console.log("romance");//woman
@@ -215,7 +215,7 @@ function validateSurvey() {
     }
     if ((o > 3.6 && o <= 5) && (c > 2.25 && c <= 4.6)) {
         if (gender == "Male") {
-            if (!contains(preferences), "film-noir") {
+            if (!contains(preferences, "film-noir")) {
 
                 preferences.push("film-noir");
                 console.log("film-noir");//man-neo-noir
@@ -225,7 +225,7 @@ function validateSurvey() {
     }
     if ((o > 3.2 && o <= 5) && (c > 2.6 && c <= 5) && (n > 1.74 && n <= 4)) {
         if (gender == "Male") {
-            if (!contains(preferences), "drama") {
+            if (!contains(preferences, "drama")) {
 
                 preferences.push("drama");
                 console.log("drama");//man
@@ -235,7 +235,7 @@ function validateSurvey() {
     }
     if ((o > 2.4 && o <= 4.6) && (e > 2.8 && e <= 5)) {
         if (gender == "Male") {
-            if (!contains(preferences), "war") {
+            if (!contains(preferences, "war")) {
 
                 preferences.push("war");
                 console.log("war");//man
@@ -245,7 +245,7 @@ function validateSurvey() {
     }
     if ((e > 2 && e <= 4.4) && (n > 1 && n <= 3.42)) {
         if (gender == "Male") {
-            if (!contains(preferences), "adventure") {
+            if (!contains(preferences, "adventure")) {
 
                 preferences.push("adventure");
                 console.log("adventure");//man
@@ -255,7 +255,7 @@ function validateSurvey() {
     }
     if ((o > 2.8 && o <= 5) && (e > 2 && e <= 4.4) && (n > 1.42 && n <= 3.74)) {
         if (gender == "Male") {
-            if (!contains(preferences), "comedy") {
+            if (!contains(preferences, "comedy")) {
 
                 preferences.push("comedy");
                 console.log("comedy");//man
@@ -265,7 +265,7 @@ function validateSurvey() {
     }
     if ((o > 3.2 && o <= 5) && (a > 2.35 && a <= 5) && (n > 0.786 && n <= 3.104)) {
         if (gender == "Male") {
-            if (!contains(preferences), "adventure") {
+            if (!contains(preferences, "adventure")) {
 
                 preferences.push("adventure");
                 console.log("adventure");//man
@@ -275,7 +275,7 @@ function validateSurvey() {
     }
     if ((c > 2.6 && c <= 5) && (e > 2 && e <= 4.4) && (n > 1.74 && n <= 4.06)) {
         if (gender == "Male") {
-            if (!contains(preferences), "drama") {
+            if (!contains(preferences, "drama")) {
 
                 preferences.push("drama");
                 console.log("drama");//man
@@ -285,7 +285,7 @@ function validateSurvey() {
     }
     if ((o > 2.6 && o <= 5) && (e > 2.4 && e <= 5) && (a > 2.7 && a <= 5) && (n > 1.42 && n <= 3.74)) {
         if (gender == "Male") {
-            if (!contains(preferences), "action") {
+            if (!contains(preferences, "action")) {
 
                 preferences.push("action");
                 console.log("action");//man
@@ -295,7 +295,7 @@ function validateSurvey() {
     }
     if ((o > 3 && o <= 5) && (n > 2 && n <= 5)) {
         if (gender == "Male") {
-            if (!contains(preferences), "musical") {
+            if (!contains(preferences, "musical")) {
 
                 preferences.push("musical");
                 console.log("musical");//man-music video
@@ -304,7 +304,7 @@ function validateSurvey() {
         }
     }
     if ((o > 2.91 && o <= 5) && (c > 2.375 && c <= 4.55) && (a > 2.5 && a <= 5)) {
-        if (!contains(preferences), "sci-fi") {
+        if (!contains(preferences, "sci-fi")) {
 
             preferences.push("sci-fi");
             console.log("sci-fi");//science fiction
@@ -312,7 +312,7 @@ function validateSurvey() {
         }
     }
     if ((o > 2.91 && o <= 5) && (a > 2.5 && a <= 4.65)) {
-        if (!contains(preferences), "sci-fi") {
+        if (!contains(preferences, "sci-fi")) {
 
             preferences.push("sci-fi");
             console.log("sci-fi");//science fiction
@@ -320,7 +320,7 @@ function validateSurvey() {
         }
     }
     if ((o > 2.9 && o <= 5) && (e > 2 && e <= 4.4) && (n > 1.7 && n <= 4)) {
-        if (!contains(preferences), "fantasy") {
+        if (!contains(preferences, "fantasy")) {
 
             preferences.push("fantasy");
             console.log("fantasy");
@@ -328,7 +328,7 @@ function validateSurvey() {
         }
     }
     if ((o > 2.7 && o <= 5) && (c > 2.4 && c <= 4.6) && (n > 1.6 && n <= 4)) {
-        if (!contains(preferences), "thriller") {
+        if (!contains(preferences, "thriller")) {
 
             preferences.push("thriller");
             console.log("thriller");
@@ -336,7 +336,7 @@ function validateSurvey() {
         }
     }
     if ((o > 2.7 && o <= 5) && (n > 1.8 && n <= 4.15)) {
-        if (!contains(preferences), "crime") {
+        if (!contains(preferences, "crime")) {
 
             preferences.push("crime");
             console.log("crime");
@@ -344,7 +344,7 @@ function validateSurvey() {
         }
     }
     if ((o > 2.7 && o <= 5) && (c > 2.4 && c <= 5) && (a > 2.45 && a <= 5)) {
-        if (!contains(preferences), "mistery") {
+        if (!contains(preferences, "mistery")) {
 
             preferences.push("mistery");
             console.log("mystery");
@@ -352,7 +352,7 @@ function validateSurvey() {
         }
     }
     if ((o > 3 && o <= 5) && (e > 2 && e <= 5) && (a > 2 && a <= 5)) {
-        if (!contains(preferences), "documentary") {
+        if (!contains(preferences, "documentary")) {
 
             preferences.push("documentary");
             console.log("documentary");
