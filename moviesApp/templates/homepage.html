@@ -83,7 +83,7 @@
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-10">
-                                <input type="email" required class="form-control" name="email" placeholder="Email" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
+                                <input type="email" required class="form-control" name="email" placeholder="Email" onchange="verifyUser()" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" required="required">
                             </div>
                         </div>
 
@@ -214,5 +214,6 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/helpers.js') }}"></script>
 </body>
 </html>

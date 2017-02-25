@@ -37,7 +37,20 @@
 
 <script>var page;</script>
 
-<form class="form-horizontal" action="/completeRegistration/" id="completeRegistration" name="completeRegistration" onsubmit="return validateSurvey()" method="post">
+{% if session['user'] != None %}
+<div class="container">
+    <h1>Hi {{ (session['user']['name']) }} {{ (session['user']['surname']) }}</h1>
+    <p>To complete your registration, please fill the following survey, that will help us to learn more
+    about your personality and film tastes!</p><br>
+</div>
+{% endif %}
+
+<form action="/completeRegistration/" name="completeRegistration" id="completeRegistraton" class="form-horizontal" onsubmit="return validateSurvey()" method="post">
+
+    <input type="text" id="userGender" value="{{ (session['user']['gender']) }}" style="visibility: hidden"/>
+    <input type="text" id="survey" value="{{ session['survey'] }}" style="visibility: hidden;">
+    <input type="text" name="preferences" id="preferences" value="" style="visibility: hidden;">
+
 
     <div class="col-lg-12">
     <table class="table table-striped table-hover ">
@@ -4442,5 +4455,6 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/helpers.js') }}"></script>
 </body>
 </html>
