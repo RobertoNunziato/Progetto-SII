@@ -38,6 +38,8 @@
             </button>
             <a class="navbar-brand" href="#">Movies App!</a>
         </div>
+
+        {% if not registration %}
         <div id="navbar" class="navbar-collapse collapse">
             <form action="/login/" method="post" class="navbar-form navbar-right">
                 <div class="form-group">
@@ -49,11 +51,16 @@
                 <button type="submit" name="login" class="btn btn-success">Sign in</button>
             </form>
         </div><!--/.navbar-collapse -->
+    {% endif %}
+
     </div>
 </nav>
 
 
 {% if registration %}
+
+    <br>
+    <br>
     <div class="row">
     </div>
     <div class="row">

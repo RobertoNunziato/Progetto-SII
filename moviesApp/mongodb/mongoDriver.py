@@ -23,7 +23,6 @@ def insertUser(user,preferences):
     preferences = helpers.buildPreferences(preferences)
     user['preferences']=preferences
 
-    #user.setPreferences(preferences)
 
     user = {'name':name,'surname':surname,'email':email,'password':password,'age':age,
             'gender':gender,'profession':profession,'education':education,'preferences':preferences}

@@ -23,6 +23,11 @@
 
 </head>
 
+<!--Redirect if user not in session -->
+{% if not session['user'] %}
+    <meta http-equiv="refresh" content="0;URL=/">
+{% endif %}
+
 <nav class="navbar navbar-default navbar-fixed-top"">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -31,6 +36,7 @@
     <ul class="nav navbar-nav">
       <li ><a href="/">Home</a></li>
       <li class="active"><a href=/userPage/">User Page</a></li>
+      <li><a href="/logout/">Logout</a></li>
     </ul>
     <form class="navbar-form navbar-right">
       <div class="form-group">
@@ -42,7 +48,7 @@
 </nav>
 
 
-
+{% if session['user'] %}
 <br>
 <br>
 
@@ -71,7 +77,7 @@
 				<br>
 				<div class="profile-usertitle">
 					<div class="profile-usertitle-name">
-						NOME + COGNOME
+						{{ (session['user']['name']) }} {{ (session['user']['surname']) }}
 					</div>
 
 				</div>
@@ -96,24 +102,29 @@
 				<!-- END MENU -->
 			</div>
 		</div>
-		<div class="col-md-10">
-            <div class="profile-content" align="left" style="vertical-align: middle">
-			   Name:
+		<div class="col-md-10" >
+            <div class="profile-content" align="left" style="vertical-align: middle; word-wrap: break-word;">
+
+                <h4>Name: {{ (session['user']['name']) }}
+               </h4>
 			   <br>
-			   Surname:
+               <h4>Surname: {{ (session['user']['surname']) }}</h4>
+               <br>
+               <h4>Email: {{ (session['user']['email']) }}</h4>
 			   <br>
-			   Email:
+               <h4>Age: {{ (session['user']['age']) }}</h4>
+               <br>
+               <h4>Gender: {{ (session['user']['gender']) }}</h4>
 			   <br>
-			   Age:
+               <h4>Profession: {{ (session['user']['profession']) }}</h4>
 			   <br>
-			   Gender:
-			   <br>
-			   Profession:
-			   <br>
-			   Education:
-			   <br>
-			   Big 5 test:
-			   <br>
+               <h4>Education: {{ (session['user']['education']) }}</h4>
+               <br>
+			   <h4>Big 5 test:{% for preference in (session['user']['preferences']) %}
+                                 <li>{{ preference }}</li>
+                               {% endfor %}
+                </h4>
+
             </div>
 		</div>
 	</div>
@@ -126,6 +137,8 @@
     </div>
 <br>
 <br>
+{% endif%}
+
 
 <div class="col-lg-12">
 <footer>

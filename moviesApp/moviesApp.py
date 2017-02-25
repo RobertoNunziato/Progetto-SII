@@ -15,6 +15,7 @@ survey = {"1":[0,0,0,0,0,0,0,0,0,0],
 
 @app.route('/')
 def index():
+    print (session)
     return render_template('homepage.html')
 
 @app.route('/getRegistrationModule/',methods=['POST'])
@@ -38,6 +39,11 @@ def login():
         return render_template('homepage.html')
     else:
         return render_template("homepage.html",user=None)
+
+@app.route('/logout/')
+def logout():
+    del session['user']
+    return render_template("homepage.html")
 
 @app.route('/completeRegistration/', methods=['POST'])
 def completeRegistration():

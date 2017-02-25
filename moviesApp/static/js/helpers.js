@@ -113,3 +113,11 @@ function parseSurvey(surveyString){
 
     return survey
 }
+
+function contains(array,value){
+    for(index in array){
+        if(array[index] == value)
+            return true
+    }
+    return false
+}
