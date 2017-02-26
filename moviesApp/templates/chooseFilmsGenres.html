@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Movies App!</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/jumbotron.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/bootstrap/ie-emulation-modes-warning.js') }}"></script>
+
+
+</head>
+
+<!--Redirect if user not in session -->
+{% if not session['user'] %}
+    <meta http-equiv="refresh" content="0;URL=/">
+{% endif %}
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Movies App</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/homeUtente/">Home</a></li>
+            <li><a href="/userPage/">User Page</a></li>
+            <li><a href="/logout/">Logout</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" action="/searchFilm/" method="post">
+            <div class="form-group">
+                <input type="text" name="search" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Search Film</button>
+        </form>
+    </div>
+</nav>
+
+
+
+{% if session['user'] %}
+
+    <h3>{{ (session['user']['name']) }} {{ (session['user']['surname']) }} it was not possible to define your personality
+        through the survey... To help us in the future suggestions, please select 5 of this genres</h3><br>
+
+
+<div class="container">
+    <div class="row profile">
+
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-10" >
+            <div class="profile-content" align="left" style="vertical-align: middle; word-wrap: break-word;">
+        <td><input type="checkbox" name="comedy" value="comedy" id="1"> comedy</td>
+        <td><input type="checkbox" name="action" value="action" id="10"> action</td>
+        <td><input type="checkbox" name="horror" value="horror" id="2"> horror</td>
+        <td><input type="checkbox" name="musical" value="musical" id="11"> musical</td>
+        <td><input type="checkbox" name="animation" value="animation" id="3"> animation</td>
+        <td><input type="checkbox" name="sci-fi" value="sci-fi" id="12"> sci-fi</td>
+        <td><input type="checkbox" name="children" value="children" id="4"> children</td>
+        <td><input type="checkbox" name="fantasy" value="fantasy" id="13"> fantasy</td>
+        <td><input type="checkbox" name="romance" value="romance" id="5"> romance</td>
+        <td><input type="checkbox" name="thriller" value="thriller" id="14"> thriller</td>
+        <td><input type="checkbox" name="film-noir" value="film-noir" id="6"> film-noir</td>
+        <td><input type="checkbox" name="crime" value="crime" id="15"> crime</td>
+        <td><input type="checkbox" name="drama" value="drama" id="7"> drama</td>
+        <td><input type="checkbox" name="mistery" value="mistery" id="16"> mistery</td>
+        <td><input type="checkbox" name="war" value="war" id="8"> war</td>
+        <td><input type="checkbox" name="documentary" value="documentary" id="17"> documentary</td>
+        <td><input type="checkbox" name="adventure" value="adventure" id="9"> adventure</td>
+
+
+            </div>
+		</div>
+	</div>
+</div>
+
+    <form action="/updateFilmsPreferences/" method="post" onsubmit="return validateChoosePreferences()" name="updateFilmsPreferences" id="updateFilmsPreferences">
+        <input type="text" name="preferences" id="preferences" style="visibility: hidden;">
+        <button type="submit" class="btn btn-primary btn-lg">Save changes</button>
+    </form>
+
+
+
+    </div>
+    </div>
+    </div>
+
+
+    <script>
+    function validateChoosePreferences(){
+        var preferences = []
+
+        for(var id=1; id<18; id++){
+            if($("#"+id)[0].checked){
+                preferences.push($("#"+id).val())
+            }
+        }
+
+        if(preferences.length != 5 ){
+            alert("Choose 5 genres!")
+            return false
+        }
+        else if(preferences.length <=5 ){
+            document.forms["updateFilmsPreferences"]["preferences"].value = preferences
+            return true
+        }
+    }
+    </script>
+
+
+{% endif %}
+
+
+<div class="col-lg-12">
+    <footer>
+        <p style="text-align: center">&copy; 2017 JavaComeLava</p>
+    </footer>
+</div>
+</div> <!-- /container -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="{{ url_for('static', filename='js/bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+<script src="{{ url_for('static', filename='js/helpers.js') }}"></script>
+</body>
+</html>

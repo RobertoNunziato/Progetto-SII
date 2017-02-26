@@ -66,21 +66,20 @@
             <div class="well bs-component">
                 <form class="form-horizontal" action="/registration/" id="registration" name="registration" onsubmit="return validateRegistration()" method="post">
                     <fieldset>
-                        <legend><h1>Get Out (2017)</h1></legend>
+                        <legend><h1>{{movieData[0]}}</h1></legend>
 	<div class="row">
    				<div class="col-xs-5 item-photo">
-                    <img style="max-width:100%;" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTE2Nzg1NjkzNV5BMl5BanBnXkFtZTgwOTgyODMyMTI@._V1_SY1000_CR0,0,631,1000_AL_.jpg"/>
+                    <img style="max-width:100%;" src="{{movieData[7]}}"/>
                 </div>
 
                 <div class="col-xs-7" style="border:3px solid gray">
                     <!-- Datos del vendedor y titulo del producto -->
-                    <p>A young African-American man visits his Caucasian girlfriend's mysterious family estate.</p>
-                    <li>Director:</li>
-                    <li>Writer:</li>
-                    <li>Stars:</li>
-                    <li>Release Date::</li>   
-                    <li>Genres.</li>  
-                    <br>                                 
+                    <li>Generes:{{movieData[1]}}</li>
+                    <li>Director:{{movieData[2]}}</li>
+                    <li>Producers:{{movieData[3]}}</li>
+                    <li>Cast:{{movieData[4]}}</li>
+                    <li>Release Date: {{movieData[5]}}</li>
+                    <br>
                 </div> 
                 
                 <div class="col-xs-12" align="center">
@@ -103,11 +102,10 @@
 
 
                     <div class="col-xs-12" style="width:100%;border-top:1px solid silver" align="center">
-                        <ul class="menu-items">
+                        <ul style="align-items: center" class="menu-items">
                             <h3>Trailer</h3>
                         </p>
-
-                        <iframe src="http://www.imdb.com/video/imdb/vi2005186073/imdb/embed?autoplay=false&width=480" width="480" height="270" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" frameborder="no" scrolling="no"></iframe>
+                            <iframe width="560" height="315" src="{{movieData[8]}}" frameborder="0" allowfullscreen></iframe>
 						</ul>
                     </div>
 
@@ -116,9 +114,9 @@
                                             <ul class="menu-items">
 
                         </p>
+                                                {{movieData[6]}}
 
-						A young African American man visits his European American girlfriend's family estate where he learns that many of its residents, who are black, have gone missing, and he soon learns the horrible truth when another frantic African-American warns him to "get out". He soon learns this is easier said than done.                        
-						</ul>  
+						</ul>
                     </div>
 	</div>
 

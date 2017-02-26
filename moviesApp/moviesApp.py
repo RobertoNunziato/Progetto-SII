@@ -4,6 +4,8 @@ from mongodb import mongoDriver
 from model.user import User
 from helpers import helpers
 import json
+from filmDataExtraction import getDataMovie
+
 
 app = Flask(__name__)
 cont = 1
@@ -15,6 +17,9 @@ survey = {"1":[0,0,0,0,0,0,0,0,0,0],
 
 @app.route('/')
 def index():
+    if (session):
+        del session['user']
+
     print (session)
     return render_template('homepage.html')
 
@@ -35,7 +40,8 @@ def registration():
 def login():
     user = mongoDriver.getUser(request.form)
     if user != None:
-        mongoDriver.suggestFilms((user.getPreferences()))
+        filmSuggested = mongoDriver.suggestFilms((user.getPreferences()))
+        print ("FILM SUGGESTED[SERVER]",filmSuggested)
         session['user'] = user.serialize()
         return render_template('homepageUtente.html')
     else:
@@ -51,6 +57,9 @@ def completeRegistration():
     global survey
     preferences = request.form['preferences']
     user = session['user']
+
+    preferences = helpers.buildPreferences(preferences)
+
     mongoDriver.insertUser(user,preferences)
     print (user)
     #clean survey
@@ -60,7 +69,13 @@ def completeRegistration():
               "4": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "5": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
     del session['survey']
-    return render_template("homepage.html")
+
+    #If there're more than 5 preferences(case of ambiguous personality),
+    #redirect to page in which user can choice 5 genres
+    if len(preferences) < 5 or len(preferences) >= 17:
+        return render_template("chooseFilmsGenres.html")
+    else:
+        return render_template("homepageUtente.html")
 
 @app.route('/getSurveyPage/',methods=['POST'])
 def getSurveyPage():
@@ -87,13 +102,20 @@ def verifyUser():
 def getUserPage():
     return render_template("user.html")
 
-@app.route('/movie/')
+@app.route('/movie/', methods=['POST'])
 def getMovie():
-    return render_template("movie.html")
+    id=request.form['movieid']
+    movieId = mongoDriver.getLink(long(id))
+    movieData = getDataMovie.getDataFilm(movieId)
+    return render_template("movie.html",movieData=movieData)
 
 @app.route('/homeUtente/')
 def userHome():
-    mongoDriver.suggestFilms(session['user']['preferences'])
+    if(session['user'] != None):
+        print ("SESSION ---> ",(session['user']))
+
+    filmSuggested = mongoDriver.suggestFilms(session['user']['preferences'])
+    print("FILM SUGGESTED[SERVER]", filmSuggested)
     return render_template("homepageUtente.html")
 
 @app.route('/searchFilm/', methods=['POST'])
@@ -106,6 +128,22 @@ def searchFilm():
 def rateFilm(rating):
     print (rating)
     return render_template("movie.html")
+
+
+
+
+@app.route('/updateFilmsPreferences/', methods=['POST'])
+def updateFilmPreferences():
+    print(session['user'])
+    preferences = request.form['preferences']
+
+    preferences = helpers.buildPreferences(preferences)
+    (session['user']['preferences']) = preferences
+    print(session['user'])
+
+    #Update user with new preferences...
+    mongoDriver.updateUser(session['user'])
+    return render_template("homepageUtente.html")
 
 #App start on localhost:5000
 if __name__ == '__main__':

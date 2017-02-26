@@ -57,12 +57,15 @@
         </div>
         <div class="col-lg-6">
 
+            <form class="form-horizontal" action="/movie/" id="getMovie" name="getMovie" method="post">
+
     <table class="table table-striped table-hover ">
       <thead>
         <tr>
           <th>#</th>
           <th>Title</th>
           <th>Genre</th>
+            <th></th>
         </tr>
       </thead>
 
@@ -72,10 +75,15 @@
               <td>{{ loop.index }}</td>
               <td>{{ index['title'] }}</td>
               <td>{{ index['genres'] }}</td>
+               <td>
+                   <button type="submit" name="movieid" id="movieid" value="{{ index['movieId'] }}" class="btn btn-primary">Get info about the movie</button>
+
+               </td>
             </tr>
         {% endfor %}
       </tbody>
     </table>
+            </form>
         </div>
     {% endif %}
 {% endif%}

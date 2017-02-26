@@ -9,8 +9,12 @@ import random
 client = MongoClient()
 db = client.movielens
 
-def getFilm():
-    return dumps(db.movies.find({'movieId':19}))
+def updateUser(user):
+    db.users.delete_many({"email": user['email']})
+    user = {'name': user['name'], 'surname': user['surname'], 'email': user['email'], 'password': user['password'], 'age': user['age'],
+            'gender': user['gender'], 'profession': user['profession'], 'education': user['education'], 'preferences': user['preferences']}
+    db.users.insert_one(user)
+
 
 def insertUser(user,preferences):
     name = (user['name'])
@@ -21,18 +25,23 @@ def insertUser(user,preferences):
     gender = (user['gender'])
     profession = (user['profession'])
     education = (user['education'])
-    preferences = helpers.buildPreferences(preferences)
-    user['preferences']=preferences
+    #preferences = helpers.buildPreferences(preferences)
+    if len(preferences) >= 17:
+        user['preferences'] = []
+        user = {'name': name, 'surname': surname, 'email': email, 'password': password, 'age': age,
+                'gender': gender, 'profession': profession, 'education': education, 'preferences': []}
 
-
-    user = {'name':name,'surname':surname,'email':email,'password':password,'age':age,
-            'gender':gender,'profession':profession,'education':education,'preferences':preferences}
+    else:
+        user['preferences'] = preferences
+        user = {'name': name, 'surname': surname, 'email': email, 'password': password, 'age': age,
+            'gender': gender, 'profession': profession, 'education': education, 'preferences': preferences}
 
     db.users.insert_one(user)
 
 
 def getUser(form):
     email = form['email']
+    email = email.strip()
     password = form['password']
     user = db.users.find({'$and':[{'email':email},{'password':password}]})
     userLogged = None
@@ -71,6 +80,7 @@ def suggestFilms(preferences):
     filmSuggest = []
 
     print "START: ",preferences
+    print "START LEN: ",type(len(preferences))
 
     #Se ci sono piu' di 5 preferenze, ne estraggo random 5
     if len(preferences) > 5:
@@ -85,23 +95,28 @@ def suggestFilms(preferences):
             print "SINGOLA CATEGORY : ", category
             print "TUTTE LE CATEGORIES : ",categories
             for film in getFilmBestRatedByGenre(category):
+                filmSuggest.append(film)
                 print "FILM ESTRATTO : ", film
 
     #print filmSuggest
+    return filmSuggest
 
 def getFilmBestRatedByGenre(genre):
     result=[]
 
     films = db.movies.aggregate([ {'$match': {'genres': {'$regex': genre, '$options': 'i'}}}, {'$sample': {'size':2}} ])
-    for elem in list(films):
-        print "FILM ESTRATTO : ",elem
-
-
+    for film in list(films):
+        result.append(film)
 #    films = db.movies.find({'genres': {'$regex': genre, '$options': 'i'}}).limit(2)
     #result.append(films[0])
     #result.append(films[1])
 
     return result
+
+
+def getLink(id):
+    movie = db.links.find({'movieId':id})
+    return movie[0]['tmdbId']
 
 
 """
