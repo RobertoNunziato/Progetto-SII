@@ -15,6 +15,10 @@ def updateUser(user):
             'gender': user['gender'], 'profession': user['profession'], 'education': user['education'], 'preferences': user['preferences']}
     db.users.insert_one(user)
 
+    updatedUser = User(user['name'],user['surname'],user['email'],user['password'],
+                      user['age'],user['gender'],user['profession'],user['education'])
+    updatedUser.setPreferences(user['preferences'])
+    return updatedUser
 
 def insertUser(user,preferences):
     name = (user['name'])

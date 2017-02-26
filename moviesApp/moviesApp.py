@@ -137,7 +137,6 @@ def rateFilm(rating):
 def updateFilmPreferences():
     print(session['user'])
     preferences = request.form['preferences']
-
     newPreferences = helpers.buildPreferences(preferences)
     oldPreferences = (session['user']['preferences'])
 
@@ -147,12 +146,13 @@ def updateFilmPreferences():
         for list in oldPreferences:
             for preference in list:
                 newPreferences.append(preference)
-
-    (session['user']['preferences']) = newPreferences
+    (session['user']['preferences']) = newPreferences   #Funzionamento strano, rimedio creando utente da capo
     print(session['user'])
-
     #Update user with new preferences...
-    mongoDriver.updateUser(session['user'])
+    updatedUser = mongoDriver.updateUser(session['user'])
+    del session['user'] #Cancello il vecchio utente dalla sessione
+    session['user'] = updatedUser.serialize()
+
     return render_template("homepageUtente.html")
 
 #App start on localhost:5000
