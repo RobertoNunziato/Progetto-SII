@@ -29,111 +29,109 @@
     <script src="../static/js/themes/krajee-uni/theme.js" type="text/javascript"></script>
 
 
-    
-
-
 </head>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Movies App</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Movies App</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/homeUtente/">Home</a></li>
+            <li><a href="/userPage/">User Page</a></li>
+            <li><a href="/logout/">Logout</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" action="/searchFilm/" method="post">
+            <div class="form-group">
+                <input type="text" name="search" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Search Film</button>
+        </form>
     </div>
-    <ul class="nav navbar-nav">
-      <li ><a href="/homeUtente/">Home</a></li>
-      <li ><a href="/userPage/">User Page</a></li>
-      <li ><a href="/logout/">Logout</a></li>
-    </ul>
-    <form class="navbar-form navbar-right" action="/searchFilm/" method="post">
-      <div class="form-group">
-        <input type="text" name="search" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">Search Film</button>
-    </form>
-  </div>
 </nav>
 
 
-
 <br>
 <br>
 
- <div class="row">
-        <div class="col-lg-3">
-        </div>
-
-        <div class="col-lg-6" >
-            <div class="well bs-component">
-                <form class="form-horizontal" action="/registration/" id="registration" name="registration" onsubmit="return validateRegistration()" method="post">
-                    <fieldset>
-                        <legend><h1>{{movieData[0]}}</h1></legend>
-	<div class="row">
-   				<div class="col-xs-5 item-photo">
-                    <img style="max-width:100%;" src="{{movieData[7]}}"/>
-                </div>
-
-                <div class="col-xs-7" style="border:3px solid gray">
-                    <!-- Datos del vendedor y titulo del producto -->
-                    <li>Generes:{{movieData[1]}}</li>
-                    <li>Director:{{movieData[2]}}</li>
-                    <li>Producers:{{movieData[3]}}</li>
-                    <li>Cast:{{movieData[4]}}</li>
-                    <li>Release Date: {{movieData[5]}}</li>
-                    <br>
-                </div> 
-                
-                <div class="col-xs-12" align="center">
-                
-                <br>
-                       <label for="input-1" class="control-label">Rate This</label>
-				            <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="1">
-                        <br>
-                        <br>
-                        <!-- Per prendere il valore delle stelle cliccate-->
-                        <script>
-                        $('#input-1').on('rating.change', function(event, value, caption) {
-                            $.getJSON('/rateFilm/'+value)
-                            console.log(value);
-                            console.log(caption);
-                        });
-                        </script>
-                     </div>
-
-
-
-                    <div class="col-xs-12" style="width:100%;border-top:1px solid silver" align="center">
-                        <ul style="align-items: center" class="menu-items">
-                            <h3>Trailer</h3>
-                        </p>
-                            <iframe width="560" height="315" src="{{movieData[8]}}" frameborder="0" allowfullscreen></iframe>
-						</ul>
-                    </div>
-
-                    <div class="col-xs-12" style="width:100%;border-top:1px solid silver" align="center">
-                            <h3>Storyline</h3>
-                                            <ul class="menu-items">
-
-                        </p>
-                                                {{movieData[6]}}
-
-						</ul>
-                    </div>
-	</div>
-
-  </fieldset>
-                </form>
-            </div>
-        </div>
-
+<div class="row">
+    <div class="col-lg-3">
     </div>
+
+    <div class="col-lg-6">
+        <div class="well bs-component">
+            <form class="form-horizontal" action="/registration/" id="registration" name="registration"
+                  onsubmit="return validateRegistration()" method="post">
+                <fieldset>
+                    <legend><h1>{{ movieData[0] }}</h1></legend>
+                    <div class="row">
+                        <div class="col-xs-5 item-photo">
+                            <img style="max-width:100%;" src="{{ movieData[7] }}"/>
+                        </div>
+
+                        <div class="col-xs-7" style="border:3px solid gray">
+                            <!-- Datos del vendedor y titulo del producto -->
+                            <li>Generes:{{ movieData[1] }}</li>
+                            <li>Director:{{ movieData[2] }}</li>
+                            <li>Producers:{{ movieData[3] }}</li>
+                            <li>Cast:{{ movieData[4] }}</li>
+                            <li>Release Date: {{ movieData[5] }}</li>
+                            <br>
+                        </div>
+
+                        <div class="col-xs-12" align="center">
+
+                            <br>
+                            <label for="input-1" class="control-label">Rate This</label>
+                            <input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5"
+                                   data-step="1">
+                            <br>
+                            <br>
+                            <!-- Per prendere il valore delle stelle cliccate-->
+                            <script>
+                                $('#input-1').on('rating.change', function (event, value, caption) {
+                                    $.getJSON('/rateFilm/' + value)
+                                    console.log(value);
+                                    console.log(caption);
+                                });
+                            </script>
+                        </div>
+
+
+                        <div class="col-xs-12" style="width:100%;border-top:1px solid silver" align="center">
+                            <ul style="align-items: center" class="menu-items">
+                                <h3>Trailer</h3>
+                                </p>
+                                <iframe width="560" height="315" src="{{ movieData[8] }}" frameborder="0"
+                                        allowfullscreen></iframe>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-12" style="width:100%;border-top:1px solid silver" align="center">
+                            <h3>Storyline</h3>
+                            <ul class="menu-items">
+
+                                </p>
+                                {{ movieData[6] }}
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</div>
 
 <br>
 <br>
 
 <div class="col-lg-12">
-<footer>
-    <p style="text-align: center">&copy; 2017 JavaComeLava</p>
-</footer>
+    <footer>
+        <p style="text-align: center">&copy; 2017 JavaComeLava</p>
+    </footer>
 </div>
 </div> <!-- /container -->
 

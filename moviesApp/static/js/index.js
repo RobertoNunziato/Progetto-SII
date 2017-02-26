@@ -362,7 +362,6 @@ function validateSurvey() {
 
 
     if (cont == 0) {
-        alert("cont"+cont)
         preferences.push("comedy")
         preferences.push("horror")
         preferences.push("animation")

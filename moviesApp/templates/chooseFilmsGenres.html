@@ -47,72 +47,104 @@
 
 {% if session['user'] %}
 
-    <h3>{{ (session['user']['name']) }} {{ (session['user']['surname']) }} it was not possible to define your personality
-        through the survey... To help us in the future suggestions, please select 5 of this genres</h3><br>
+
+    <h3 style="text-align: center">{{ (session['user']['name']) }} {{ (session['user']['surname']) }} it was not
+        possible to define your personality
+        through the survey... To help us in the future suggestions, please select
+        {% if number < 5 %}{{ 5 - number }}{% endif %} {% if number > 5 %}5{% endif %} of this genres</h3><br>
+
+    <input type="text" id="number"
+           value="{% if number < 5 %}{{ 5 - number }}{% endif %} {% if number > 5 %}5{% endif %}"
+           style="visibility: hidden">
 
 
-<div class="container">
-    <div class="row profile">
+    <div class="col-lg-3">
+    </div>
+    <div class="col-lg-6">
+        <table class="table table-striped table-hover ">
+            <tbody>
+            <tr class="active">
+                <td><input type="checkbox" name="comedy" value="comedy" id="1"{% if pref.__contains__("comedy") %}disabled="true"{% endif %}> comedy</td>
+                <td><input type="checkbox" name="action" value="action" id="10"{% if pref.__contains__("action") %}disabled="true"{% endif %}> action</td>
 
-		<div class="col-md-2">
-		</div>
-		<div class="col-md-10" >
-            <div class="profile-content" align="left" style="vertical-align: middle; word-wrap: break-word;">
-        <td><input type="checkbox" name="comedy" value="comedy" id="1"> comedy</td>
-        <td><input type="checkbox" name="action" value="action" id="10"> action</td>
-        <td><input type="checkbox" name="horror" value="horror" id="2"> horror</td>
-        <td><input type="checkbox" name="musical" value="musical" id="11"> musical</td>
-        <td><input type="checkbox" name="animation" value="animation" id="3"> animation</td>
-        <td><input type="checkbox" name="sci-fi" value="sci-fi" id="12"> sci-fi</td>
-        <td><input type="checkbox" name="children" value="children" id="4"> children</td>
-        <td><input type="checkbox" name="fantasy" value="fantasy" id="13"> fantasy</td>
-        <td><input type="checkbox" name="romance" value="romance" id="5"> romance</td>
-        <td><input type="checkbox" name="thriller" value="thriller" id="14"> thriller</td>
-        <td><input type="checkbox" name="film-noir" value="film-noir" id="6"> film-noir</td>
-        <td><input type="checkbox" name="crime" value="crime" id="15"> crime</td>
-        <td><input type="checkbox" name="drama" value="drama" id="7"> drama</td>
-        <td><input type="checkbox" name="mistery" value="mistery" id="16"> mistery</td>
-        <td><input type="checkbox" name="war" value="war" id="8"> war</td>
-        <td><input type="checkbox" name="documentary" value="documentary" id="17"> documentary</td>
-        <td><input type="checkbox" name="adventure" value="adventure" id="9"> adventure</td>
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="horror" value="horror" id="2"{% if pref.__contains__("horror") %}disabled="true"{% endif %}> horror</td>
+                <td><input type="checkbox" name="musical" value="musical" id="11"{% if pref.__contains__("musical") %}disabled="true"{% endif %}> musical</td>
 
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="animation" value="animation" id="3" {% if pref.__contains__("animation") %}disabled="true"{% endif %}> animation</td>
+                <td><input type="checkbox" name="sci-fi" value="sci-fi" id="12"{% if pref.__contains__("sci-fi") %}disabled="true"{% endif %}> sci-fi</td>
 
-            </div>
-		</div>
-	</div>
-</div>
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="children" value="children" id="4"{% if pref.__contains__("children") %}disabled="true"{% endif %}> children</td>
+                <td><input type="checkbox" name="fantasy" value="fantasy" id="13"{% if pref.__contains__("fantasy") %}disabled="true"{% endif %}> fantasy</td>
 
-    <form action="/updateFilmsPreferences/" method="post" onsubmit="return validateChoosePreferences()" name="updateFilmsPreferences" id="updateFilmsPreferences">
-        <input type="text" name="preferences" id="preferences" style="visibility: hidden;">
-        <button type="submit" class="btn btn-primary btn-lg">Save changes</button>
-    </form>
+            </tr>
 
+            <tr class="active">
+                <td><input type="checkbox" name="romance" value="romance" id="5"{% if pref.__contains__("romance") %}disabled="true"{% endif %}> romance</td>
+                <td><input type="checkbox" name="thriller" value="thriller" id="14"{% if pref.__contains__("thriller") %}disabled="true"{% endif %}> thriller</td>
 
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="film-noir" value="film-noir" id="6"{% if pref.__contains__("film-noir") %}disabled="true"{% endif %}> film-noir</td>
+                <td><input type="checkbox" name="crime" value="crime" id="15"{% if pref.__contains__("crime") %}disabled="true"{% endif %}> crime</td>
 
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="drama" value="drama" id="7"{% if pref.__contains__("drama") %}disabled="true"{% endif %}> drama</td>
+                <td><input type="checkbox" name="mistery" value="mistery" id="16"{% if pref.__contains__("mistery") %}disabled="true"{% endif %}> mistery</td>
+
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="war" value="war" id="8"{% if pref.__contains__("war") %}disabled="true"{% endif %}> war</td>
+                <td><input type="checkbox" name="documentary" value="documentary" id="17"{% if pref.__contains__("documentary") %}disabled="true"{% endif %}> documentary</td>
+
+            </tr>
+            <tr class="active">
+                <td><input type="checkbox" name="adventure" value="adventure" id="9"{% if pref.__contains__("adventure") %}disabled="true"{% endif %}> adventure</td>
+
+            </tr>
+            </tbody>
+        </table>
     </div>
     </div>
     </div>
+    </div>
 
+    <div class="col-lg-4">
+    </div>
+    <div class="col-lg-4">
+        <form action="/updateFilmsPreferences/" method="post" onsubmit="return validateChoosePreferences()"
+              name="updateFilmsPreferences" id="updateFilmsPreferences">
+            <input type="text" name="preferences" id="preferences" style="width:77px; visibility: hidden;">
+            <button type="submit" class="btn btn-primary btn-lg">Save changes</button>
+        </form>
+    </div>
 
     <script>
-    function validateChoosePreferences(){
-        var preferences = []
+        function validateChoosePreferences() {
+            var preferences = []
+            var number = parseInt(document.getElementById("number").value)
 
-        for(var id=1; id<18; id++){
-            if($("#"+id)[0].checked){
-                preferences.push($("#"+id).val())
+            for (var id = 1; id < 18; id++) {
+                if ($("#" + id)[0].checked) {
+                    preferences.push($("#" + id).val())
+                }
+            }
+
+            if (preferences.length != number) {
+                alert("Choose " + number + " genres!")
+                return false
+            }
+            else if (preferences.length <= number) {
+                document.forms["updateFilmsPreferences"]["preferences"].value = preferences
+                return true
             }
         }
-
-        if(preferences.length != 5 ){
-            alert("Choose 5 genres!")
-            return false
-        }
-        else if(preferences.length <=5 ){
-            document.forms["updateFilmsPreferences"]["preferences"].value = preferences
-            return true
-        }
-    }
     </script>
 
 

@@ -70,10 +70,13 @@ def completeRegistration():
               "5": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
     del session['survey']
 
+
     #If there're more than 5 preferences(case of ambiguous personality),
     #redirect to page in which user can choice 5 genres
+    if len(preferences) == 17:
+        preferences = []
     if len(preferences) < 5 or len(preferences) >= 17:
-        return render_template("chooseFilmsGenres.html")
+        return render_template("chooseFilmsGenres.html",number=len(preferences),pref=preferences)
     else:
         return render_template("homepageUtente.html")
 
@@ -130,15 +133,22 @@ def rateFilm(rating):
     return render_template("movie.html")
 
 
-
-
 @app.route('/updateFilmsPreferences/', methods=['POST'])
 def updateFilmPreferences():
     print(session['user'])
     preferences = request.form['preferences']
 
-    preferences = helpers.buildPreferences(preferences)
-    (session['user']['preferences']) = preferences
+    newPreferences = helpers.buildPreferences(preferences)
+    oldPreferences = (session['user']['preferences'])
+
+    #Fai merge delle liste..
+    if(len(newPreferences)+len(oldPreferences)) == 5:
+        oldPreferences = helpers.buildPreferences((session['user']['preferences']))
+        for list in oldPreferences:
+            for preference in list:
+                newPreferences.append(preference)
+
+    (session['user']['preferences']) = newPreferences
     print(session['user'])
 
     #Update user with new preferences...
