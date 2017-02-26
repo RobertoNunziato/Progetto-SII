@@ -78,7 +78,8 @@ def completeRegistration():
     if len(preferences) < 5 or len(preferences) >= 17:
         return render_template("chooseFilmsGenres.html",number=len(preferences),pref=preferences)
     else:
-        return render_template("homepageUtente.html")
+        films = mongoDriver.getRandomFilmsByGenre(preferences)
+        return render_template("rateFilms.html",films=films)
 
 @app.route('/getSurveyPage/',methods=['POST'])
 def getSurveyPage():
@@ -153,7 +154,9 @@ def updateFilmPreferences():
     del session['user'] #Cancello il vecchio utente dalla sessione
     session['user'] = updatedUser.serialize()
 
-    return render_template("homepageUtente.html")
+    films = mongoDriver.getRandomFilmsByGenre(newPreferences)
+
+    return render_template("rateFilms.html",films=films)
 
 #App start on localhost:5000
 if __name__ == '__main__':

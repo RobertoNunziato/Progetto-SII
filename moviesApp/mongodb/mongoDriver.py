@@ -122,6 +122,16 @@ def getLink(id):
     movie = db.links.find({'movieId':id})
     return movie[0]['tmdbId']
 
+def getRandomFilmsByGenre(preferences):
+    films = []
+
+    for preference in preferences:
+        result = db.movies.aggregate([ {'$match': {'genres': {'$regex': preference, '$options': 'i'}}}, {'$sample': {'size':3}} ])
+        for film in list(result):
+            films.append(film)
+
+    return films
+
 
 """
 Query fondamentale:
