@@ -1,10 +1,7 @@
 import sys
 sys.path.append("/anaconda/bin/python2.7/site-packages")
 from pymongo import MongoClient
-from bson.json_util import dumps
-from helpers import helpers
 from model.user import User
-import random
 
 client = MongoClient()
 db = client.movielens
@@ -79,7 +76,7 @@ def searchFilm(search):
 
     return result
 
-def suggestFilms(preferences):
+"""def suggestFilms(preferences):
     categories = []
     filmSuggest = []
 
@@ -103,7 +100,7 @@ def suggestFilms(preferences):
                 print "FILM ESTRATTO : ", film
 
     #print filmSuggest
-    return filmSuggest
+    return filmSuggest"""
 
 def getFilmBestRatedByGenre(genre):
     result=[]
@@ -111,9 +108,6 @@ def getFilmBestRatedByGenre(genre):
     films = db.movies.aggregate([ {'$match': {'genres': {'$regex': genre, '$options': 'i'}}}, {'$sample': {'size':2}} ])
     for film in list(films):
         result.append(film)
-#    films = db.movies.find({'genres': {'$regex': genre, '$options': 'i'}}).limit(2)
-    #result.append(films[0])
-    #result.append(films[1])
 
     return result
 
