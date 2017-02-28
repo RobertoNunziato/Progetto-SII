@@ -58,7 +58,7 @@
 </div>
 <div class="col-lg-6">
 
-    <form class="form-horizontal" action="/rateFilm/" onsubmit="return verifyCheckFilms()" id="getMovie" name="getMovie" method="post">
+    <form class="form-horizontal" action="/rateFilm/" onsubmit="return verifyCheckFilms()" id="rating" name="rating" method="post">
 
         <table class="table table-striped table-hover ">
             <thead>
@@ -66,16 +66,17 @@
                 <th>#</th>
                 <th>Films</th>
                 <th>Rate films</th>
-                <th></th>
             </tr>
             </thead>
 
             <tbody>
+            <script>var cont = 0</script>
             {% for index in films %}
+                <script>cont++</script>
                 <tr class="danger">
                     <td>{{ loop.index }}</td>
                     <td>{{ index['title'] }}<br>
-                        <div class="col-xs-5 item-photo">
+                        <div class="col-xs-10">
                             <img style="max-width:100%;" src="{{ (moviesDetail[index['movieId']|string])[1] }}"/>
                         </div>
                     </td>
@@ -85,7 +86,8 @@
                             <label for="{{ "input-" ~ loop.index }}" class="control-label">Rate This</label>
                             <input id="{{ "input-" ~ loop.index }}" name="{{ "input-" ~ loop.index }}" class="rating rating-loading"
                                    data-min="0" data-max="5"
-                                   data-step="1">
+                                   data-step="1" >
+                            <input type="text" value="{{index['movieId']}}" id="{{ loop.index }}" style="visibility: hidden"/>
                             <br>
                             <br>
                             <!-- Per prendere il valore delle stelle cliccate-->
@@ -120,14 +122,21 @@
 
 <script>
 function verifyCheckFilms(){
-
-    for(var i=1; i<16; i++){
-        if($('#input-'+i).value == undefined) {
-            alert("rate all films!")
-            return false
+    var ratings = ""
+    for(var i=1; i<=cont; i++){
+        if($('#input-'+i).val() != "") {
+            ratings += ""+document.getElementById(i).value+":"+$('#input-'+i).val()+","
         }
-        console.log($('#input-'+i).value)
     }
+    ratings = ratings.substring(0,ratings.length-1)
+    var form = document.getElementById("rating");
+    var input = document.createElement("input")
+    input.type = "text";
+    input.style.visibility="hidden"
+    input.value = ratings
+    input.name = "film-ratings"
+    input.id = "film-ratings"
+    form.appendChild(input)
     return true
 }
 </script>

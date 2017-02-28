@@ -76,32 +76,6 @@ def searchFilm(search):
 
     return result
 
-"""def suggestFilms(preferences):
-    categories = []
-    filmSuggest = []
-
-    print "START: ",preferences
-    print "START LEN: ",type(len(preferences))
-
-    #Se ci sono piu' di 5 preferenze, ne estraggo random 5
-    if len(preferences) > 5:
-        num = len(preferences)
-        for i in range(6):
-            randomNumber = random.randint(0,num)
-            if preferences[randomNumber] not in categories:
-                categories.append(preferences[randomNumber])
-
-        #Per ogni categoria mi prendo due film
-        for category in categories:
-            print "SINGOLA CATEGORY : ", category
-            print "TUTTE LE CATEGORIES : ",categories
-            for film in getFilmBestRatedByGenre(category):
-                filmSuggest.append(film)
-                print "FILM ESTRATTO : ", film
-
-    #print filmSuggest
-    return filmSuggest"""
-
 def getFilmBestRatedByGenre(genre):
     result=[]
 
@@ -120,7 +94,7 @@ def getRandomFilmsByGenre(preferences):
     films = []
 
     for preference in preferences:
-        result = db.movies.aggregate([ {'$match': {'genres': {'$regex': preference, '$options': 'i'}}}, {'$sample': {'size':3}} ])
+        result = db.movies.aggregate([ {'$match': {'genres': {'$regex': preference, '$options': 'i'}}}, {'$sample': {'size':2}} ])
         for film in list(result):
             films.append(film)
 
