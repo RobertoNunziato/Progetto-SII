@@ -52,8 +52,8 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Title</th>
-                <th>Genre</th>
+                <th>Films</th>
+                <th>Rate films</th>
                 <th></th>
             </tr>
             </thead>
@@ -62,7 +62,7 @@
             {% for index in films %}
                 <tr class="info">
                     <td>{{ loop.index }}</td>
-                    <td>{{ index['title'] }}</td>
+                    <td>{{ index['title'] }}<br>{{ (moviesDetail[index['movieId']])['poster'] }}</td>
                     <td>{{ index['genres'] }}</td>
                     <td>
                         <button type="submit" name="movieid" id="movieid" value="{{ index['movieId'] }}"

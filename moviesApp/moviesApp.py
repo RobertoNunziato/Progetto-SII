@@ -42,6 +42,25 @@ def login():
     if user != None:
         filmSuggested = mongoDriver.getRandomFilmsByGenre((user.getPreferences()))
         print ("FILM SUGGESTED[SERVER]",filmSuggested)
+        movieId =[]
+        count=0
+        a=[]
+        for i in filmSuggested:
+
+            count=count+1
+            id1=long(i['movieId'])
+            id = mongoDriver.getLink(id1)
+            lista =getDataMovie.getNamePoster(id)
+            lista.append(id1)
+            a.append(lista)
+            if(count==4):
+                movieId.append(a)
+                count=0
+                a=[]
+        if count>0 and count<4:
+            for i in range(0,count-4):
+                a.append(None)
+            movieId.append(a)
         session['user'] = user.serialize()
         return render_template('homepageUtente.html')
     else:
@@ -79,7 +98,14 @@ def completeRegistration():
         return render_template("chooseFilmsGenres.html",number=len(preferences),pref=preferences)
     else:
         films = mongoDriver.getRandomFilmsByGenre(preferences)
-        return render_template("rateFilms.html",films=films)
+        # Per ogni film, prenditi anche i dati
+        moviesDetail = {}
+        for film in films:
+            movieId = film['movieId']
+            movieData = getDataMovie.getDataFilm(movieId)
+            details = {'title': movieData[0], 'poster': movieData[6], 'trailer': movieData[7]}
+            moviesDetail['movieId'] = details
+        return render_template("rateFilms.html",films=films,moviesDetail=moviesDetail)
 
 @app.route('/getSurveyPage/',methods=['POST'])
 def getSurveyPage():
@@ -119,8 +145,28 @@ def userHome():
         print ("SESSION ---> ",(session['user']))
 
     filmSuggested = mongoDriver.getRandomFilmsByGenre(session['user']['preferences'])
+    movieId =[]
+    count=0
+    a=[]
+    for i in filmSuggested:
+
+        count=count+1
+        id1=long(i['movieId'])
+        id = mongoDriver.getLink(id1)
+        lista =getDataMovie.getNamePoster(id)
+        lista.append(id1)
+        a.append(lista)
+        if(count==4):
+            movieId.append(a)
+            count=0
+            a=[]
+    if count>0 and count<4:
+        for i in range(0,count-4):
+            a.append(None)
+        movieId.append(a)
     print("FILM SUGGESTED[SERVER]", filmSuggested)
-    return render_template("homepageUtente.html")
+    return render_template("homepageUtente.html",movieId=movieId)
+
 
 @app.route('/searchFilm/', methods=['POST'])
 def searchFilm():
@@ -128,6 +174,8 @@ def searchFilm():
     films = mongoDriver.searchFilm(search)
     return render_template("listaFilm.html",films=films)
 
+
+"""da completare"""
 @app.route('/rateFilm/<rating>')
 def rateFilm(rating):
     print (rating)
@@ -154,9 +202,16 @@ def updateFilmPreferences():
     del session['user'] #Cancello il vecchio utente dalla sessione
     session['user'] = updatedUser.serialize()
 
+    #Reindirizzo l'utente sulla pagina finale
     films = mongoDriver.getRandomFilmsByGenre(newPreferences)
-
-    return render_template("rateFilms.html",films=films)
+    #Per ogni film, prenditi anche i dati
+    moviesDetail = {}
+    for film in films:
+        movieId = film['movieId']
+        movieData = getDataMovie.getDataFilm(movieId)
+        details = {'title':movieData[0],'poster':movieData[6],'trailer':movieData[7]}
+        moviesDetail['movieId'] = details
+    return render_template("rateFilms.html",films=films,moviesDetail=moviesDetail)
 
 #App start on localhost:5000
 if __name__ == '__main__':

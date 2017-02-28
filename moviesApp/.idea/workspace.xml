@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c19f5b0-854b-4b0f-b7ca-347f7c253da6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/arrows.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/blacktocat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/gh-buttons.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/gh-icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/responsive.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/example5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery-easing-1.3.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.bullet_navigator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.circular_navigator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.css3_animation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.navigator.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.remote_content.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/jquery.silver_track.responsive_hub_connector.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/modernizr.mediaqueries.transforms3d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/responsive-hub.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/js/script.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/filmDataExtraction/getDataMovie.py" afterPath="$PROJECT_DIR$/filmDataExtraction/getDataMovie.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/moviesApp.py" afterPath="$PROJECT_DIR$/moviesApp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/homepageUtente.html" afterPath="$PROJECT_DIR$/templates/homepageUtente.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/rateFilms.html" afterPath="$PROJECT_DIR$/templates/rateFilms.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +24,8 @@
       <file leaf-file-name="homepageUtente.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/homepageUtente.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -49,18 +34,18 @@
       <file leaf-file-name="moviesApp.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/moviesApp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="122" column="39" lean-forward="true" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+            <state relative-caret-position="203">
+              <caret line="43" column="54" lean-forward="false" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/movie.html">
+      <file leaf-file-name="rateFilms.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/rateFilms.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="68" column="40" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+            <state relative-caret-position="350">
+              <caret line="64" column="91" lean-forward="false" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -69,8 +54,28 @@
       <file leaf-file-name="mongoDriver.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="88" column="17" lean-forward="false" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+            <state relative-caret-position="226">
+              <caret line="123" column="33" lean-forward="false" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listaFilm.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/listaFilm.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="85" column="17" lean-forward="false" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chooseFilmsGenres.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/chooseFilmsGenres.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-820">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,6 +109,7 @@
       <find>updateFilmsPreferences</find>
       <find>User</find>
       <find>.png</find>
+      <find>/login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,19 +134,19 @@
         <option value="$PROJECT_DIR$/helpers/helpers.py" />
         <option value="$PROJECT_DIR$/static/js/helpers.js" />
         <option value="$PROJECT_DIR$/model/user.py" />
-        <option value="$PROJECT_DIR$/filmDataExtraction/getDataMovie.py" />
         <option value="$PROJECT_DIR$/templates/user.html" />
         <option value="$PROJECT_DIR$/templates/listaFilm.html" />
         <option value="$PROJECT_DIR$/templates/movie.html" />
         <option value="$PROJECT_DIR$/templates/homepage.html" />
         <option value="$PROJECT_DIR$/static/js/index.js" />
         <option value="$PROJECT_DIR$/templates/chooseFilmsGenres.html" />
-        <option value="$PROJECT_DIR$/templates/rateFilms.html" />
-        <option value="$PROJECT_DIR$/moviesApp.py" />
-        <option value="$PROJECT_DIR$/mongodb/mongoDriver.py" />
         <option value="$PROJECT_DIR$/static/css/gh-buttons.css" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/mongodb/mongoDriver.py" />
+        <option value="$PROJECT_DIR$/templates/rateFilms.html" />
+        <option value="$PROJECT_DIR$/moviesApp.py" />
         <option value="$PROJECT_DIR$/templates/homepageUtente.html" />
+        <option value="$PROJECT_DIR$/filmDataExtraction/getDataMovie.py" />
       </list>
     </option>
   </component>
@@ -729,7 +735,14 @@
       <option name="project" value="LOCAL" />
       <updated>1488236481686</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Pulizia lavoro sulla homepage utente per inserire pagina nik (vanno importati anche i controlli sugli errori sui link dei trailer..)">
+      <created>1488263689832</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1488263689832</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -784,20 +797,14 @@
     <MESSAGE value="Fix problemi con la sessione" />
     <MESSAGE value="Inserito rating iniziale registrazione" />
     <MESSAGE value="Inizio raccomandazione film homepageUtente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inizio raccomandazione film homepageUtente" />
+    <MESSAGE value="Pulizia lavoro sulla homepage utente per inserire pagina nik (vanno importati anche i controlli sugli errori sui link dei trailer..)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pulizia lavoro sulla homepage utente per inserire pagina nik (vanno importati anche i controlli sugli errori sui link dei trailer..)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -956,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/filmDataExtraction/getDataMovie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="15" lean-forward="false" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/helpers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -995,27 +995,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listaFilm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="86" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/rateFilms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/chooseFilmsGenres.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1070,34 +1049,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
+    <entry file="file://$PROJECT_DIR$/templates/movie.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="88" column="17" lean-forward="false" selection-start-line="88" selection-start-column="17" selection-end-line="88" selection-end-column="17" />
+        <state relative-caret-position="65">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/homepageUtente.html">
+    <entry file="file://$PROJECT_DIR$/templates/chooseFilmsGenres.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="-820">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listaFilm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="85" column="17" lean-forward="false" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongodb/mongoDriver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="123" column="33" lean-forward="false" selection-start-line="123" selection-start-column="33" selection-end-line="123" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filmDataExtraction/tmdb3/tmdb_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1364">
+          <caret line="658" column="4" lean-forward="false" selection-start-line="658" selection-start-column="4" selection-end-line="658" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/moviesApp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="122" column="39" lean-forward="true" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+        <state relative-caret-position="203">
+          <caret line="43" column="54" lean-forward="false" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/movie.html">
+    <entry file="file://$PROJECT_DIR$/templates/homepageUtente.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="68" column="40" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+        <state relative-caret-position="270">
+          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/filmDataExtraction/getDataMovie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/rateFilms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="64" column="91" lean-forward="false" selection-start-line="64" selection-start-column="91" selection-end-line="64" selection-end-column="91" />
           <folding />
         </state>
       </provider>
