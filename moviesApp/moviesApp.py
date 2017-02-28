@@ -102,9 +102,10 @@ def completeRegistration():
         moviesDetail = {}
         for film in films:
             movieId = film['movieId']
-            movieData = getDataMovie.getDataFilm(movieId)
-            details = {'title': movieData[0], 'poster': movieData[6], 'trailer': movieData[7]}
-            moviesDetail['movieId'] = details
+            id = mongoDriver.getLink(movieId)
+            movieData = getDataMovie.getDataFilm(id)
+            details = [movieData[0],movieData[7],movieData[8]]
+            moviesDetail[str(movieId)] = details
         return render_template("rateFilms.html",films=films,moviesDetail=moviesDetail)
 
 @app.route('/getSurveyPage/',methods=['POST'])
@@ -208,9 +209,10 @@ def updateFilmPreferences():
     moviesDetail = {}
     for film in films:
         movieId = film['movieId']
-        movieData = getDataMovie.getDataFilm(movieId)
-        details = {'title':movieData[0],'poster':movieData[6],'trailer':movieData[7]}
-        moviesDetail['movieId'] = details
+        id = mongoDriver.getLink(movieId)
+        movieData = getDataMovie.getDataFilm(id)
+        details = [movieData[0],movieData[7],movieData[8]]
+        moviesDetail[str(movieId)] = details
     return render_template("rateFilms.html",films=films,moviesDetail=moviesDetail)
 
 #App start on localhost:5000
