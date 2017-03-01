@@ -3,6 +3,7 @@ sys.path.append("/anaconda/bin/python2.7/site-packages")
 from pymongo import MongoClient
 from model.user import User
 
+
 client = MongoClient()
 db = client.movielens
 
@@ -132,6 +133,7 @@ def insertFilmRatings(user,ratings):
 
 
 def rateSingleFilm(rating,filmId,user):
+    print(filmId)
     if db.usersRatings.find({'$and':[{'filmId':int(filmId)},{'email':user['email']}]}).count()>0:
         db.usersRatings.delete_many({'$and':[{'filmId':int(filmId)},{'email':user['email']}]})
 
@@ -144,15 +146,33 @@ def checkRating(user,filmId):
         return result[0]['rating']
     return None
 
+def getTitleAndGenresFilm(filmId):
+    movie = db.movies.find({'movieId':filmId})
+    return [movie[0]['title'],movie[0]['genres']]
+
 #userMovies(session['user'])
 def userMovies(user):
     ratingFilms = db.usersRatings.find({'email':user['email']})
+    data=[]
+    for film in list(ratingFilms):
+        id= film['filmId']
+        title = getTitleAndGenresFilm(id)[0]
+        genres = getTitleAndGenresFilm(id)[1]
+        rating=film['rating']
+        data.append([id,title,genres,rating])
+    return data
 
 
-def usersBestMovies(user):
-    result = db.usersRatings.aggregate([{'$match':{'$and':[{'email': user['email']},{'rating':{'$gte':3}}]}},{'$sample': {'size':2}}])
+
+def usersBestMovies(user,numberTop):
+    result = db.usersRatings.aggregate([{'$match':{'$and':[{'email': user['email']},{'rating':{'$gte':3}}]}},{'$sample': {'size':numberTop}}])
+    movies=[]
     for film in list(result):
-        print film['filmId']
+        id= film['filmId']
+        movies.append(getLink(id))
+    return movies
+
+
 
 """
 Query fondamentale:

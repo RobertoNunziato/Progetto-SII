@@ -45,13 +45,13 @@
 
 
 {% if session['user'] %}
-  <h2 style="text-align: center">Search results</h2>
+  <h2 style="text-align: center">Movies List</h2>
     {% if films|length ==0 %}
-    <h4 style="text-align: center">Are found 0 results!...</h4>
+    <h4 style="text-align: center">You are voted 0 movies!...</h4>
     {% endif %}
 
     {% if films|length >=1 %}
-    <h4 style="text-align: center">Are found {{ films|length }} {% if films|length==1 %}result{% endif %}{% if films|length>1 %}results{% endif %}</h4>
+    <h4 style="text-align: center">You have {{ films|length }} {% if films|length==1 %}film{% endif %}{% if films|length>1 %}films{% endif %} in your library</h4>
         <div class="col-lg-3">
 
         </div>
@@ -62,21 +62,21 @@
     <table class="table table-striped table-hover ">
       <thead>
         <tr>
-          <th>#</th>
           <th>Title</th>
           <th>Genre</th>
+            <th>Rating</th>
             <th></th>
         </tr>
       </thead>
 
       <tbody>
-        {% for index in films %}
+        {% for f in films %}
             <tr class="danger">
-              <td>{{ loop.index }}</td>
-              <td>{{ index['title'] }}</td>
-              <td>{{ index['genres'] }}</td>
+              <td>{{ f[1] }}</td>
+              <td>{{ f[2] }}</td>
+                <td>{{ f[3] }}</td>
                <td>
-                   <button type="submit" name="movieid" id="movieid" value="{{ index['movieId'] }}" class="btn btn-primary">Get info about the movie</button>
+                   <button type="submit" name="movieid" id="movieid" value="{{ f[0] }}" class="btn btn-primary">Get info about the movie</button>
 
                </td>
             </tr>

@@ -40,6 +40,9 @@ def registration():
 def login():
     user = mongoDriver.getUser(request.form)
     if user != None:
+
+        session['user'] = user.serialize()
+
         filmSuggested = mongoDriver.getRandomFilmsByGenre((user.getPreferences()))
         print ("FILM SUGGESTED[SERVER]",filmSuggested)
         movieId =[]
@@ -62,8 +65,14 @@ def login():
             for i in range(0,count-4):
                 a.append(None)
             movieId.append(a)
-        session['user'] = user.serialize()
-        return render_template('homepageUtente.html',movieId=movieId)
+
+        #consiglia film visti
+        codesFilmTop = mongoDriver.usersBestMovies(session['user'],2)
+        filmInTop=[]
+        for code in codesFilmTop:
+            filmInTop.append(getDataMovie.getNameAndSimilar(code))
+
+        return render_template('homepageUtente.html',movieId=movieId,filmInTop=filmInTop)
     else:
         return render_template("homepage.html",user=None)
 
@@ -178,8 +187,17 @@ def userHome():
         for i in range(0,count-4):
             a.append(None)
         movieId.append(a)
-    print("FILM SUGGESTED[SERVER]", filmSuggested)
-    return render_template("homepageUtente.html",movieId=movieId)
+
+    #consiglia film visti
+    user = session['user']
+    codesFilmTop = mongoDriver.usersBestMovies(user,2)
+    filmInTop=[]
+    for code in codesFilmTop:
+        filmInTop.append(getDataMovie.getNameAndSimilar(code))
+
+
+
+    return render_template("homepageUtente.html",movieId=movieId,filmInTop=filmInTop)
 
 
 @app.route('/searchFilm/', methods=['POST'])
@@ -262,6 +280,12 @@ def updateFilmPreferences():
         moviesDetail[str(movieId)] = details
 
     return render_template("rateFilms.html",films=films,moviesDetail=moviesDetail)
+
+@app.route('/listFilms/')
+def listFilms():
+    userFilms = mongoDriver.userMovies(session['user'])
+    print(userFilms)
+    return render_template("listaFilmUtente.html",films=userFilms)
 
 #App start on localhost:5000
 if __name__ == '__main__':

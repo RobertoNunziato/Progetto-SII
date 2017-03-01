@@ -124,11 +124,19 @@ def getNamePosterSimilar(codiceFilm,elemPerPage,elemEstratti):
         return None
 
 
+def getNameAndSimilar(codiceFilm,):
+    try:
+        m = Movie(codiceFilm)
+        title=m.title
+        similar= getNamePosterSimilar(codiceFilm,4,8)
+        return [mongoDriver.getIdMovielens(codiceFilm),title,similar]
+    except KeyError as err:
+        return None
 
 
 
 
 
 if __name__ == '__main__':
-    a=getNamePoster(14411)
+    a=getNameAndSimilar(14411)
     print(a)
