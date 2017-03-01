@@ -117,6 +117,18 @@ function validateSurvey() {
     n = (38 - q4 + q9 - q14 + q19 - q24 - q29 - q34 - q39 - q44 - q49) * 5 / 40;
     o = (8 + q5 - q10 + q15 - q20 + q25 - q30 + q35 + q40 + q45 + q50) * 5 / 40;
 
+
+    /*personality è un array in cui nelle corrispondenti posizioni ci sono gli elementi:
+    * -Extroversion
+    * -Agreeableness
+    * -Neuroticism
+    * -OpenessToExperience
+    * */
+
+    var personality = [e,a,c,n,o]
+    console.log(personality)
+    document.forms["completeRegistration"]["personality"].value = personality
+
     /*    alert("Extroversion: " + e +
      "\nAgreeableness: " + a +
      "\nConscientiousness: " + c +
@@ -381,9 +393,6 @@ function validateSurvey() {
         preferences.push("documentary")
         console.log("ambiguous personality");
     }
-
-
     document.forms["completeRegistration"]["preferences"].value = preferences
     return true;
-
 }

@@ -15,6 +15,14 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/jumbotron.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/bootstrap/ie-emulation-modes-warning.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Chart.js') }}"></script>
+
+    <style>
+        .hero {
+    background-color: #ffffff;
+}
+    </style>
+
 
 
 </head>
@@ -27,11 +35,11 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Movies App</a>
+      <a class="navbar-brand">Movies App</a>
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="/homeUtente/">Home</a></li>
-      <li ><a href="/userPage/">User Page</a></li>
+      <li class="nav-item active" ><a href="/userPage/">User Page</a></li>
       <li ><a href="/logout/">Logout</a></li>
     </ul>
     <form class="navbar-form navbar-right" action="/searchFilm/" method="post">
@@ -92,7 +100,7 @@
 							<i class="glyphicon glyphicon-user"></i>
 							Account Settings </a>
 						</li>
-						
+
 					</ul>
 				</div>-->
 				<!-- END MENU -->
@@ -121,10 +129,16 @@
                                {% endfor %}
                 </h4>
 
+
+
+
+
+
             </div>
 		</div>
 	</div>
 </div>
+
 
   </fieldset>
                 </form>
@@ -133,6 +147,17 @@
     </div>
 <br>
 <br>
+<div class="col-md-10">
+</div>
+ <div class="col-md-10 hero" align="center">
+<br><br>
+                <canvas id="radarChart" width="800" height="650"></canvas>
+                    <script src="{{ url_for('static', filename='js/radarChart.js') }}"></script>
+ <br><br>
+ </div>
+
+<div class="col-md-10">
+</div>
 {% endif%}
 
 

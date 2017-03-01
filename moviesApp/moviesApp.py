@@ -51,8 +51,9 @@ def login():
             id1=long(i['movieId'])
             id = mongoDriver.getLink(id1)
             lista =getDataMovie.getNamePoster(id)
-            lista.append(id1)
-            a.append(lista)
+            if (lista!= None):
+                lista.append(id1)
+                a.append(lista)
             if(count==4):
                 movieId.append(a)
                 count=0
@@ -76,11 +77,13 @@ def completeRegistration():
     global survey
     preferences = request.form['preferences']
     user = session['user']
-
+    personality = request.form['personality']
+    personality = helpers.buildPersonality(personality)
+    session['user']['personality'] = personality
+    print (personality)
     preferences = helpers.buildPreferences(preferences)
 
     mongoDriver.insertUser(user,preferences)
-    print (user)
     #clean survey
     survey = {"1": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
               "2": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -119,9 +122,6 @@ def getSurveyPage():
     survey[pageNumber] = answersArray
 
     session['survey'] = json.dumps(helpers.reformat(survey))
-    """Prove sessione"""
-    #user = session['user']
-    #(print(user['name']))
     return render_template("survey.html",page=cont,survey=survey)
 
 @app.route('/verifyUser/')
@@ -155,8 +155,9 @@ def userHome():
         id1=long(i['movieId'])
         id = mongoDriver.getLink(id1)
         lista =getDataMovie.getNamePoster(id)
-        lista.append(id1)
-        a.append(lista)
+        if (lista!= None):
+                lista.append(id1)
+                a.append(lista)
         if(count==4):
             movieId.append(a)
             count=0
@@ -207,7 +208,7 @@ def rateFilm():
 
 @app.route('/updateFilmsPreferences/', methods=['POST'])
 def updateFilmPreferences():
-    print(session['user'])
+    #print(session['user'])
     preferences = request.form['preferences']
     newPreferences = helpers.buildPreferences(preferences)
     oldPreferences = (session['user']['preferences'])
@@ -219,12 +220,14 @@ def updateFilmPreferences():
             for preference in list:
                 newPreferences.append(preference)
     (session['user']['preferences']) = newPreferences   #Funzionamento strano, rimedio creando utente da capo
-    print(session['user'])
+
+    #print(session['user'])
     #Update user with new preferences...
     updatedUser = mongoDriver.updateUser(session['user'])
     del session['user'] #Cancello il vecchio utente dalla sessione
     session['user'] = updatedUser.serialize()
 
+    print("UPDATE FILM PREFERENCES ------->",session['user'])
     #Reindirizzo l'utente sulla pagina finale
     films = mongoDriver.getRandomFilmsByGenre(newPreferences)
     #Per ogni film, prenditi anche i dati

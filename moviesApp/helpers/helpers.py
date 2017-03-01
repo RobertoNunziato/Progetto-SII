@@ -19,3 +19,11 @@ def buildPreferences(preferences):
         list.append(preferences)
 
     return list
+
+def buildPersonality(personality):
+    list = []
+    personalityArray = personality.split(",")
+    for index in range(len(personalityArray)):
+        list.append(personalityArray[index])
+
+    return list

@@ -36,7 +36,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Movies App</a>
+            <a class="navbar-brand" >Movies App</a>
         </div>
         <ul class="nav navbar-nav">
             <li><a href="/homeUtente/">Home</a></li>
@@ -134,10 +134,15 @@
 
             <div class="row">
               {% for m in movieData[9][index] %}
-              <div class="col-md-6">
-                <a class="thumbnail" ><img alt="" src="{{m[1]}}">{{m[0]}}</a>
+                {%if m!=None%}
+                 <div class="col-md-6">
+                        <form action="/movie/" method="post" class="navbar-form navbar-right">
+                    <input type="text" hidden="true" id="movieid" name="movieid" value="{{m[2]}}">
+                <a class="thumbnail" href="#" onclick="this.parentNode.submit()"><img alt="" src="{{m[1]}}">{{m[0]}}</a>
 
-              </div>
+                      </form>
+                 </div>
+                {% endif %}
               {% endfor %}
             </div>
           </div>
