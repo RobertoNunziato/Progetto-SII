@@ -124,6 +124,26 @@ def getRandomFilmsByGenre(preferences):
     return films
 
 
+def insertFilmRatings(user,ratings):
+    for elem in ratings:
+        for filmId in elem:
+            json = {'email':user['email'],'filmId':int(filmId),'rating':int(elem[filmId])}
+            db.usersRatings.insert_one(json)
+
+
+def rateSingleFilm(rating,filmId,user):
+    if db.usersRatings.find({'$and':[{'filmId':int(filmId)},{'email':user['email']}]}).count()>0:
+        db.usersRatings.delete_many({'$and':[{'filmId':int(filmId)},{'email':user['email']}]})
+
+    json = {'email':user['email'],'filmId':int(filmId),'rating':int(rating)}
+    db.usersRatings.insert_one(json)
+
+def checkRating(user,filmId):
+    if db.usersRatings.find({'$and': [{'filmId': int(filmId)}, {'email': user['email']}]}).count() > 0:
+        result = db.usersRatings.find({'$and': [{'filmId': int(filmId)}, {'email': user['email']}]})
+        return result[0]['rating']
+    return None
+
 """
 Query fondamentale:
 -Per prendere N film random dato un genere:

@@ -27,3 +27,12 @@ def buildPersonality(personality):
         list.append(personalityArray[index])
 
     return list
+
+def buildFilmRatings(ratings):
+    list = []
+    filmsRatingArray = ratings.split(",")
+    for elem in filmsRatingArray:
+        filmId = elem.split(":")[0]
+        rating = elem.split(":")[1]
+        list.append({filmId:rating})
+    return list

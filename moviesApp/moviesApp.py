@@ -138,7 +138,13 @@ def getMovie():
     id=request.form['movieid']
     movieId = mongoDriver.getLink(long(id))
     movieData = getDataMovie.getDataFilm(movieId)
-    return render_template("movie.html",movieData=movieData)
+
+    #trova se l'utente ha gia' votato il film
+    rate = mongoDriver.checkRating(session['user'],id)
+    if rate != None:
+        return render_template("movie.html",movieData=movieData,id=id,rate=rate)
+    else:
+        return render_template("movie.html",movieData=movieData,id=id)
 
 @app.route('/homeUtente/')
 def userHome():
@@ -177,11 +183,17 @@ def searchFilm():
     return render_template("listaFilm.html",films=films)
 
 
-"""da completare"""
+@app.route('/rateSingleFilm/<rating>/<filmId>')
+def rateSingleFilm(rating,filmId):
+    mongoDriver.rateSingleFilm(rating,filmId,session['user'])
+    return "ok"
+
 @app.route('/rateFilm/', methods=['POST'])
 def rateFilm():
     ratings = request.form['film-ratings']
-    print (ratings)
+    if ratings != "":
+        ratings = helpers.buildFilmRatings(ratings)
+        mongoDriver.insertFilmRatings(session['user'],ratings)
 
     filmSuggested = mongoDriver.getRandomFilmsByGenre(session['user']['preferences'])
     movieId =[]
@@ -235,9 +247,14 @@ def updateFilmPreferences():
     for film in films:
         movieId = film['movieId']
         id = mongoDriver.getLink(movieId)
-        movieData = getDataMovie.getDataFilm(id)
-        details = [movieData[0],movieData[7],movieData[8]]
+        movieData = getDataMovie.getNamePoster(id)
+        if movieData != None:
+            details = [movieData[0],movieData[1],movieId]
+        else:
+            details = None
+
         moviesDetail[str(movieId)] = details
+
     return render_template("rateFilms.html",films=films,moviesDetail=moviesDetail)
 
 #App start on localhost:5000
