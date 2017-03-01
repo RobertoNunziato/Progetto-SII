@@ -131,7 +131,13 @@ def verifyUser():
 
 @app.route('/userPage/')
 def getUserPage():
-    return render_template("user.html")
+    big5 = session['user']['personality']
+    longBig5 = ""
+    for b in big5:
+        longBig5 = longBig5 + b + ","
+    longBig5 = longBig5[:-1]
+    print(longBig5)
+    return render_template("user.html", big5=longBig5)
 
 @app.route('/movie/', methods=['POST'])
 def getMovie():

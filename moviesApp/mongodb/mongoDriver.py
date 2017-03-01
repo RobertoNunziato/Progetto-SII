@@ -144,6 +144,16 @@ def checkRating(user,filmId):
         return result[0]['rating']
     return None
 
+#userMovies(session['user'])
+def userMovies(user):
+    ratingFilms = db.usersRatings.find({'email':user['email']})
+
+
+def usersBestMovies(user):
+    result = db.usersRatings.aggregate([{'$match':{'$and':[{'email': user['email']},{'rating':{'$gte':3}}]}},{'$sample': {'size':2}}])
+    for film in list(result):
+        print film['filmId']
+
 """
 Query fondamentale:
 -Per prendere N film random dato un genere:
