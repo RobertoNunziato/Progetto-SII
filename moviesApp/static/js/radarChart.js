@@ -11,17 +11,18 @@ for (i in data){
 	data2.push(parseFloat(data[i]))
 }
 //radar chart data
+
 var radarData = {
     labels: ["Extroversion","Agreeableness","Coscientioussness","Neuroticism","OpenessToExperience"],
     datasets: [
         {
             label: "Big5 values",
-            backgroundColor: "rgba(179,181,198,0.2)",
+            backgroundColor: "#ff9900",
             borderColor: "rgba(179,181,198,1)",
-            pointBackgroundColor: "rgba(179,181,198,1)",
+            pointBackgroundColor: "rgba(255,0,0,1)",
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
-            pointHoverBorderColor: "rgba(179,181,198,1)",
+            pointHoverBorderColor: "rgba(255,0,0,1)",
             data: data2
         }]
 };

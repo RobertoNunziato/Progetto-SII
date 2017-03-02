@@ -15,7 +15,6 @@
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/jumbotron.css') }}" rel="stylesheet">
     <script src="{{ url_for('static', filename='js/bootstrap/ie-emulation-modes-warning.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/Chart.js') }}"></script>
 
  <style>
         .hero {
@@ -156,6 +155,8 @@ canvas {
     		<div class="col-md-4" align="center">
                 <h3>Big5 values:</h3>
                 <canvas id="radarChart" width="800" height="600" ></canvas>
+                    <script src="{{ url_for('static', filename='js/Chart.js') }}"></script>
+
                 <script userBig5="{{big5}}" src="{{ url_for('static', filename='js/radarChart.js') }}"></script>
             </div>
     		<div class="col-md-4" >

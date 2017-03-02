@@ -228,8 +228,9 @@ def rateFilm():
         id1=long(i['movieId'])
         id = mongoDriver.getLink(id1)
         lista =getDataMovie.getNamePoster(id)
-        lista.append(id1)
-        a.append(lista)
+        if (lista!= None):
+            lista.append(id1)
+            a.append(lista)
         if(count==4):
             movieId.append(a)
             count=0
@@ -238,8 +239,15 @@ def rateFilm():
         for i in range(0,count-4):
             a.append(None)
         movieId.append(a)
+
+    #consiglia film visti
+    codesFilmTop = mongoDriver.usersBestMovies(session['user'],2)
+    filmInTop=[]
+    for code in codesFilmTop:
+        filmInTop.append(getDataMovie.getNameAndSimilar(code))
+
     print("FILM SUGGESTED[SERVER]", filmSuggested)
-    return render_template("homepageUtente.html",movieId=movieId)
+    return render_template("homepageUtente.html",movieId=movieId,filmInTop=filmInTop)
 
 
 @app.route('/updateFilmsPreferences/', methods=['POST'])
