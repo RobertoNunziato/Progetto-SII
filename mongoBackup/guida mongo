@@ -1,0 +1,23 @@
+1. fai partire mongod
+	sudo mongod
+2. importa il database
+	mongorestore -d movielens <percorso alla cartella movielens>
+3. fai partire l'app
+	esegui il file python moviesApp.py nella cartella Progetto-SII-master
+
+
+per testare che hai importato bene il db fai questi comandi:
+	- sudo mongo
+	- use movielens
+	- show collections
+	- dopo questo comando dovresi vedere le collezioni che hai, che devono essere:
+	links
+	movies
+	system.indexes
+	users
+	usersRatings
+
+
+
+
+
